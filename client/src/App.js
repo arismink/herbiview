@@ -1,9 +1,13 @@
 import logo from './logo.svg';
+
+import { useEffect } from 'react';
+
+import axios from 'axios';
 import './App.css';
 
 function App() {
 
-  fetchData = () => {
+  useEffect(() => {
     axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
       // handle success
@@ -14,7 +18,7 @@ function App() {
         message: response.data.message
       });
     }) 
-  }
+  })
 
   return (
     <div className="App">
