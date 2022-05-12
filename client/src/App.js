@@ -16,9 +16,9 @@ function App() {
     axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
       // handle success
-      console.log(response.data) // The entire response from the Rails API
+      console.log("Entire response: ", response.data) // The entire response from the Express server
 
-      console.log(response.data.message) // Just the message
+      console.log("Response message: ",response.data.message) // Just the message
       setState({
         message: response.data.message
       });
