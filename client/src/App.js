@@ -1,9 +1,10 @@
 import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
 
 function App() {
 
-  fetchData = () => {
+  const fetchData = () => {
     axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
       // handle success
