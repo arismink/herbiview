@@ -1,8 +1,16 @@
-import logo from './logo.svg';
+import { useState, useEffect } from "react";
 import axios from 'axios';
 import './App.css';
 
 function App() {
+  // Set up state information
+  const [state, setState] = useState({
+    message: "No message for now."
+  });
+
+  // useEffect(() => {
+
+  // }, []);
 
   const fetchData = () => {
     axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
@@ -11,16 +19,16 @@ function App() {
       console.log(response.data) // The entire response from the Rails API
 
       console.log(response.data.message) // Just the message
-      this.setState({
+      setState({
         message: response.data.message
       });
     }) 
-  }
+  };
 
   return (
     <div className="App">
-      <h1>{ this.state.message }</h1>
-      <button onClick={this.fetchData} >
+      <h1>{ state.message }</h1>
+      <button onClick={fetchData} >
         Fetch Data
       </button>        
     </div>
