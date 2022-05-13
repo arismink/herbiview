@@ -34,7 +34,7 @@ export default function Search() {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div
+    <Box
       style={{
         display: "flex",
         alignSelf: "center",
@@ -46,6 +46,6 @@ export default function Search() {
       <SearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery} />
-    </div>
+    </Box>
   );
 }

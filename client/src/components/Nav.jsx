@@ -120,7 +120,8 @@ export default function Nav() {
           <Box sx={{
             width: { md: 600 } }}>
 
-            <Search/>
+            <Search
+              />
 
           </Box>
 
@@ -160,8 +161,7 @@ export default function Nav() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-      <Toolbar />
-      <Toolbar />
+
     </Box>
   );
 }
