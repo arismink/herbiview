@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 
 
 function App() {
-  const { handleChange, handleSubmit } = useAppData();
+  const { setFile, sendToPlantAPI } = useAppData();
 
   return (
 
@@ -15,8 +15,8 @@ function App() {
       <Nav />
 
       <h1>Herbiview</h1>
-      <form onSubmit={handleSubmit}>
-        <input type='file' onChange={handleChange} />
+      <form onSubmit={sendToPlantAPI}>
+        <input type='file' onChange={setFile} />
         <button type='submit'>Upload</button>
       </form> 
 

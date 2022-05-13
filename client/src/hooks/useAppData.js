@@ -7,23 +7,19 @@ export default function useAppData() {
     file: {},
   });
 
-  const sendToPlantAPI = () => {
+  const sendToPlantAPI = (e) => {
+    e.preventDefault();
     convertImageToBase64(state.file).then((base64file) => {
       axios.post("api/identify", { base64file })
       .then(res => {
-        console.log(res.data);
+        console.log("id: ", res.data.identify, "health: ", res.data.health);
       });
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    sendToPlantAPI();
-  };
-
-  const handleChange = (e) => {
+  const setFile = (e) => {
     setState((prev) => ({ ...prev, file: e.target.files[0] }));
   };
 
-  return { handleChange, handleSubmit };
+  return { setFile, sendToPlantAPI };
 }
