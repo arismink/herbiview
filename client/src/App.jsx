@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { Button, Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 
-
 import Theme from './styles/Theme';
 
 import { useState } from "react";
@@ -14,6 +13,7 @@ import './App.css';
 
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+
 
 function App() {
   // Set up state information

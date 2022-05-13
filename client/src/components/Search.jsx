@@ -1,6 +1,5 @@
 import { useState } from "react";
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
+
 import TextField from "@mui/material/TextField";
 
 const SearchBar = ({setSearchQuery}) => (
@@ -16,17 +15,11 @@ const SearchBar = ({setSearchQuery}) => (
       placeholder="Search..."
       size="small"
     />
-    <IconButton type="submit" aria-label="search">
-      <SearchIcon />
-    </IconButton>
   </form>
 );
 
-
 export default function Search() {
   const [searchQuery, setSearchQuery] = useState("");
-
-  console.log(searchQuery)
 
   return (
     <div
