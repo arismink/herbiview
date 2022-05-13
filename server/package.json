@@ -6,7 +6,7 @@
   "author": "garrettgsb",
   "license": "MIT",
   "scripts": {
-    "go": "nodemon server.js"
+    "go": "nodemon -L server.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
