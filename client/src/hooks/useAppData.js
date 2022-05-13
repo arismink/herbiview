@@ -11,7 +11,7 @@ export default function useAppData() {
     convertImageToBase64(state.file).then((base64file) => {
       axios.post("api/identify", { base64file })
       .then(res => {
-        console.log(res.data);
+        console.log("id: ", res.data.identify, "health: ", res.data.health);
       });
     });
   };
