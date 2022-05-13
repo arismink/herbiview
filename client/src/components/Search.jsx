@@ -33,6 +33,7 @@ const SearchBar = ({setSearchQuery}) => (
 export default function Search() {
   const [searchQuery, setSearchQuery] = useState("");
 
+  console.log(searchQuery)
   return (
     <Box
       style={{
