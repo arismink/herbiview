@@ -8,6 +8,8 @@ function App() {
     message: "No message for now."
   });
 
+  const [selectedImage, setSelectedImage] = useState(null);
+
   // useEffect(() => {
 
   // }, []);
@@ -30,7 +32,23 @@ function App() {
       <h1>{ state.message }</h1>
       <button onClick={fetchData} >
         Fetch Data
-      </button>        
+      </button>
+      <h1>Image</h1>
+      {selectedImage && (
+        <div>
+        <img alt="not found" width={"250px"} src={URL.createObjectURL(selectedImage)} />
+        <br />
+        <button onClick={()=>setSelectedImage(null)}>Remove</button>
+        </div>
+      )}
+      <input
+        type="file"
+        name="myImage"
+        onChange={(event) => {
+          console.log(event.target.files[0]);
+          setSelectedImage(event.target.files[0]);
+        }}
+      />
     </div>
   );
 }
