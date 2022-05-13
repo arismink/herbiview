@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.main-footer{
+  display: flex;
+  padding: 0em 1.5em 1em 1.5em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $footer-bg;
+
+  h3 {
+    font-family: $logo_font;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+  }
+}
