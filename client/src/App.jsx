@@ -1,6 +1,15 @@
-import { useState, useEffect } from "react";
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+
+import { Button, Typography } from '@mui/material';
+
+import { useState } from "react";
 import axios from 'axios';
 import './App.css';
+
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+
 
 function App() {
   // Set up state information
@@ -26,12 +35,19 @@ function App() {
   };
 
   return (
+
     <div className="App">
-      <h1>{ state.message }</h1>
-      <button onClick={fetchData} >
-        Fetch Data
-      </button>        
+      <Nav />
+
+        <Typography variant="h1">{ state.message }</Typography>
+        <Button variant="contained" onClick={fetchData} >
+          Fetch Data!
+        </Button>
+      <Footer />
+
     </div>
+
+
   );
 }
 

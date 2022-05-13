@@ -1,0 +1,31 @@
+@import 'variables.scss';
+
+.main-navbar{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
+  h2 {
+    padding-left: 1em;
+    font-weight: $logo-weighting;
+    font-family: $logo_font;
+    letter-spacing: 0.15rem;
+  }
+}
+
+.navbar-link {
+  padding: 1.3em;
+  text-transform: uppercase;
+}
+
+/* Mobile and smaller devices only styles */
+@media only screen and (max-width: 700px) {
+  .main-navbar{
+    h2 {
+      font-size: 1em;
+      font-family: $logo_font;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
