@@ -7,7 +7,6 @@ import { useState } from "react";
 import axios from 'axios';
 import './App.css';
 
-
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
@@ -44,9 +43,8 @@ function App() {
         <Button variant="contained" onClick={fetchData} >
           Fetch Data!
         </Button>
-    
-      
       <Footer />
+
     </div>
 
 

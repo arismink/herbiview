@@ -19,7 +19,8 @@ import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 
 import Search from './Search';
 
-export default function PrimarySearchAppBar() {
+export default function Nav() {
+
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
