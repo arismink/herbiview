@@ -37,6 +37,7 @@ export default function Search() {
       <SearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery} />
+        
     </div>
   );
 }
