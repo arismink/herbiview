@@ -3,11 +3,12 @@ const App = Express();
 const BodyParser = require("body-parser");
 const cors = require("cors");
 const axios = require("axios");
+require("dotenv").config();
 const PORT = 8080;
 
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
-App.use(BodyParser.json());
+App.use(BodyParser.json({ limit: "50mb" }));
 App.use(cors());
 App.use(Express.static("public"));
 
@@ -20,7 +21,7 @@ App.get("/api/data", (req, res) => {
 });
 
 App.post("/api/identify", (req, res) => {
-  const base64file = req.body;
+  const base64file = req.body.base64file;
   const data = {
     images: [base64file],
     // modifiers docs: https://github.com/flowerchecker/Plant-id-API/wiki/Modifiers
@@ -47,7 +48,7 @@ App.post("/api/identify", (req, res) => {
       console.log("Success: ", res.data);
     })
     .catch((err) => {
-      // console.log('Error: ', err);
+      console.log("Error: ", err);
     });
 });
 
