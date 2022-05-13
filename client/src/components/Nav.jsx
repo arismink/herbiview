@@ -1,5 +1,3 @@
-import Toolbar from '@mui/material/Toolbar';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 
@@ -18,7 +16,7 @@ export default function Nav() {
       </div>
 
       <div class="navbar-link">
-        Login | Signup
+        <a href="#">Login</a> | <a href="#">Signup</a>
       </div>
 
     </div>
