@@ -17,7 +17,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 
-import Search from './Search';
+import SearchBar from './Search';
 
 export default function Nav() {
 
@@ -120,8 +120,7 @@ export default function Nav() {
           <Box sx={{
             width: { md: 600 } }}>
 
-            <Search
-              />
+            <SearchBar />
 
           </Box>
 
@@ -149,7 +148,7 @@ export default function Nav() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit" 
+              color="inherit"
             >
               <MoreIcon />
             </IconButton>
