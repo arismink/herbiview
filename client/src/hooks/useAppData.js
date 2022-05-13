@@ -30,7 +30,7 @@ export default function useAppData() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "api_key": process.env.API_KEY
+          "Api_Key": process.env.API_KEY
         },
         body: JSON.stringify(data),
       })
