@@ -6,7 +6,7 @@
   "author": "garrettgsb",
   "license": "MIT",
   "scripts": {
-    "go": "nodemon -L src/server.js"
+    "go": "nodemon -L server.js"
   },
   "dependencies": {
     "axios": "^0.27.2",
