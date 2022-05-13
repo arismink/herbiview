@@ -9,8 +9,8 @@ export default function useAppData() {
 
   const sendToPlantAPI = () => {
     convertImageToBase64(state.file).then((base64file) => {
-      console.log(base64file);
       const data = {
+        "Api-Key": process.env.API_KEY,
         image: base64file,
         // modifiers docs: https://github.com/flowerchecker/Plant-id-API/wiki/Modifiers
         modifiers: ["crops_fast", "similar_images"],
@@ -26,15 +26,15 @@ export default function useAppData() {
         ],
       };
 
-      return axios("https://api.plant.id/v2/identify", {
+      return axios("api/identify", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Api_Key": process.env.API_KEY
-        },
         body: JSON.stringify(data),
       })
         .then((response) => response.json())
+        .then((data) => {
+          // todo: parse return data
+          console.log("Success:", data);
+        })
         .catch((error) => {
           console.error("Error:", error);
         });
@@ -43,10 +43,7 @@ export default function useAppData() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendToPlantAPI().then((data) => {
-      // todo: parse return data
-      console.log("Success:", data);
-    });
+    sendToPlantAPI();
   };
 
   const handleChange = (e) => {
