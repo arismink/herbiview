@@ -16,6 +16,7 @@ const SearchBar = ({setSearchQuery}) => (
       variant="outlined"
       placeholder="Search..."
       size="small"
+      fullWidth
     />
   </form>
 );

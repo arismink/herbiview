@@ -108,16 +108,22 @@ export default function Nav() {
         position="fixed">
         <Toolbar>
 
-          <Typography
-            variant="logo1"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            <FontAwesomeIcon icon={faEnvira} /> HERBIVIEW
-          </Typography>
-          <Search/>
-          <SearchIcon/>
+            <Typography
+              variant="logo1"
+              noWrap
+              component="div"
+              sx={{ display: { xs: 'none', sm: 'block' } }}
+            >
+              <FontAwesomeIcon icon={faEnvira} /> HERBIVIEW
+            </Typography>
+
+          <Box sx={{
+            width: { md: 600 } }}>
+
+            <Search/>
+
+          </Box>
+            <SearchIcon/>
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
