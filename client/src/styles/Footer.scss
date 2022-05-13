@@ -10,8 +10,19 @@
   background-color: $footer-bg;
 
   h3 {
-    font-family: $logo_font;
+    font-family: $logo-font;
     font-size: 0.9em;
     letter-spacing: 0.1em;
+  }
+}
+
+/* Mobile and smaller devices only styles */
+@media only screen and (max-width: 400px) {
+  .main-footer{
+    h3 {
+      font-size: 0.7em;
+      font-family: $logo_font;
+      letter-spacing: 0.1em;
+    }
   }
 }

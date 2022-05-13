@@ -5,9 +5,20 @@
   width: 100%;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 
+  h2 {
+    font-weight: $logo-weighting;
+    font-family: $logo_font;
+    letter-spacing: 0.15rem;
+  }
 }
 
-h2 {
-  font-family: $logo_font;
-  letter-spacing: 0.15rem;
+/* Mobile and smaller devices only styles */
+@media only screen and (max-width: 400px) {
+  .main-navbar{
+    h2 {
+      font-size: 0.9em;
+      font-family: $logo_font;
+      letter-spacing: 0.1rem;
+    }
+  }
 }
