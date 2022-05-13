@@ -1,52 +1,29 @@
-import { useState } from "react";
-
 import SearchIcon from '@mui/icons-material/Search';
 
 import Box from '@mui/material/Box';
 
-import TextField from "@mui/material/TextField";
+import OutlinedInput from '@mui/material/OutlinedInput';
 
 const SearchBar = ({setSearchQuery}) => (
-  <form
-    autoComplete="off"
-    >
-    <TextField
-      id="search-bar"
-      className="text"
-      onInput={(e) => {
-        setSearchQuery(e.target.value);
-      }}
-      label="Search"
-      variant="outlined"
-      placeholder="Search..."
-      size="small"
-      fullWidth
-      InputProps={{
-        endAdornment: (
-          <SearchIcon />
-        )
-      }}
-    />
-  </form>
+  <Box sx={{padding: 2}}>
+
+    <form
+      autoComplete='off'
+      action="/" method="get">
+      <OutlinedInput
+        sx={{
+          height: 40
+        }}
+        type="text"
+        id="header-search"
+        placeholder="Search..."
+        name="s"
+        fullWidth
+        endAdornment={<SearchIcon />}
+      />
+    </form>
+
+  </Box>
 );
 
-export default function Search() {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  console.log(searchQuery)
-  return (
-    <Box
-      style={{
-        display: "flex",
-        alignSelf: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        padding: 20
-      }}
-    >
-      <SearchBar
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery} />
-    </Box>
-  );
-}
+export default SearchBar;
