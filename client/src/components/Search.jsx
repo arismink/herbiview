@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+import SearchIcon from '@mui/icons-material/Search';
+
+import Box from '@mui/material/Box';
+
 import TextField from "@mui/material/TextField";
 
 const SearchBar = ({setSearchQuery}) => (
@@ -17,6 +21,11 @@ const SearchBar = ({setSearchQuery}) => (
       placeholder="Search..."
       size="small"
       fullWidth
+      InputProps={{
+        endAdornment: (
+          <SearchIcon />
+        )
+      }}
     />
   </form>
 );
@@ -37,7 +46,6 @@ export default function Search() {
       <SearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery} />
-        
     </div>
   );
 }

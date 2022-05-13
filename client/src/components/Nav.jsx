@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
@@ -123,7 +123,7 @@ export default function Nav() {
             <Search/>
 
           </Box>
-            <SearchIcon/>
+
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
