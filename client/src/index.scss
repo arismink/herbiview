@@ -6,8 +6,38 @@ body {
   font-family: $primary-font;
 }
 
+a:hover {
+  // background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/squiggle.svg");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+a:link {
+  color: $primary-font-color;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $primary-font-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $primary-font-color;
+  text-decoration: none;
+}
+
+a:active {
+  color: $primary-font-color;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 700px) {
   body {
     font-size: 0.8em;
   }
 }
+
