@@ -8,9 +8,11 @@ import "../styles/Nav.scss";
 export default function Nav() {
 
   return (
-    <div>
+    <div class="navbar">
       <Toolbar>
         <h2><FontAwesomeIcon icon={faEnvira} /> HERBIVIEW</h2>
+
+
       </Toolbar>
     </div>
   )
