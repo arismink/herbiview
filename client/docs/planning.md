@@ -8,3 +8,5 @@ Project Desc: Allow users to learn more about plants by uploading a photo and it
 - As a pet owner, I want to be able to find out if a plant is toxic for my pet.
 
 - As a plant owner, I want to be able to keep track of what plants I looked up
+
+Techstack: PERN
