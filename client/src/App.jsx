@@ -2,9 +2,6 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Button, Typography } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
-
-import Theme from './styles/Theme';
 
 import { useState } from "react";
 import axios from 'axios';
@@ -39,21 +36,19 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme = { Theme }>
 
-      <div className="App">
-        <Nav />
+    <div className="App">
+      <Nav />
 
-          <Typography variant="h1">{ state.message }</Typography>
-          <Button variant="contained" onClick={fetchData} >
-            Fetch Data!
-          </Button>
+        <Typography variant="h1">{ state.message }</Typography>
+        <Button variant="contained" onClick={fetchData} >
+          Fetch Data!
+        </Button>
+    
       
-        
-      </div>
-
       <Footer />
-    </ThemeProvider>
+    </div>
+
 
   );
 }
