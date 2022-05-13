@@ -13,6 +13,7 @@ import './App.css';
 
 
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 function App() {
   // Set up state information
@@ -51,7 +52,7 @@ function App() {
         
       </div>
 
-
+      <Footer />
     </ThemeProvider>
 
   );
