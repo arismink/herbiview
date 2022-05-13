@@ -3,7 +3,9 @@ import { useState } from "react";
 import TextField from "@mui/material/TextField";
 
 const SearchBar = ({setSearchQuery}) => (
-  <form>
+  <form
+    autoComplete="off"
+    >
     <TextField
       id="search-bar"
       className="text"
