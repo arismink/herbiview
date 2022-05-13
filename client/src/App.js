@@ -1,6 +1,10 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import Button from '@mui/material/Button';
+
+import { Button, Paper } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+
+import theme from './theme'
 
 import { useState } from "react";
 import axios from 'axios';
@@ -30,13 +34,26 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>{ state.message }</h1>
-      <Button variant="contained" onClick={fetchData} >
-        Fetch Data
-      </Button>
+    <ThemeProvider theme = { theme }>
+
+      <div className="App">
+        <Paper sx={{
+          marginTop: '1rem',
+          padding: '1rem'
+        }}>
+          <h1>{ state.message }</h1>
+          <Button variant="contained" onClick={fetchData} >
+            Fetch Data
+          </Button>
       
-    </div>
+          
+        </Paper>
+        
+      </div>
+
+
+    </ThemeProvider>
+
   );
 }
 
