@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 import { Button, Paper, Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvira } from '@fortawesome/free-brands-svg-icons'
 
 import Theme from './styles/Theme';
 
@@ -44,10 +42,10 @@ function App() {
 
       <div className="App">
         <Nav />
-        
+
           <Typography variant="h1">{ state.message }</Typography>
           <Button variant="contained" onClick={fetchData} >
-          <FontAwesomeIcon icon={faEnvira} />
+            Fetch Data!
           </Button>
       
         
