@@ -9,11 +9,18 @@ export default function Nav() {
 
   return (
     <div class="main-navbar">
-      <Toolbar>
-        <h2><FontAwesomeIcon icon={faEnvira} /> HERBIVIEW</h2>
+        <div class="main-logo">
+          <h2><FontAwesomeIcon icon={faEnvira} /> HERBIVIEW</h2>
+        </div>
 
+      <div class="searchbar">
+        search bar component needs to go here
+      </div>
 
-      </Toolbar>
+      <div class="navbar-link">
+        Login | Signup
+      </div>
+
     </div>
   )
 
