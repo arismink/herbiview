@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import TextField from "@mui/material/TextField";
 
-const SearchBar = ({setSearchQuery}) => (
+const SearchBar = ({setState}) => (
   <form
     autoComplete="off"
     >
@@ -10,7 +10,7 @@ const SearchBar = ({setSearchQuery}) => (
       id="search-bar"
       className="text"
       onInput={(e) => {
-        setSearchQuery(e.target.value);
+        setState(e.target.value);
       }}
       label="Search"
       variant="outlined"
@@ -21,7 +21,7 @@ const SearchBar = ({setSearchQuery}) => (
 );
 
 export default function Search() {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [state, setState] = useState("");
 
   return (
     <div
@@ -34,8 +34,8 @@ export default function Search() {
       }}
     >
       <SearchBar
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery} />
+        state={state}
+        setState={setState} />
     </div>
   );
 }
