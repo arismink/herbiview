@@ -7,10 +7,11 @@ import "../styles/Footer.scss";
 
 export default function Footer() {
   return (
-    <div class="main-footer">
-      <div class="logo-footer">
+    <div className="main-footer">
+      <div className="logo-footer">
         <h3><FontAwesomeIcon icon={faEnvira} /> HERBIVIEW</h3>
       </div>
+
     </div>
   )
 }

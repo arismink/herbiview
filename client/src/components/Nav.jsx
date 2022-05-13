@@ -3,19 +3,19 @@ import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 
 import "../styles/Nav.scss";
 
+import Search from './Search';
+
 export default function Nav() {
 
   return (
-    <div class="main-navbar">
-        <div class="main-logo">
+    <div className="main-navbar">
+        <div className="main-logo">
           <h2><FontAwesomeIcon icon={faEnvira} /> HERBIVIEW</h2>
         </div>
 
-      <div class="searchbar">
-        search bar component needs to go here
-      </div>
-
-      <div class="navbar-link">
+      <Search />
+      
+      <div className="navbar-link">
         <a href="#">Login</a> | <a href="#">Signup</a>
       </div>
 
@@ -23,3 +23,4 @@ export default function Nav() {
   )
 
 };
+

@@ -2,7 +2,7 @@
 
 .main-navbar{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 
@@ -15,7 +15,7 @@
 }
 
 .navbar-link {
-  padding: 1em;
+  padding: 1.3em;
   text-transform: uppercase;
 }
 
