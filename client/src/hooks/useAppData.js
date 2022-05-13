@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { convertImageToBase64 } from "helpers/fileReader";
 
@@ -11,7 +11,6 @@ export default function useAppData() {
     convertImageToBase64(state.file).then((base64file) => {
       console.log(base64file);
       const data = {
-        api_key: "-- ask for one: https://web.plant.id/api-access-request/ --",
         image: base64file,
         // modifiers docs: https://github.com/flowerchecker/Plant-id-API/wiki/Modifiers
         modifiers: ["crops_fast", "similar_images"],
@@ -31,6 +30,7 @@ export default function useAppData() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "api_key": process.env.API_KEY
         },
         body: JSON.stringify(data),
       })
@@ -42,17 +42,16 @@ export default function useAppData() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    sendToPlantAPI()
-    .then((data) => {
+    e.preventDefault();
+    sendToPlantAPI().then((data) => {
       // todo: parse return data
       console.log("Success:", data);
-    })
-  }
+    });
+  };
 
   const handleChange = (e) => {
-    setState(prev => ({...prev, file: e.target.files[0]}))
-  }
+    setState((prev) => ({ ...prev, file: e.target.files[0] }));
+  };
 
-  return { state, handleChange, handleSubmit };
+  return { handleChange, handleSubmit };
 }
