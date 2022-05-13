@@ -12,7 +12,7 @@ App.use(Express.static('public'));
 App.get('/api/data', (req, res) => {
   console.log("GET /api/data");
   res.json({
-    message: "Seems to work!",
+    message: "Seems to work :) !",
   })
 });
 

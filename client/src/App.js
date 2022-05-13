@@ -1,4 +1,8 @@
-import { useState, useEffect } from "react";
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import Button from '@mui/material/Button';
+
+import { useState } from "react";
 import axios from 'axios';
 import './App.css';
 
@@ -28,9 +32,10 @@ function App() {
   return (
     <div className="App">
       <h1>{ state.message }</h1>
-      <button onClick={fetchData} >
+      <Button variant="contained" onClick={fetchData} >
         Fetch Data
-      </button>        
+      </Button>
+      
     </div>
   );
 }
