@@ -1,0 +1,20 @@
+.hero-container {
+  left: 1em;
+
+  img {
+    height: 90vh;
+    width: 50vw;
+    object-fit: cover;
+    // object-position: 10vw
+    max-width: 400px;
+  }
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-body {
+  padding: 10em;
+}
