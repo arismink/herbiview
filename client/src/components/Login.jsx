@@ -54,6 +54,7 @@ export default function Login() {
                   message: "Invalid email address",
                 },
               })}
+              autoFocus
             />
 
             <TextField

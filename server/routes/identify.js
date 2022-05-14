@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const axios = require("axios");
+const mockIdentifyData = require("../mockData/mockIdentifyData.json");
+const mockHeathData = require("../mockData/mockHealthData.json");
 
 module.exports = () => {
   router.post("/", async (req, res) => {
@@ -55,14 +57,20 @@ module.exports = () => {
     );
 
     try {
-      const [identifyResponse, healthResponse] = await Promise.all([
-        identifyApiCall,
-        healthApiCall,
-      ]);
+      // uncomment to make real api call
+      // const [identifyResponse, healthResponse] = await Promise.all([
+      //   identifyApiCall,
+      //   healthApiCall,
+      // ]);
 
       res.send({
-        identify: identifyResponse.data,
-        health: healthResponse.data,
+        //uncomment to make real api call
+        // identify: identifyResponse.data,
+        // health: healthResponse.data,
+
+        //uncomment when using mock data
+        identify: mockIdentifyData,
+        health: mockHeathData,
       });
     } catch (error) {
       console.log("Error: ", error);
