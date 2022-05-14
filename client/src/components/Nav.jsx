@@ -105,7 +105,8 @@ export default function Nav() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         sx={{ alignItems: "center" }}
-        position="fixed">
+        position="fixed"
+        style={{ background: '#FFFFFF' }}>
         <Toolbar>
           <Link to="/">
             <Typography
