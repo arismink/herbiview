@@ -11,6 +11,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function Login() {
 
+  // register lets you register an input and apply validation rules on it
   const { register, handleSubmit } = useForm();
 
   // function handle login data
@@ -19,7 +20,9 @@ export default function Login() {
   const onErrors = errors => console.error(errors)
 
   return (
-    <Container maxWidth="md">
+    <Container
+      sx={{mt: 5}}
+      maxWidth="md">
 
       <AccountCircleIcon style={{ fontSize: 100, color: 'grey' }}/>
       <Typography variant="h4" margin={2}>Login</Typography>

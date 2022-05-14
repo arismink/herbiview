@@ -17,7 +17,9 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Container sx={{ marginY: 20 }}>
+      <Container
+        // sx={{marginTop: 20}}
+      >
         <Routes>
           <Route
             path="/"

@@ -17,7 +17,9 @@ export default function Register() {
   const onErrors = errors => console.error(errors);
 
   return (
-<Container maxWidth="md">
+<Container
+  sx={{mt: 5}}
+  maxWidth="md">
 
   <PersonAddAltIcon style={{ fontSize: 100, color: 'grey' }}/>
     <Typography variant="h4" margin={2}>Register</Typography>
