@@ -157,7 +157,7 @@ export default function Nav() {
             </IconButton>
           </Box>
 
-          <Button onClick={() => navigate("/login")} color="inherit">Login</Button>
+          <Button variant="text" onClick={() => navigate("/login")}>Login</Button>
 
         </Toolbar>
       </AppBar>
