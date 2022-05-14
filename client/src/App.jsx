@@ -1,37 +1,32 @@
-import './App.css';
-import useAppData from 'hooks/useAppData';
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import useAppData from "hooks/useAppData";
 
-import Container from '@mui/material/Container';
+import Container from "@mui/material/Container";
 
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Home from "components/Home";
+import Login from "components/Login";
 
 function App() {
   const { setFile, sendToPlantAPI } = useAppData();
 
   return (
-
     <div className="App">
-
       <Nav />
-      <Container sx={{marginY: 20}}>
-
-        <h1>Herbiview</h1>
-        <form onSubmit={sendToPlantAPI}>
-          <input type='file' onChange={setFile} />
-          <button type='submit'>Upload</button>
-        </form>
-
-
-
+      <Container sx={{ marginY: 20 }}>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home sendToPlantAPI={sendToPlantAPI} setFile={setFile} />}
+          />
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </Container>
 
       <Footer />
-
     </div>
-
-
   );
 }
 
