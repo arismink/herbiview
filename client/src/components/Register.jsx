@@ -7,6 +7,8 @@ import { Container, Button, Typography } from "@mui/material";
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 
 export default function Register() {
+
+  // register lets you register an input and apply validation rules on it
   const { register, handleSubmit } = useForm();
 
   // Handle registration with this function
