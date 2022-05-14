@@ -34,7 +34,10 @@ const theme = createTheme({
       fontFamily: variables.logo_font,
       fontSize: '1.3em',
       fontWeight: 600,
-      letterSpacing: '0.1em'
+      letterSpacing: '0.1em',
+      "&:hover": {
+          color: "#000000"
+        }
     }
   },
 });
