@@ -4,7 +4,9 @@ import { useState } from "react";
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Container, Button } from "@mui/material";
+import { Container, Button, Typography } from "@mui/material";
+
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 export default function Login() {
@@ -12,9 +14,14 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSubmit = (e) => {
+    console.log(e)
+  }
+
   return (
     <Container maxWidth="md">
-      <h2>Login</h2>
+      <AccountCircleIcon style={{ fontSize: 100, color: 'grey' }}/>
+      <Typography variant="h4" margin={2}>Login</Typography>
 
       <Container
         component="form"
