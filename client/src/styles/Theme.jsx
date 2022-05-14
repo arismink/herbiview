@@ -17,7 +17,7 @@ const theme = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: variables.primary_bg
+      main: variables.black
     },
     secondary: {
       main: '#f50057',
@@ -40,6 +40,16 @@ const theme = createTheme({
         }
     }
   },
+  overrides: {
+    MuiOutlinedInput: {
+      root: {
+        "& $notchedOutline": {
+          borderColor: "#d3d3d3",
+          borderWidth: 0.5
+        }
+      }
+    }
+  }
 });
 
 export default theme;
