@@ -46,7 +46,7 @@ export default function Login() {
               label="Email"
               type="email"
               fullWidth
-              sx={{mb: 1}}
+              sx={{mb: 2}}
               {...register("email", {
                 required: "Required field",
                 pattern: {
@@ -64,7 +64,7 @@ export default function Login() {
               type="password"
               autoComplete="current-password"
               fullWidth
-              sx={{mb: 1}}
+              sx={{mb: 2}}
               {...register('password', { required: true })}
             />
 
