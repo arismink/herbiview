@@ -1,6 +1,8 @@
 import './App.css';
 import useAppData from 'hooks/useAppData';
 
+import Container from '@mui/material/Container';
+
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
@@ -11,14 +13,19 @@ function App() {
   return (
 
     <div className="App">
-      
-      <Nav />
 
-      <h1>Herbiview</h1>
-      <form onSubmit={sendToPlantAPI}>
-        <input type='file' onChange={setFile} />
-        <button type='submit'>Upload</button>
-      </form> 
+      <Nav />
+      <Container sx={{marginY: 20}}>
+
+        <h1>Herbiview</h1>
+        <form onSubmit={sendToPlantAPI}>
+          <input type='file' onChange={setFile} />
+          <button type='submit'>Upload</button>
+        </form>
+
+
+
+      </Container>
 
       <Footer />
 

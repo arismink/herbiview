@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 
@@ -17,7 +17,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 
-import Search from './Search';
+import SearchBar from './Search';
 
 export default function Nav() {
 
@@ -108,16 +108,22 @@ export default function Nav() {
         position="fixed">
         <Toolbar>
 
-          <Typography
-            variant="logo1"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            <FontAwesomeIcon icon={faEnvira} /> HERBIVIEW
-          </Typography>
-          <Search/>
-          <SearchIcon/>
+            <Typography
+              variant="logo1"
+              noWrap
+              component="div"
+              sx={{ display: { xs: 'none', sm: 'block' } }}
+            >
+              <FontAwesomeIcon icon={faEnvira} /> HERBIVIEW
+            </Typography>
+
+          <Box sx={{
+            width: { md: 600 } }}>
+
+            <SearchBar />
+
+          </Box>
+
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
@@ -142,7 +148,7 @@ export default function Nav() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit" 
+              color="inherit"
             >
               <MoreIcon />
             </IconButton>
@@ -154,8 +160,7 @@ export default function Nav() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-      <Toolbar />
-      <Toolbar />
+
     </Box>
   );
 }
