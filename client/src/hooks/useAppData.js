@@ -1,29 +1,31 @@
-import SearchIcon from '@mui/icons-material/Search';
+import { useState } from "react";
+import axios from "axios";
+import { convertImageToBase64 } from "helpers/fileReader";
+import { useNavigate } from "react-router-dom";
 
-import Box from '@mui/material/Box';
+export default function useAppData() {
+  const navigate = useNavigate();
+  const [state, setState] = useState({
+    file: {},
+    id: {},
+    health: {}
+  });
 
-import OutlinedInput from '@mui/material/OutlinedInput';
+  const sendToPlantAPI = (e) => {
+    e.preventDefault();
+    convertImageToBase64(state.file).then((base64file) => {
+      axios.post("api/identify", { base64file })
+      .then(res => {
+        console.log("id: ", res.data.identify, "health: ", res.data.health);
+        setState(prev => ({...prev, id: res.data.identify, health: res.data.health}));
+        navigate("/plant-details");
+      });
+    });
+  };
 
-const SearchBar = ({setSearchQuery}) => (
-  <Box sx={{padding: 2}}>
+  const setFile = (e) => {
+    setState((prev) => ({ ...prev, file: e.target.files[0] }));
+  };
 
-    <form
-      autoComplete='off'
-      action="/" method="get">
-      <OutlinedInput
-        sx={{
-          height: 40
-        }}
-        type="text"
-        id="header-search"
-        placeholder="Search..."
-        name="s"
-        fullWidth
-        endAdornment={<SearchIcon />}
-      />
-    </form>
-
-  </Box>
-);
-
-export default SearchBar;
+  return { state, setFile, sendToPlantAPI };
+}
