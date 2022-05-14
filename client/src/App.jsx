@@ -8,6 +8,7 @@ import Nav from "components/Nav";
 import Footer from "components/Footer";
 import Home from "components/Home";
 import Login from "components/Login";
+import Register from "components/Register";
 import PlantDetailPage from "components/PlantDetailPage";
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
             element={<Home sendToPlantAPI={sendToPlantAPI} setFile={setFile} />}
           />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+
           <Route path="/plant-details" element={<PlantDetailPage id={state.id} health={state.health} />} />
         </Routes>
       </Container>

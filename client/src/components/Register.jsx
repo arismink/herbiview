@@ -1,28 +1,26 @@
-import { Link } from "react-router-dom";
-
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Container, Button, Typography } from "@mui/material";
 
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 
+export default function Register() {
 
-export default function Login() {
-
+  // register lets you register an input and apply validation rules on it
   const { register, handleSubmit } = useForm();
 
-  // function handle login data
-  const handleLogin = data => console.log(data);
+  // Handle registration with this function
+  const handleRegistration = data => console.log(data);
 
-  const onErrors = errors => console.error(errors)
+  const onErrors = errors => console.error(errors);
 
   return (
-    <Container maxWidth="md">
+<Container maxWidth="md">
 
-      <AccountCircleIcon style={{ fontSize: 100, color: 'grey' }}/>
-      <Typography variant="h4" margin={2}>Login</Typography>
+  <PersonAddAltIcon style={{ fontSize: 100, color: 'grey' }}/>
+    <Typography variant="h4" margin={2}>Register</Typography>
 
       <Container
         sx={{
@@ -31,15 +29,23 @@ export default function Login() {
           alignItems: "center",
         }}
         noValidate
-
         >
 
-        <form
-          autoComplete="off"
-          onSubmit={handleSubmit(handleLogin, onErrors)}>
-
+        <form onSubmit={handleSubmit(handleRegistration, onErrors)}
+        autoComplete="off">
 
           <Box mb={2}>
+          <TextField
+              required
+              id="outlined-name-input"
+              label="Name"
+              type="Name"
+              fullWidth
+              sx={{mb: 2}}
+              autoFocus
+              {...register('name', { required: true })}
+            />
+
             <TextField
               required
               id="outlined-email-input"
@@ -54,7 +60,6 @@ export default function Login() {
                   message: "Invalid email address",
                 },
               })}
-              autoFocus
             />
 
             <TextField
@@ -74,15 +79,12 @@ export default function Login() {
             type="submit"
             variant="contained"
             fullWidth
-            sx={{mb: 4}}>Login</Button>
+            sx={{mb: 4}}>Register</Button>
 
         </form>
-
-        <Link to="/register">Don't have an account? Register here</Link>
-
 
        </Container>
 
     </Container>
-  );
-}
+  )
+};
