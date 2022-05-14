@@ -8,6 +8,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "components/Home";
 import Login from "components/Login";
+import Register from "components/Register";
 
 function App() {
   const { setFile, sendToPlantAPI } = useAppData();
@@ -22,6 +23,7 @@ function App() {
             element={<Home sendToPlantAPI={sendToPlantAPI} setFile={setFile} />}
           />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Container>
 

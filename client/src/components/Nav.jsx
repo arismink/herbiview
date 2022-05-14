@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box';
@@ -107,7 +107,7 @@ export default function Nav() {
         sx={{ alignItems: "center" }}
         position="fixed">
         <Toolbar>
-
+          <Link to="/">
             <Typography
               variant="logo1"
               noWrap
@@ -116,6 +116,8 @@ export default function Nav() {
             >
               <FontAwesomeIcon icon={faEnvira} /> HERBIVIEW
             </Typography>
+
+          </Link>
 
           <Box sx={{
             width: { md: 600 } }}>
