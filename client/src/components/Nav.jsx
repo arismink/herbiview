@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box';
@@ -20,7 +20,7 @@ import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 import SearchBar from './Search';
 
 export default function Nav() {
-
+  const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -154,7 +154,7 @@ export default function Nav() {
             </IconButton>
           </Box>
 
-          <Button color="inherit">Login</Button>
+          <Button onClick={() => navigate("/login")} color="inherit">Login</Button>
 
         </Toolbar>
       </AppBar>
