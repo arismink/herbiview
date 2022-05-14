@@ -1,0 +1,142 @@
+{
+  "id": 45787500,
+  "custom_id": null,
+  "meta_data": {
+    "latitude": null,
+    "longitude": null,
+    "date": "2022-05-14",
+    "datetime": "2022-05-14"
+  },
+  "uploaded_datetime": 1652491334.152986,
+  "finished_datetime": 1652491334.464553,
+  "images": [
+    {
+      "file_name": "9fd2a6cd347c4df3a9554c9115ac5077.jpg",
+      "url": "https://plant.id/media/images/9fd2a6cd347c4df3a9554c9115ac5077.jpg"
+    }
+  ],
+  "suggestions": [
+    {
+      "id": 273231887,
+      "plant_name": "Monstera deliciosa",
+      "plant_details": {
+        "common_names": [
+          "Fruit Salad Plant",
+          "Swiss cheese plant"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Monstera_deliciosa",
+        "name_authority": "Monstera deliciosa Liebm.",
+        "wiki_description": {
+          "value": "Monstera deliciosa, the Swiss cheese plant, is a species of flowering plant native to tropical forests of southern Mexico, south to Panama. It has been introduced to many tropical areas, and has become a mildly invasive species in Hawaii, Seychelles, Ascension Island and the Society Islands. It is very widely grown in temperate zones as a houseplant.\nThe plant may be confused with Thaumatophyllum bipinnatifidum, known as the Split-leaf Philodendron or Tree Philodendron, as they have similar leaves and growing habits. However, the ingestion of Thaumatophyllum bipinnatifidum may cause irritation to the digestive tract and will induce internal swelling. The sap is also known to irritate the skin.",
+          "citation": "https://en.wikipedia.org/wiki/Monstera_deliciosa",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "taxonomy": {
+          "class": "Magnoliopsida",
+          "family": "Araceae",
+          "genus": "Monstera",
+          "kingdom": "Plantae",
+          "order": "Alismatales",
+          "phylum": "Magnoliophyta"
+        },
+        "synonyms": [
+          "Monstera borsigiana",
+          "Monstera deliciosa var. borsigiana",
+          "Monstera deliciosa var. sierrana",
+          "Monstera tacanaensis",
+          "Philodendron anatomicum",
+          "Philodendron pertusum",
+          "Tornelia fragrans"
+        ],
+        "language": "en",
+        "scientific_name": "Monstera deliciosa",
+        "structured_name": {
+          "genus": "monstera",
+          "species": "deliciosa"
+        }
+      },
+      "probability": 0.9612380825417501,
+      "confirmed": false,
+      "similar_images": [
+        {
+          "id": "96a6cd2c6fcf485bdc2e57c941a4506b",
+          "similarity": 0.6455786975565027,
+          "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/96a/6cd2c6fcf485bdc2e57c941a4506b.jpg",
+          "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/96a/6cd2c6fcf485bdc2e57c941a4506b.small.jpg"
+        },
+        {
+          "id": "6d71917da667d7d3c9f28005891ebd6e",
+          "similarity": 0.623447503695115,
+          "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/6d7/1917da667d7d3c9f28005891ebd6e.jpg",
+          "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/6d7/1917da667d7d3c9f28005891ebd6e.small.jpg"
+        }
+      ]
+    },
+    {
+      "id": 273231888,
+      "plant_name": "Thaumatophyllum bipinnatifidum",
+      "plant_details": {
+        "common_names": [
+          "lacy tree philodendron",
+          "selloum",
+          "horsehead philodendron"
+        ],
+        "url": "https://en.wikipedia.org/wiki/Thaumatophyllum_bipinnatifidum",
+        "name_authority": "Thaumatophyllum bipinnatifidum (Schott ex Endl.) Sakur., Calazans & Mayo",
+        "wiki_description": {
+          "value": "Thaumatophyllum bipinnatifidum (common names: lacy tree philodendron, selloum, horsehead philodendron) is a plant that belongs to the family Araceae and genus Thaumatophyllum, which previously was placed at subgenus Meconostigma, one of three subgenera within the genus Philodendron. The commonly used name Philodendron bipinnatifidum is a synonym. This plant is native to South America, namely to Brazil, Bolivia, Argentina, and Paraguay, but is also cultivated as a landscape plant in tropical, subtropical and warm temperate climates.",
+          "citation": "https://en.wikipedia.org/wiki/Thaumatophyllum_bipinnatifidum",
+          "license_name": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "taxonomy": {
+          "class": "Magnoliopsida",
+          "family": "Araceae",
+          "genus": "Thaumatophyllum",
+          "kingdom": "Plantae",
+          "order": "Alismatales",
+          "phylum": "Magnoliophyta"
+        },
+        "synonyms": [
+          "Arum pinnatifidum",
+          "Philodendron bipinnatifidum",
+          "Philodendron pygmaeum",
+          "Sphincterostigma bipinnatifidum"
+        ],
+        "language": "en",
+        "scientific_name": "Thaumatophyllum bipinnatifidum",
+        "structured_name": {
+          "genus": "thaumatophyllum",
+          "species": "bipinnatifidum"
+        }
+      },
+      "probability": 0.025518527610426427,
+      "confirmed": false,
+      "similar_images": [
+        {
+          "id": "0505b2fd91ec58e0b76ad7d740cdf45b",
+          "similarity": 0.5847089515133135,
+          "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/050/5b2fd91ec58e0b76ad7d740cdf45b.jpg",
+          "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/050/5b2fd91ec58e0b76ad7d740cdf45b.small.jpg"
+        },
+        {
+          "id": "3ae29498e61f8c7644a344b91a057ea9",
+          "similarity": 0.5343852509106659,
+          "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/3ae/29498e61f8c7644a344b91a057ea9.jpg",
+          "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/3ae/29498e61f8c7644a344b91a057ea9.small.jpg"
+        }
+      ]
+    }
+  ],
+  "modifiers": [
+    "similar_images",
+    "crops_fast"
+  ],
+  "secret": "7MGIUhJHxkt14ik",
+  "fail_cause": null,
+  "countable": true,
+  "feedback": null,
+  "is_plant_probability": 0.9796733904999999,
+  "is_plant": true
+}
