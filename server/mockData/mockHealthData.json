@@ -1,0 +1,505 @@
+{
+  "id": 45787977,
+  "custom_id": null,
+  "meta_data": {
+    "latitude": null,
+    "longitude": null,
+    "date": "2022-05-14",
+    "datetime": "2022-05-14"
+  },
+  "uploaded_datetime": 1652491758.824979,
+  "finished_datetime": 1652491759.081091,
+  "images": [
+    {
+      "file_name": "1ec1a5ef28924533ba9e7893150e495a.jpg",
+      "url": "https://plant.id/media/images/1ec1a5ef28924533ba9e7893150e495a.jpg"
+    }
+  ],
+  "modifiers": [
+    "health_only",
+    "disease_similar_images",
+    "crops_fast"
+  ],
+  "secret": "xIcOAixcBLh7m7h",
+  "fail_cause": null,
+  "countable": true,
+  "feedback": null,
+  "is_plant_probability": 0.9796733904999999,
+  "is_plant": true,
+  "health_assessment": {
+    "is_healthy_probability": 0.682122305,
+    "is_healthy": true,
+    "diseases": [
+      {
+        "classification": [],
+        "entity_id": 456,
+        "name": "abiotic",
+        "probability": 0.5006709545,
+        "similar_images": [
+          {
+            "id": "4f4c9f23e5e844bca0bca33b106df1fe",
+            "similarity": 0.541040143720216,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/4f4/c9f23e5e844bca0bca33b106df1fe.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/4f4/c9f23e5e844bca0bca33b106df1fe.small.jpg"
+          },
+          {
+            "id": "18d43174593c4b3eb5f106fa55dc21df",
+            "similarity": 0.3328890640373089,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/18d/43174593c4b3eb5f106fa55dc21df.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/18d/43174593c4b3eb5f106fa55dc21df.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": [
+            "abiotic disorder",
+            "physiological plant disorder"
+          ],
+          "classification": [],
+          "description": "Abiotic disorders are caused by non-living factors - usually by unsuitable environmental conditions, such as drought stress, nutrient deficiency, improper watering, or planting conditions.",
+          "treatment": {
+            "prevention": [
+              "Choose a suitable environment.",
+              "Grow plants adapted to local conditions, such as native plants.",
+              "Grow less sensitive plants and cultivars."
+            ]
+          },
+          "url": "https://en.wikipedia.org/wiki/Physiological_plant_disorder",
+          "local_name": "abiotic",
+          "name": "abiotic",
+          "language": "en"
+        }
+      },
+      {
+        "classification": [
+          "Abiotic",
+          "Water-related issue"
+        ],
+        "entity_id": 899,
+        "name": "water excess or uneven watering",
+        "probability": 0.37220287350000003,
+        "similar_images": [
+          {
+            "id": "56c2d385e14f48a6aff5e091c506bc25",
+            "similarity": 0.4332461388081308,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/56c/2d385e14f48a6aff5e091c506bc25.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/56c/2d385e14f48a6aff5e091c506bc25.small.jpg"
+          },
+          {
+            "id": "d4bf56166008434f89a37f9680653a23",
+            "similarity": 0.3362746022607597,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/d4b/f56166008434f89a37f9680653a23.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/d4b/f56166008434f89a37f9680653a23.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": [
+            "overwatering"
+          ],
+          "classification": [
+            "abiotic",
+            "water-related issue"
+          ],
+          "description": "Water excess and uneven watering are abiotic disorders caused by inadequate watering. Water excess may lead to rotting of the roots due to lack of oxygen, and higher susceptibility to infection. Symptoms of over-watering include stunted growth, yellow and brown leaves, wilting and higher susceptibility to leaf burn.",
+          "treatment": {
+            "biological": [
+              "Maintain suitable watering conditions.",
+              "Select appropriate flower pot - small pots dry out sooner than bigger pots, which may stay too wet for a long time.",
+              "Temporarily move the plant to a more shady place (roots are probably damaged and do not manage to supply the plant with water)."
+            ],
+            "prevention": [
+              "Improve soil drainage.",
+              "Avoid overwatering. If possible, water plants only when the soil gets dry (but not too dry).",
+              "Grow less sensitive plants and cultivars."
+            ]
+          },
+          "url": "https://www.missouribotanicalgarden.org/gardens-gardening/your-garden/help-for-the-home-gardener/advice-tips-resources/pests-and-problems/environmental/overwatering.aspx",
+          "local_name": "water excess or uneven watering",
+          "name": "water excess or uneven watering",
+          "language": "en"
+        }
+      },
+      {
+        "classification": [
+          "Abiotic"
+        ],
+        "entity_id": 941,
+        "name": "water-related issue",
+        "probability": 0.2943671195,
+        "redundant": true,
+        "similar_images": [
+          {
+            "id": "0a006fc5499c4f97be23be94fb686a41",
+            "similarity": 0.30038970830483075,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/0a0/06fc5499c4f97be23be94fb686a41.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/0a0/06fc5499c4f97be23be94fb686a41.small.jpg"
+          },
+          {
+            "id": "dbd6933b808747ca8a72229e8bce1344",
+            "similarity": 0.2568962561633617,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/dbd/6933b808747ca8a72229e8bce1344.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/dbd/6933b808747ca8a72229e8bce1344.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": null,
+          "classification": [
+            "abiotic"
+          ],
+          "description": "Water-related abiotic issues refer to abiotic stresses caused by inadequate watering, including water excess, uneven watering, and water deficiency.",
+          "treatment": {
+            "biological": [
+              "Maintain suitable watering conditions.",
+              "Replant the plant - select appropriate soil.",
+              "Select appropriate flower pot - small pots dry out sooner than bigger pots, which may stay too wet for a long time.",
+              "Temporarily move the plant to a more shady place (roots are probably damaged and do not manage to supply the plant with water)."
+            ],
+            "prevention": [
+              "Avoid overwatering. If possible, water plants only when the soil gets dry (but not too dry).",
+              "Grow less sensitive plants and cultivars."
+            ]
+          },
+          "url": "https://en.wikipedia.org/wiki/Houseplant_care#Water_requirement",
+          "local_name": "water-related issue",
+          "name": "water-related issue",
+          "language": "en"
+        }
+      },
+      {
+        "classification": [
+          "Abiotic",
+          "Nutrient-related issue"
+        ],
+        "entity_id": 801,
+        "name": "nutrient deficiency",
+        "probability": 0.08818541839999999,
+        "similar_images": [
+          {
+            "id": "5b1241de2674451e95d3d8466b07c7a2",
+            "similarity": 0.16223076791687763,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/5b1/241de2674451e95d3d8466b07c7a2.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/5b1/241de2674451e95d3d8466b07c7a2.small.jpg"
+          },
+          {
+            "id": "9ccd88fb6bdc4bb8b5e3ef40f2cfde61",
+            "similarity": 0.1458150019831546,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/9cc/d88fb6bdc4bb8b5e3ef40f2cfde61.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/9cc/d88fb6bdc4bb8b5e3ef40f2cfde61.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": null,
+          "classification": [
+            "abiotic",
+            "nutrient-related issue"
+          ],
+          "description": "Nutrient deficiency is caused by a lack of macronutrients or micronutrients essential for the plant. This can be caused by insufficient amounts of nutrients in the soil or unsuitable conditions for nutrients uptake.",
+          "treatment": {
+            "biological": [
+              "Add manure or compost to the soil.",
+              "Replant the plant - select appropriate soil."
+            ],
+            "chemical": [
+              "Apply missing nutrients to the plant foliage (suitable for quick help). Follow the instructions on the chosen product to prevent excessive fertilizer usage.",
+              "Apply missing nutrients to the soil (suitable for long-term help). Follow the instructions on the chosen product to prevent excessive fertilizer usage."
+            ],
+            "prevention": [
+              "Supply missing nutrients regularly.",
+              "Change the soil regularly.",
+              "Choose suitable neighboring plants - different plants have different nutrient requirements."
+            ]
+          },
+          "url": "https://www.missouribotanicalgarden.org/gardens-gardening/your-garden/help-for-the-home-gardener/advice-tips-resources/pests-and-problems/environmental/nutrients.aspx",
+          "local_name": "nutrient deficiency",
+          "name": "nutrient deficiency",
+          "language": "en"
+        }
+      },
+      {
+        "classification": [
+          "Abiotic"
+        ],
+        "entity_id": 943,
+        "name": "nutrient-related issue",
+        "probability": 0.08800993115,
+        "redundant": true,
+        "similar_images": [
+          {
+            "id": "9927567af7424129aba947e6211e078c",
+            "similarity": 0.30423488847102753,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/992/7567af7424129aba947e6211e078c.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/992/7567af7424129aba947e6211e078c.small.jpg"
+          },
+          {
+            "id": "52b229e5a0d34e8dac84effa67fac748",
+            "similarity": 0.2874719632223313,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/52b/229e5a0d34e8dac84effa67fac748.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/52b/229e5a0d34e8dac84effa67fac748.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": [
+            "nutritional disease"
+          ],
+          "classification": [
+            "abiotic"
+          ],
+          "description": "Nutrient-related abiotic disorders are caused by deficiency or toxicity of macronutrients and micronutrients essential for the plant. This can be caused by a suboptimal amount of nutrients in the soil or unsuitable conditions for nutrients uptake.",
+          "treatment": {
+            "biological": [
+              "Replant the plant - select appropriate soil."
+            ],
+            "prevention": [
+              "Change the soil regularly.",
+              "Choose suitable neighboring plants - different plants have different nutrient requirements."
+            ]
+          },
+          "url": "https://en.wikipedia.org/wiki/Plant_nutrition",
+          "local_name": "nutrient-related issue",
+          "name": "nutrient-related issue",
+          "language": "en"
+        }
+      },
+      {
+        "classification": [
+          "Abiotic"
+        ],
+        "entity_id": 793,
+        "name": "mechanical damage",
+        "probability": 0.0767886065,
+        "similar_images": [
+          {
+            "id": "6d540fb533dd4bd09ca7b7514694a6e5",
+            "similarity": 0.49470586753058776,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/6d5/40fb533dd4bd09ca7b7514694a6e5.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/6d5/40fb533dd4bd09ca7b7514694a6e5.small.jpg"
+          },
+          {
+            "id": "c6beca3c0b9a4f1d9d3e039db966c02d",
+            "similarity": 0.3436231142007714,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/c6b/eca3c0b9a4f1d9d3e039db966c02d.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/c6b/eca3c0b9a4f1d9d3e039db966c02d.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": [
+            "mechanical injury"
+          ],
+          "classification": [
+            "abiotic"
+          ],
+          "description": "Mechanical damage occurs when parts of the plant are disrupted by physical action, usually by tools or inappropriate handling. The damage can affect roots, root collar, stem, branches, or leaves.",
+          "treatment": {
+            "biological": [
+              "If possible remove the damaged parts of the plant. The injury can become an entry point for infectious disease.",
+              "For trees: if the bark is damaged, make the edges of the wound clean and leave it exposed to air to dry out."
+            ],
+            "prevention": [
+              "Consider if the location of the plant is suitable and remove any possible sources of damage.",
+              "Be careful with tools while handling the plant during watering, pruning, repotting, etc.",
+              "For trees: create protection zones around the tree to avoid injuries to the trunk and roots by gardening equipment. Avoid using heavy equipment around trees."
+            ]
+          },
+          "url": "https://www.missouribotanicalgarden.org/gardens-gardening/your-garden/help-for-the-home-gardener/advice-tips-resources/pests-and-problems/environmental/mechanical.aspx",
+          "local_name": "mechanical damage",
+          "name": "mechanical damage",
+          "language": "en"
+        }
+      },
+      {
+        "classification": [],
+        "entity_id": 1082,
+        "name": "senescence",
+        "probability": 0.04203040525,
+        "similar_images": [
+          {
+            "id": "35f2a89eda334922a7ccf6a193969d46",
+            "similarity": 0.4396989828550512,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/35f/2a89eda334922a7ccf6a193969d46.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/35f/2a89eda334922a7ccf6a193969d46.small.jpg"
+          },
+          {
+            "id": "e2cacaae715d44fbb17583f1be983257",
+            "similarity": 0.41698111165292323,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/e2c/acaae715d44fbb17583f1be983257.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/e2c/acaae715d44fbb17583f1be983257.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": [
+            "aging"
+          ],
+          "classification": [],
+          "description": "Senescence is a process of aging that can occur due to physiological aging or environmental stress.",
+          "treatment": {
+            "biological": [
+              "Remove dead parts of the plant."
+            ],
+            "prevention": [
+              "Prevent plant stress (e.g. by optimal watering and fertilizing)."
+            ]
+          },
+          "url": "https://en.wikipedia.org/wiki/Plant_senescence",
+          "local_name": "senescence",
+          "name": "senescence",
+          "language": "en"
+        }
+      },
+      {
+        "classification": [
+          "Abiotic",
+          "Light-related issue"
+        ],
+        "entity_id": 900,
+        "name": "light or heat source damage",
+        "probability": 0.0239147935,
+        "similar_images": [
+          {
+            "id": "ac8f9dde479943e1a99de5f4c99edbe8",
+            "similarity": 0.5549920999602074,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/ac8/f9dde479943e1a99de5f4c99edbe8.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/ac8/f9dde479943e1a99de5f4c99edbe8.small.jpg"
+          },
+          {
+            "id": "27a9ec426694403ba87d3a7cbf6b1788",
+            "similarity": 0.375995270976797,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/27a/9ec426694403ba87d3a7cbf6b1788.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/27a/9ec426694403ba87d3a7cbf6b1788.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": null,
+          "classification": [
+            "abiotic",
+            "light-related issue"
+          ],
+          "description": "Exposition to a strong source of light or heat (such as a radiator, light bulb, fire) can be damaging to plants and lead to injuries, stunted growth, leaf drop, etc.",
+          "treatment": {
+            "biological": [
+              "Inspect the surrounding for the source of the heat or light source and move the plant to a sufficient distance away.",
+              "If possible remove the damaged parts of the plant. The injury can become an entry point for infectious disease.",
+              "Shade the plant."
+            ],
+            "prevention": [
+              "When placing a plant in a new place inspect the environment for possible sources of strong heat and light.",
+              "Choose heat and light-tolerant species."
+            ]
+          },
+          "url": null,
+          "local_name": "light or heat source damage",
+          "name": "light or heat source damage",
+          "language": "en"
+        }
+      },
+      {
+        "classification": [
+          "Abiotic"
+        ],
+        "entity_id": 942,
+        "name": "light-related issue",
+        "probability": 0.0217690626,
+        "redundant": true,
+        "similar_images": [
+          {
+            "id": "85417f6720eb49b989391be003f2cb4d",
+            "similarity": 0.4814202611129083,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/854/17f6720eb49b989391be003f2cb4d.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/854/17f6720eb49b989391be003f2cb4d.small.jpg"
+          },
+          {
+            "id": "8b4243d389ab4878b3f88042ef430a73",
+            "similarity": 0.334784282960716,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/8b4/243d389ab4878b3f88042ef430a73.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/8b4/243d389ab4878b3f88042ef430a73.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": null,
+          "classification": [
+            "abiotic"
+          ],
+          "description": "A light-related issue is an abiotic disorder that can be caused by inadequate light intensity or quality. Various plant species differ in light requirements in terms of intensity and type of light (e.g. direct or indirect light).",
+          "treatment": {
+            "biological": [
+              "Provide the plant with an appropriate amount of light."
+            ],
+            "prevention": [
+              "Grow less sensitive plants and cultivars."
+            ]
+          },
+          "url": "https://en.wikipedia.org/wiki/Grow_light#Light_requirements_of_plants",
+          "local_name": "light-related issue",
+          "name": "light-related issue",
+          "language": "en"
+        }
+      },
+      {
+        "classification": [],
+        "entity_id": 459,
+        "name": "Bacteria",
+        "probability": 0.014813507450000003,
+        "similar_images": [
+          {
+            "id": "01fb5ee193b1480eb6033fea4254f62b",
+            "similarity": 0.44618297463444107,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/01f/b5ee193b1480eb6033fea4254f62b.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/01f/b5ee193b1480eb6033fea4254f62b.small.jpg"
+          },
+          {
+            "id": "d43f57fdeacb447a8bd325eb51a0a808",
+            "similarity": 0.38142808991583094,
+            "url": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/d43/f57fdeacb447a8bd325eb51a0a808.jpg",
+            "url_small": "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/d43/f57fdeacb447a8bd325eb51a0a808.small.jpg"
+          }
+        ],
+        "disease_details": {
+          "cause": null,
+          "common_names": null,
+          "classification": [],
+          "description": "Bacterial infections cause damage to plant tissues and the symptoms include vascular wilt, necrosis, soft rot, and tumors. Bacterial pathogens enter the plant through wounds and the spread of infection is facilitated by stress conditions (e.g. by overwatering).",
+          "treatment": {
+            "biological": [
+              "If possible remove and destroy the infected plant (burn it or toss it into the garbage). Do not compost."
+            ],
+            "chemical": [
+              "If necessary, apply bactericide. It will reduce the spreading of bacteria."
+            ],
+            "prevention": [
+              "Use resistant species and cultivars.",
+              "Disinfect tools and hands to avoid disease transmission.",
+              "Maintain suitable watering conditions - keep the moisture low, avoid prolonged wetting of the leaves or overhead, sprinkler irrigation.",
+              "Avoid plant injuries providing a point of access for the bacterium.",
+              "Use healthy, certified seeds and seedlings."
+            ]
+          },
+          "url": "https://en.wikipedia.org/wiki/Bacteria",
+          "local_name": "Bacteria",
+          "name": "Bacteria",
+          "language": "en"
+        }
+      }
+    ],
+    "diseases_simple": [
+      {
+        "name": "Abiotic",
+        "probability": 0.5006709545
+      },
+      {
+        "name": "Senescence",
+        "probability": 0.04203040525
+      },
+      {
+        "name": "Bacteria",
+        "probability": 0.014813507450000003
+      }
+    ]
+  }
+}

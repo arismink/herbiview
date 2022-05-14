@@ -1,26 +1,29 @@
-import { useState } from "react";
-import axios from "axios";
-import { convertImageToBase64 } from "helpers/fileReader";
+import SearchIcon from '@mui/icons-material/Search';
 
-export default function useAppData() {
-  const [state, setState] = useState({
-    file: {},
-  });
+import Box from '@mui/material/Box';
 
-  const sendToPlantAPI = () => {
-    convertImageToBase64(state.file).then((base64file) => {
-      axios.post("api/identify", { base64file });
-    });
-  };
+import OutlinedInput from '@mui/material/OutlinedInput';
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    sendToPlantAPI();
-  };
+const SearchBar = ({setSearchQuery}) => (
+  <Box sx={{padding: 2}}>
 
-  const handleChange = (e) => {
-    setState((prev) => ({ ...prev, file: e.target.files[0] }));
-  };
+    <form
+      autoComplete='off'
+      action="/" method="get">
+      <OutlinedInput
+        sx={{
+          height: 40
+        }}
+        type="text"
+        id="header-search"
+        placeholder="Search..."
+        name="s"
+        fullWidth
+        endAdornment={<SearchIcon />}
+      />
+    </form>
 
-  return { handleChange, handleSubmit };
-}
+  </Box>
+);
+
+export default SearchBar;

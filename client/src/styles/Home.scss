@@ -1,0 +1,65 @@
+@import 'variables.scss';
+
+.hero-container {
+  img {
+    height: 90vh;
+    width: 50vw;
+    object-fit: cover;
+    // object-position: 10vw
+    max-width: 400px;
+  }
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-body {
+  padding: 10em 0 0 5em;
+
+  input {
+    border: 1px dashed black;
+    margin: 0.8em;
+    padding: 1em;
+  }
+
+}
+
+.home-msg {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  line-height: 1em;
+  font-weight: 200;
+
+  strong {
+    font-family: $logo-font;
+    font-size: 2em;
+  }
+
+  b {
+    font-family: $logo-font;
+  }
+}
+
+/* Mobile and smaller devices only styles */
+@media only screen and (max-width: 700px) {
+  .home-container {
+    flex-direction: column;
+  }
+
+  .hero-container {
+
+    img {
+      height: 20vh;
+      width: 100%;
+      object-fit: cover;
+      // object-position: 10vw
+    }
+  }
+
+  .home-body {
+    padding: 10em 0 0 0;
+  }
+
+}

@@ -1,33 +1,40 @@
-import * as React from 'react';
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import useAppData from "hooks/useAppData";
 
-import { Button, Typography } from '@mui/material';
+import Container from "@mui/material/Container";
 
-import './App.css';
-import useAppData from './hooks/useAppData';
-
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-
+import Nav from "components/Nav";
+import Footer from "components/Footer";
+import Home from "components/Home";
+import Login from "components/Login";
+import Register from "components/Register";
+import PlantDetailPage from "components/PlantDetailPage";
 
 function App() {
-  const { handleChange, handleSubmit } = useAppData();
+  const { state, setFile, sendToPlantAPI } = useAppData();
 
   return (
-
     <div className="App">
       <Nav />
-      <h1>Herbiview</h1>
-      <form onSubmit={handleSubmit}>
-        <input type='file' onChange={handleChange} />
+      <Container
+        // sx={{marginTop: 20}}
+      >
+        <Routes>
+          <Route
+            path="/"
+            element={<Home sendToPlantAPI={sendToPlantAPI} setFile={setFile} />}
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
-        <Button variant="contained" type='submit'>Upload</Button>
-      </form> 
+
+          <Route path="/plant-details" element={<PlantDetailPage id={state.id} health={state.health} />} />
+        </Routes>
+      </Container>
 
       <Footer />
-
     </div>
-
-
   );
 }
 
