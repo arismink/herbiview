@@ -1,5 +1,3 @@
-import Toolbar from '@mui/material/Toolbar';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 

@@ -1,6 +1,6 @@
-.hero-container {
-  left: 1em;
+@import 'variables.scss';
 
+.hero-container {
   img {
     height: 90vh;
     width: 50vw;
@@ -16,5 +16,44 @@
 }
 
 .home-body {
-  padding: 10em;
+  padding: 10em 0 0 5em;
+
+}
+
+.home-msg {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  line-height: 1em;
+  font-weight: 200;
+
+  strong {
+    font-family: $logo-font;
+    font-size: 2em;
+  }
+
+  b {
+    font-family: $logo-font;
+  }
+}
+
+/* Mobile and smaller devices only styles */
+@media only screen and (max-width: 700px) {
+  .home-container {
+    flex-direction: column;
+  }
+
+  .hero-container {
+
+    img {
+      height: 20vh;
+      width: 100%;
+      object-fit: cover;
+      // object-position: 10vw
+    }
+  }
+
+  .home-body {
+    padding: 10em 0 0 0;
+  }
+
 }
