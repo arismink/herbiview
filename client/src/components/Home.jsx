@@ -1,5 +1,7 @@
 import "../styles/Home.scss"
 
+import { Button } from "@mui/material";
+
 export default function Home({sendToPlantAPI, setFile}) {
 
 
@@ -19,10 +21,9 @@ export default function Home({sendToPlantAPI, setFile}) {
         </div>
 
         <div>
-
           <form onSubmit={sendToPlantAPI}>
             <input type="file" onChange={setFile} />
-            <button type="submit">Upload</button>
+            <Button variant="outlined" type="submit">Upload</Button>
           </form>
 
         </div>
