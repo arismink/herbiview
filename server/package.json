@@ -2,7 +2,7 @@
   "name": "express-back-end",
   "version": "1.0.0",
   "description": "Boilerplate for the Express backend in an Express-React project",
-  "main": "server.js",
+  "main": "src/server.js",
   "author": "garrettgsb",
   "license": "MIT",
   "scripts": {
