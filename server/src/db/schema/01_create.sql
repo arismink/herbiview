@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS toxicity CASCADE;
-DROP TABLE IF EXISTS plant_queries CASCADE;
+DROP TABLE IF EXISTS user_search_history CASCADE;
 DROP TABLE IF EXISTS plants CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 
@@ -20,15 +20,15 @@ CREATE TABLE IF NOT EXISTS plants (
   image_url VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE plant_queries (
+CREATE TABLE user_search_history (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   plant_id INTEGER REFERENCES plants(id) ON DELETE CASCADE,
   sci_name VARCHAR(255) NOT NULL,
-  description TEXT NOT NULL, 
+  description TEXT NOT NULL,
   info_url VARCHAR(255) NOT NULL,
   user_img_url VARCHAR(255) NOT NULL,
-  common_names TEXT NOT NULL, 
+  common_names TEXT NOT NULL,
   date TIMESTAMP
 );
 
