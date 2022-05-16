@@ -1,5 +1,9 @@
 import { useForm } from "react-hook-form"
 
+import { useEffect } from "react";
+
+import axios from "axios";
+
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Container, Button, Typography } from "@mui/material";
@@ -12,41 +16,54 @@ export default function Register() {
   const { register, handleSubmit } = useForm();
 
   // Handle registration with this function
-  const handleRegistration = data => console.log(data);
+  const handleRegistration = (data) => {
+
+    return new Promise((resolve, reject) => {
+      axios.post('/api/users/register', {
+        name: data.name,
+        email: data.email,
+        password: data.password
+      })
+        .then(res => {
+          console.log(res)
+          return resolve(res)
+      })
+    })
+  };
 
   const onErrors = errors => console.error(errors);
 
   return (
-<Container
-  sx={{mt: 5}}
-  maxWidth="md">
+    <Container
+      sx={{mt: 5}}
+      maxWidth="md">
 
-  <PersonAddAltIcon style={{ fontSize: 100, color: 'grey' }}/>
-    <Typography variant="h4" margin={2}>Register</Typography>
+      <PersonAddAltIcon style={{ fontSize: 100, color: 'grey' }}/>
+        <Typography variant="h4" margin={2}>Register</Typography>
 
-      <Container
-        sx={{
-          width: 500,
-          maxWidth: "100%",
-          alignItems: "center",
-        }}
-        noValidate
-        >
+          <Container
+            sx={{
+              width: 500,
+              maxWidth: "100%",
+              alignItems: "center",
+            }}
+            noValidate
+            >
 
-        <form onSubmit={handleSubmit(handleRegistration, onErrors)}
-        autoComplete="off">
+            <form onSubmit={handleSubmit(handleRegistration, onErrors)}
+            autoComplete="off">
 
-          <Box mb={2}>
-          <TextField
-              required
-              id="outlined-name-input"
-              label="Name"
-              type="Name"
-              fullWidth
-              sx={{mb: 2}}
-              autoFocus
-              {...register('name', { required: true })}
-            />
+            <Box mb={2}>
+            <TextField
+                required
+                id="outlined-name-input"
+                label="Name"
+                type="Name"
+                fullWidth
+                sx={{mb: 2}}
+                autoFocus
+                {...register('name', { required: true })}
+              />
 
             <TextField
               required
@@ -85,7 +102,7 @@ export default function Register() {
 
         </form>
 
-       </Container>
+      </Container>
 
     </Container>
   )
