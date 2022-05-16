@@ -7,9 +7,9 @@ import Container from "@mui/material/Container";
 import Nav from "components/Nav";
 import Footer from "components/Footer";
 import Home from "components/Home";
-import Login from "components/Login";
-import Register from "components/Register";
-import PlantDetailPage from "components/PlantDetailPage";
+import Login from "pages/Login";
+import Register from "pages/Register";
+import PlantDetailPage from "pages/PlantDetailPage";
 
 function App() {
   const { state, setFile, sendToPlantAPI } = useAppData();
