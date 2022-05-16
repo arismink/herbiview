@@ -1,0 +1,16 @@
+version: "3.7"
+services: 
+  db: 
+    image: postgres
+    hostname: db
+    container_name: db
+    ports: 
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
+      POSTGRES_DB: pgdatabase
+
+volumes:
+  db_data:
+    name: herbiview-database
