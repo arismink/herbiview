@@ -255,15 +255,7 @@ INSERT INTO plants (
     ('Creeping Gloxinia','Asarina erubescens','Maurandya','Scrophulariaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/creeping-gloxinia'),
     ('Creeping Mahonia','Mahonia aquifolium','Tall Mahonia, Mountain Grape, Oregon Grape, Oregon Holly, Holly-leaved Barberry','Berberidaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/creeping-mahonia'),
     ('Creeping Pilea','Pilea nummulariifolia','Swedish Ivy (Plectranthus), Creeping Charlie','Pilea: Uriticaeae; Plectranthus: Lamiaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/creeping-pilea'),
-    ('Creeping Rubus','Rubus pedatus','Strawberryleaf Raspberry','Rosaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/creeping-rubus');
-INSERT INTO plants (
-  name,
-  sci_name,
-  common_names,
-  family,
-  aspca_url,
-  image_url
-) VALUES
+    ('Creeping Rubus','Rubus pedatus','Strawberryleaf Raspberry','Rosaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/creeping-rubus'),
     ('Creeping Zinnia','Sanvitalia species','','Asteraceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/creeping-zinnia-r.jpg?itok=Up-rwFAq','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/creeping-zinnia'),
     ('Crepe Myrtle','Lagerstroemia indica','Crape Myrtle','Lythraceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/crepe-myrtle'),
     ('Crimson Bottlebush','Callistemon species','Weeping Bottlebrush, Prickly Bottlebrush, Bottlebrush','Myrtaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/weeping-bottlebrush-r.jpg?itok=nLg91Ylc','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/crimson-bottlebush'),
@@ -513,15 +505,7 @@ INSERT INTO plants (
     ('Kentia Palm','Howea forsteriana','Forster Senty Palm','Howea forsteriana','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/kentia-palm'),
     ('Kenya Violet','Santpaulia confusa','Usambra violet','Gesneraceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/kenya-violet'),
     ('Kharoub','Ceratonia siliqua','Carob Tree, Sugar Pods, Locust Pods, Beans','','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/kharoub'),
-    ('King and Queen Fern','Asplenium bulbiferum','Hen and Chickens Fern, Spleenwort, Parsley fern','Polypodaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/king-and-queen-fern');
-INSERT INTO plants (
-  name,
-  sci_name,
-  common_names,
-  family,
-  aspca_url,
-  image_url
-) VALUES
+    ('King and Queen Fern','Asplenium bulbiferum','Hen and Chickens Fern, Spleenwort, Parsley fern','Polypodaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/king-and-queen-fern'),
     ('King Nut','Carya laciniosa','','Juglandaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/king-nut'),
     ('King of the Forest','Anoectuchilus setaceus','Golden Jewel Orchid','Orchidaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/king-forest'),
     ('Kiss-me-quick','Brunfelsia species','Yesterday, Today, Tomorrow, Lady-of-the-Night, Morning-Noon-and-Night, Fransiscan Rain Tree','Solanaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/yesterday-today-tomorrow-r_0.jpg?itok=_ftphWG9','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/kiss-me-quick'),
@@ -771,15 +755,7 @@ INSERT INTO plants (
     ('Queensland Arrowroot','Canna edulis','Achira, Canna, Arrowroot','Cannaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/achira-r.jpg?itok=iQMC4kSf','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/queensland-arrowroot'),
     ('Queensland Nut','Macadamia integrifolia','Macadamia Nut, Australia Nut','Proteaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/macadamia-nut-r.jpg?itok=NzjVmw5J','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/queensland-nut'),
     ('Rabbits Foot Fern','Davallia spp.','Hare Fern, Squirrel Foot Fern, Deer Foot Fern, Ball Fern','Polypodiaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/rabbits-foot-fern'),
-    ('Racemose asparagus','Asparagus densiflorus cv sprengeri','Asparagus, Emerald Feather, Emerald Fern, Sprengeri Fern, Plumosa Fern, Lace Fern, Asparagus Fern, Shatavari','Liliaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/asparagus-fern-r.jpg?itok=t-jWcv3E','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/racemose-asparagus');
-INSERT INTO plants (
-  name,
-  sci_name,
-  common_names,
-  family,
-  aspca_url,
-  image_url
-) VALUES
+    ('Racemose asparagus','Asparagus densiflorus cv sprengeri','Asparagus, Emerald Feather, Emerald Fern, Sprengeri Fern, Plumosa Fern, Lace Fern, Asparagus Fern, Shatavari','Liliaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/asparagus-fern-r.jpg?itok=t-jWcv3E','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/racemose-asparagus'),
     ('Ragwort','Senecio species','Golden Ragwort, Tansy','Compositae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/ragwort-r.jpg?itok=k8xM44JR','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/ragwort'),
     ('Rainbow Orchid','Epidendrum prismatocarpum','','Orchidaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/rainbow-orchid-r.jpg?itok=3FAQFNh3','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/rainbow-orchid'),
     ('Ranger''s Button','Sphenosciadium capitellatum','White Heads','Apiaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/rangers-button-r.jpg?itok=FA3uxT4U','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/rangers-button'),
@@ -1029,15 +1005,7 @@ INSERT INTO plants (
     ('Yellowrocket','Barbarea vulgaris','','Brassicaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/yellowrocket-r.jpg?itok=c3Q3cNVO','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/yellowrocket'),
     ('Yerba Linda','Peperomia rotundifolia','','Piperaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/yerba-linda'),
     ('Yesterday, Today, Tomorrow','Brunfelsia species','Morning-Noon-and-Night, Kiss-Me-Quick, Lady-of-the-Night, Fransiscan Rain Tree, Brunfelsia','Solanaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/yesterday-today-tomorrow-r.jpg?itok=s-pvZNSh','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/yesterday-today-tomorrow'),
-    ('Yew','Taxus sp.','japanese yew','Taxaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/yew-r.jpg?itok=TOFzaTbb','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/yew');
-INSERT INTO plants (
-  name,
-  sci_name,
-  common_names,
-  family,
-  aspca_url,
-  image_url
-) VALUES
+    ('Yew','Taxus sp.','japanese yew','Taxaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/yew-r.jpg?itok=TOFzaTbb','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/yew'),
     ('Yew Pine','Podocarpus macrophylla','buddhist pine','Podocarpacaea','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/yew-pine'),
     ('Yucca','Yucca sp.','','Agavaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/yucca-r.jpg?itok=UbXzyOAV','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/yucca'),
     ('Zebra Haworthia','Haworthia fasciata','','Liliaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/zebra-haworthia-r.jpg?itok=I3BTXxrA','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/zebra-haworthia'),
