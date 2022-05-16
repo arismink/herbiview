@@ -1,15 +1,17 @@
 version: "3.7"
 services: 
-  db: 
+  db:
     image: postgres
     hostname: db
     container_name: db
     ports: 
       - "5432:5432"
     environment:
-      POSTGRES_USER: pguser
-      POSTGRES_PASSWORD: pgpassword
-      POSTGRES_DB: pgdatabase
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ./src/db/schema:/docker-entrypoint-initdb.d/
 
 volumes:
   db_data:
