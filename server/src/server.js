@@ -6,6 +6,11 @@ const BodyParser = require("body-parser");
 const cors = require("cors");
 const PORT = process.env.PORT || 8080;
 
+// PG database client/connection setup
+const { Pool } = require("pg");
+const dbParams = require("./lib/db.js")
+const db = new Pool(dbParams);
+db.connect();
 
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
@@ -15,9 +20,12 @@ App.use(Express.static("public"));
 
 // Routes
 const identifyRoutes = require("./routes/identify");
+const getUsersRoutes = require("./routes/users");
 
 // Mount resource routes
 App.use("/api/identify", identifyRoutes());
+
+App.use("/api/users", getUsersRoutes(db));
 
 // Sample GET route
 App.get("/api/data", (req, res) => {
