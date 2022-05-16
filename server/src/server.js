@@ -20,12 +20,15 @@ App.use(Express.static("public"));
 
 // Routes
 const identifyRoutes = require("./routes/identify");
-const getUsersRoutes = require("./routes/users");
+const usersRoutes = require("./routes/users");
+const plantRoutes = require("./routes/plants");
 
 // Mount resource routes
 App.use("/api/identify", identifyRoutes());
 
-App.use("/api/users", getUsersRoutes(db));
+App.use("/api/plants", plantRoutes(db));
+
+App.use("/api/users", usersRoutes(db));
 
 // Sample GET route
 App.get("/api/data", (req, res) => {
