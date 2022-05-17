@@ -4,7 +4,28 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-export default function PlantDetail({ id, health }) {
+/*
+data = {
+  image_url: string,
+  plant_name: string,
+  common_names: array,
+  info_url: string,
+  description: string,
+  sci_name: string,
+  probablilty: int %,
+  similar_images: array,
+
+  healthy: boolean,
+  healthy_probability: int %,
+  disease_name: string,
+  disease_probability: int %,
+  disease_info_url: string,
+  disease_prevention: string,
+  disease_description: string
+}
+*/
+
+export default function PlantDetail({ data }) {
   return (
     <div>
       <Accordion>
