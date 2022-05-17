@@ -8,7 +8,7 @@ import Footer from "components/Footer";
 import Home from "components/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
-import PlantDetailPage from "pages/PlantDetailPage";
+import PlantDetails from "pages/PlantDetails";
 
 function App() {
   const { state, setFile, sendToPlantAPI } = useAppData();
@@ -28,7 +28,7 @@ function App() {
           <Route path="/register" element={<Register />} />
 
 
-          <Route path="/plant-details" element={<PlantDetailPage id={state.id} health={state.health} />} />
+          <Route path="/plant-details" element={<PlantDetails id={state.id} health={state.health} />} />
         </Routes>
       </Container>
 
