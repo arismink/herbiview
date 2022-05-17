@@ -34,14 +34,6 @@ App.use("/api/plants", plantRoutes(db));
 App.use("/api/users", usersRoutes(db));
 App.use("/api/userHistory", userHistory(db));
 
-// Sample GET route
-App.get("/api/data", (req, res) => {
-  console.log("GET /api/data");
-  res.json({
-    message: "Seems to work kinda!",
-  });
-});
-
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(

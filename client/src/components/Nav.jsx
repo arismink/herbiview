@@ -74,7 +74,8 @@ export default function Nav() {
 
       )}
 
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={e => console.log("My Account clicked")}>My Account</MenuItem>
+      <MenuItem onClick={e => navigate("/search-history")}>My Search History</MenuItem>
     </Menu>
   );
 
