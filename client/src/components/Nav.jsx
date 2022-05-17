@@ -145,7 +145,7 @@ export default function Nav() {
           </Box>
 
 
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'flex' } }}>
 
             { user && (
               <IconButton
@@ -159,18 +159,6 @@ export default function Nav() {
                 <AccountCircle />
               </IconButton>) }
 
-          </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              style={{color: 'black'}}
-            >
-              <MoreIcon />
-            </IconButton>
           </Box>
 
           { user === null && (
