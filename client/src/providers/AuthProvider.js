@@ -1,5 +1,7 @@
 import { createContext, useState } from 'react';
 
+import axios from "axios";
+
 export const authContext = createContext();
 
 export default function AuthProvider(props) {
@@ -31,8 +33,29 @@ export default function AuthProvider(props) {
     setUser(null);
   };
 
+  // Handles account registration
+  const registerHandler = (data) => {
+
+    return axios
+      .post('/api/users/register', {
+        name: data.name,
+        email: data.email,
+        password: data.password
+      })
+      .then(res => {
+        const body = JSON.parse(res.config.data);
+
+        const user = { email: body.email, password: body.password };
+
+        setAuth(true);
+        setUser()
+
+        return 'ok'
+      })
+  };
+
   // authContext will expose these items
-  const userData = { auth, user, login, logout };
+  const userData = { auth, user, login, logout, registerHandler };
 
   // We can use this component to wrap any content we want to share this context
   return (
