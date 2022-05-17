@@ -14,7 +14,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function Login() {
   // use auth context given by providers/AuthProvider.js
-  const { loginHandler, user, auth } = useContext(authContext);
+  const { loginHandler } = useContext(authContext);
 
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ export default function Login() {
   const handleLogin = data => {
     loginHandler(data)
     .then((res) => {
-      if (user && auth) {
+      if (res) {
         console.log("email and password verified");
         navigate("/");
       } else {
