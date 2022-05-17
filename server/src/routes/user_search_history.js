@@ -26,6 +26,7 @@ module.exports = (db) => {
     db.query(`
       SELECT * FROM user_search_history 
       JOIN users ON user_id = users.id
+      JOIN plants ON plant_id = plants.id
       WHERE email = $1
     ;`, [req.body.email])
     .then(data => {
