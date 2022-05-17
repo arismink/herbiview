@@ -1,3 +1,8 @@
+import { useState, useContext } from 'react';
+import { authContext } from 'providers/AuthProvider';
+
+import axios from "axios";
+
 import { Link } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
@@ -10,14 +15,28 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 export default function Login() {
+  // use auth context given by providers/AuthProvider.js
+  const { login } = useContext(authContext);
 
   // register lets you register an input and apply validation rules on it
   const { register, handleSubmit } = useForm();
 
   // function handle login data
-  const handleLogin = data => console.log(data);
+  const handleLogin = data => {
+    const loginEmail = data.email;
+    const loginPassword = data.password;
+    return axios
+      .get('/api/users/login', {
+        email: data.email,
+        password: data.password
+      })
+      .then(res => {
+        login(loginEmail, loginPassword); // can change to res.body or whatever the response is
+        // login(res.body.user.email, res.body.user.password);
+      })
+  };
 
-  const onErrors = errors => console.error(errors)
+  const onErrors = errors => console.error(errors);
 
   return (
     <Container

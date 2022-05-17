@@ -14,6 +14,21 @@ module.exports = (db) => {
     })
   });
 
+  router.get("/login", (req, res) => {
+    db.query(`SELECT * FROM users WHERE email = $1 AND password = $2;`, [req.body.email, req.body.password])
+    .then(data => {
+      const user = data.rows[0];
+      console.log("Logged in as:", user);
+      // return to home page
+      return user;
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message })
+    })
+  });
+
   router.post("/register", (req, res) => {
     db.query(`
       INSERT INTO users (name, email, password_digest)
