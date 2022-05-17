@@ -13,19 +13,23 @@ export default function UserSearchHistory({ auth, user }) {
   const [queryList, setQueryList] = useState([]);
 
   useEffect(() => {
-    // Redirect to login page if not logged in
-    if (!auth) {
+    if (!auth || !user) {
+      // Redirect to login page if not logged in
       return <Navigate replace to="/login" />
     } else {
+      // GET user history
       const email = user && user.email;
       axios
-        .get('/api/userHistory', { data: email })
+        .post('/api/userHistory', { email })
         .then(response => {
-          console.log(response.data.user_history);
-          setQueryList([...response.data.user_history]);
+          console.log("User history response", response.data.user_history);
+          const userHistoryArray = response.data.user_history.map(
+            query => Object.entries(query)
+          );
+          setQueryList(userHistoryArray);
         });
     }
-  }, [auth, user.email]);
+  }, [auth, user]);
 
 
   return (
@@ -33,7 +37,7 @@ export default function UserSearchHistory({ auth, user }) {
     // sx={{marginTop: 20}}
     >
       <div>
-        <Typography variant="h2" margin={2}>User: {user.name}, {user.email}</Typography>
+        <Typography variant="h2" margin={2}>User: {user && user.name}, {user && user.email}</Typography>
       </div>
       {queryList}
 

@@ -8,9 +8,26 @@ module.exports = (db) => {
     db.query(`
       SELECT * FROM user_search_history 
       JOIN users ON user_id = users.id
-      WHERE email = $1
       LIMIT 5;
-    `, [req.data.email])
+    `)
+    .then(data => {
+      const user_history = data.rows;
+      res.send({user_history});
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message })
+    })
+  })
+
+  router.post("/", (req, res) => {
+    console.log("GET /api/userHistory, email is", req.body);
+    db.query(`
+      SELECT * FROM user_search_history 
+      JOIN users ON user_id = users.id
+      WHERE email = $1
+    ;`, [req.body.email])
     .then(data => {
       const user_history = data.rows;
       res.send({user_history});
