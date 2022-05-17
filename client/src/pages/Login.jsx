@@ -29,7 +29,8 @@ export default function Login() {
 
   return (
     <Container
-      sx={{mt: 5}}
+      sx={{mt: 5,
+      textAlign: "center"}}
       maxWidth="md">
 
       <AccountCircleIcon style={{ fontSize: 100, color: 'grey' }}/>

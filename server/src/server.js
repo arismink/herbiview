@@ -14,7 +14,7 @@ const dbParams = require("./lib/db.js")
 const db = new Pool(dbParams);
 db.connect();
 
-App.use(morgan("dev"))
+App.use(morgan("dev"));
 
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
