@@ -1,5 +1,5 @@
-import { createContext, useState } from 'react';
-
+import { createContext, useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 import axios from "axios";
 
 export const authContext = createContext();
@@ -9,6 +9,14 @@ export default function AuthProvider(props) {
   // Set state of user when on site
   const [auth, setAuth] = useState(false);
   const [user, setUser] = useState(null);
+  const [cookies, setCookies, removeCookie] = useCookies(['credentials']);
+
+  useEffect(() => {
+    if (cookies['credentials']) {
+      setAuth(true);
+      setUser(cookies['credentials']);
+    }
+  }, [cookies]);
 
   // Handles login
   const loginHandler = (data) => {
@@ -18,11 +26,8 @@ export default function AuthProvider(props) {
       .post('/api/users/login', { email, password })
       .then(res => {
         const user = res.data;
-        setAuth(true);
-        setUser(user);
-
+        setCookies('credentials', user);
         return user;
-
       })
       .catch(err => {
         console.log('uh oh:', err)
@@ -33,6 +38,7 @@ export default function AuthProvider(props) {
   const logoutHandler = function() {
     setAuth(false);
     setUser(null);
+    removeCookie('credentials');
   };
 
   // Handles account registration
@@ -42,11 +48,8 @@ export default function AuthProvider(props) {
     return axios
       .post('/api/users/register', { name, email, password})
       .then(res => {
-        const body = JSON.parse(res.config.data);
-        const user = { name: body.name, email: body.email, password: body.password };
-
-        setAuth(true);
-        setUser(user);
+        const user = res.data;
+        setCookies('credentials', user);
 
         return user;
       })

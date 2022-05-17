@@ -16,6 +16,7 @@ db.connect();
 
 App.use(morgan("dev"));
 
+
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json({ limit: "50mb" }));
