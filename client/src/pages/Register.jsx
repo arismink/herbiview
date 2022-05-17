@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form"
 import { useContext } from "react";
 import { authContext } from "providers/AuthProvider";
 
+import { useNavigate } from "react-router-dom";
+
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Container, Button, Typography } from "@mui/material";
@@ -11,6 +13,8 @@ import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 
 export default function Register() {
 
+  const navigate = useNavigate();
+
   const { registerHandler } = useContext(authContext);
   // register lets you register an input and apply validation rules on it
   const { register, handleSubmit } = useForm();
@@ -18,7 +22,12 @@ export default function Register() {
   const handleRegister = (data) => {
     registerHandler(data)
     .then((res) => {
-      console.log(res)
+      if (res) {
+        console.log("email and password verified");
+        navigate("/");
+      } else {
+        console.log("email and password could not be verified.")
+      }
     })
     .catch(err => {
       console.log(err)
