@@ -3,6 +3,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Box, Container } from "@mui/material";
 
 /*
 data = {
@@ -27,7 +28,16 @@ data = {
 
 export default function PlantDetail({ data }) {
   return (
-    <div>
+    <Container>
+      <Container sx={{ textAlign: "center" }}>
+        <Box margin={2}>
+          <img src={data.image_url} alt={"plant_image"} />
+        </Box>
+        <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
+          {data.plant_name}
+        </Typography>
+        <Typography>{data.probability}%</Typography>
+      </Container>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -35,75 +45,25 @@ export default function PlantDetail({ data }) {
           id="panel1bh-header"
         >
           <Typography sx={{ width: "33%", flexShrink: 0 }}>
-            General settings
+            Description
           </Typography>
           <Typography sx={{ color: "text.secondary" }}>
-            I am an accordion
+            Learn more about this plant
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2bh-content"
-          id="panel2bh-header"
-        >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>Users</Typography>
+          <Typography>{data.description}</Typography>
+          <br />
           <Typography sx={{ color: "text.secondary" }}>
-            You are currently not an owner
+            Additional Information:
+            <br />
           </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Donec placerat, lectus sed mattis semper, neque lectus feugiat
-            lectus, varius pulvinar diam eros in elit. Pellentesque convallis
-            laoreet laoreet.
-          </Typography>
+          <a href={data.info_url} target="_blank" rel="noopener noreferrer">
+            {data.info_url}
+          </a>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
-        >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
-            Advanced settings
-          </Typography>
-          <Typography sx={{ color: "text.secondary" }}>
-            Filtering has been entirely disabled for whole web server
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
-        >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
-            Personal data
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-            sit amet egestas eros, vitae egestas augue. Duis vel est augue.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-    </div>
+      <Box mb={15} />
+    </Container>
   );
 }
