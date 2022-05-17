@@ -28,6 +28,7 @@ export default function Register() {
       .then(res => {
         console.log('res:', res);
         console.log(res.config.data);
+        console.log(JSON.parse(res.config.data))
         console.log('type of:', typeof res.config.data)
       })
 
