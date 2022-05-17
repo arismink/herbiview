@@ -7,8 +7,7 @@ export default function useAppData() {
   const navigate = useNavigate();
   const [state, setState] = useState({
     file: {},
-    id: {},
-    health: {}
+    data: {}
   });
 
   const sendToPlantAPI = (e) => {
@@ -16,8 +15,8 @@ export default function useAppData() {
     convertImageToBase64(state.file).then((base64file) => {
       axios.post("api/identify", { base64file })
       .then(res => {
-        console.log("id: ", res.data.identify, "health: ", res.data.health);
-        setState(prev => ({...prev, id: res.data.identify, health: res.data.health}));
+        console.log("data: ", res.data);
+        setState(prev => ({...prev, data: res.data}));
         navigate("/plant-details");
       });
     });
