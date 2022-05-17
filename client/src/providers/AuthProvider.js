@@ -37,13 +37,10 @@ export default function AuthProvider(props) {
 
   // Handles account registration
   const registerHandler = (data) => {
+    const { name, email, password} = data;
 
     return axios
-      .post('/api/users/register', {
-        name: data.name,
-        email: data.email,
-        password: data.password
-      })
+      .post('/api/users/register', { name, email, password})
       .then(res => {
         const body = JSON.parse(res.config.data);
 
