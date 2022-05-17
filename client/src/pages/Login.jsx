@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react';
 import { authContext } from 'providers/AuthProvider';
 
+import axios from "axios";
+
 import { Link } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
@@ -21,11 +23,19 @@ export default function Login() {
 
   // function handle login data
   const handleLogin = data => {
-    console.log("handle login", data);
-    login(data.email, data.password);
+    const loginEmail = data.email;
+    const loginPassword = data.password;
+    return axios
+      .get('/api/users/login', {
+        email: data.email,
+        password: data.password
+      })
+      .then(res => {
+        login(loginEmail, loginPassword); // can change to res.body or whatever the response is
+      })
   };
 
-  const onErrors = errors => console.error(errors)
+  const onErrors = errors => console.error(errors);
 
   return (
     <Container
