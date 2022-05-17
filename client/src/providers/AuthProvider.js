@@ -8,25 +8,23 @@ export default function AuthProvider(props) {
   const [auth, setAuth] = useState(false);
   const [user, setUser] = useState(null);
 
-  // Perform login process for the user & save authID, etc
-  const login = function(email, password) {
-    // query login route, to query db, to see if email and password match
-    const authTry = { email, password };
-    fetch('/login', { body: authTry })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-        // check if data returned exactly 1 row
-        setAuth(true);
-        setUser({ email, name: data.name });  // get name from the response obj
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        setAuth(false);
-        setUser(null);
-      });
+  const loginHandler = (data) => {
+    const { email, password } = data
 
-  };
+    return axios
+      .post('/api/users/login', { email, password })
+      .then(res => {
+        const user = res.data;
+        setAuth(true);
+        setUser(user);
+
+        return user;
+
+      })
+      .catch(err => {
+        console.log('uh oh:', err)
+      })
+  }
 
   const logout = function() {
     setAuth(false);
@@ -48,14 +46,14 @@ export default function AuthProvider(props) {
         const user = { email: body.email, password: body.password };
 
         setAuth(true);
-        setUser()
+        setUser(user);
 
         return 'ok'
       })
   };
 
   // authContext will expose these items
-  const userData = { auth, user, login, logout, registerHandler };
+  const userData = { auth, user, logout, registerHandler, loginHandler };
 
   // We can use this component to wrap any content we want to share this context
   return (
