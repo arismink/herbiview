@@ -70,9 +70,15 @@ export default function Nav() {
         horizontal: 'right',
       }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      onClose={handleMenuClose}>
+
+      { user && (
+        <Typography sx={{color: 'black', marginX: 2}}>
+          {user.name}
+        </Typography>
+
+      )}
+
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
@@ -97,7 +103,6 @@ export default function Nav() {
       { user && (
 
         <MenuItem onClick={handleProfileMenuOpen}>
-
           <IconButton
             size="large"
             aria-label="account of current user"
@@ -137,7 +142,6 @@ export default function Nav() {
             width: { md: 600 } }}>
 
             <SearchBar />
-
           </Box>
 
 
@@ -163,7 +167,7 @@ export default function Nav() {
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              style={{color: 'black'}}
             >
               <MoreIcon />
             </IconButton>
@@ -174,6 +178,7 @@ export default function Nav() {
           )}
 
           { user && (
+
             <Button variant="text" onClick={onLogout}>Logout</Button>
           )}
 
