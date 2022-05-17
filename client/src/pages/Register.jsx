@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form"
 
-import { useEffect } from "react";
-
-import axios from "axios";
+import { useContext } from "react";
+import { authContext } from "providers/AuthProvider";
 
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -12,32 +11,23 @@ import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 
 export default function Register() {
 
+  const { registerHandler } = useContext(authContext);
   // register lets you register an input and apply validation rules on it
   const { register, handleSubmit } = useForm();
 
-  // Handle registration with this function
-  const handleRegistration = (data) => {
-
-    // move to context
-    return axios
-      .post('/api/users/register', {
-        name: data.name,
-        email: data.email,
-        password: data.password
-      })
-      .then(res => {
-        const newUser = JSON.parse(res.config.data);
-
-        console.log(newUser);
-      })
-  };
-
-  const onErrors = errors => console.error(errors);
+  const handleRegister = (data) => {
+    registerHandler(data)
+    .then((res) => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
   return (
     <Container
-      sx={{
-        mt: 5,
+      sx={{mt: 5,
         textAlign: "center"}}
       maxWidth="md">
 
@@ -53,7 +43,7 @@ export default function Register() {
             noValidate
             >
 
-            <form onSubmit={handleSubmit(handleRegistration, onErrors)}
+            <form onSubmit={handleSubmit(handleRegister)}
             autoComplete="off">
 
             <Box mb={2}>
