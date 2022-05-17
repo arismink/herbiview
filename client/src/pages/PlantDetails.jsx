@@ -72,6 +72,58 @@ export default function PlantDetail({ data }) {
         </AccordionDetails>
       </Accordion>
 
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+            Description
+          </Typography>
+          <Typography sx={{ color: "text.secondary" }}>
+            Learn more about this plant
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{data.description}</Typography>
+          <br />
+          <Typography sx={{ color: "text.secondary" }}>
+            Additional Information:
+            <br />
+          </Typography>
+          <a href={data.info_url} target="_blank" rel="noopener noreferrer">
+            {data.info_url}
+          </a>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+            Description
+          </Typography>
+          <Typography sx={{ color: "text.secondary" }}>
+            Learn more about this plant
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{data.description}</Typography>
+          <br />
+          <Typography sx={{ color: "text.secondary" }}>
+            Additional Information:
+            <br />
+          </Typography>
+          <a href={data.info_url} target="_blank" rel="noopener noreferrer">
+            {data.info_url}
+          </a>
+        </AccordionDetails>
+      </Accordion>
+
       <Box mb={15} />
     </Container>
   );
