@@ -1,4 +1,7 @@
 import * as React from 'react';
+
+import { useContext } from 'react';
+import { authContext } from 'providers/AuthProvider';
 import { useNavigate, Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button'
@@ -20,6 +23,13 @@ import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 import SearchBar from './Search';
 
 export default function Nav() {
+  const { user, logoutHandler } = useContext(authContext);
+
+  const onLogout = function() {
+    logoutHandler();
+    navigate("/");
+  }
+
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -84,20 +94,23 @@ export default function Nav() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onClick={handleProfileMenuOpen}>
-        {/* display only if logged in */}
+      { user && (
 
-        {/* <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton> */}
+        <MenuItem onClick={handleProfileMenuOpen}>
 
-      </MenuItem>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="primary-search-account-menu"
+            aria-haspopup="true"
+            color="inherit"
+          >
+            <AccountCircle />
+          </IconButton>
+
+        </MenuItem>
+
+      )}
     </Menu>
   );
 
@@ -130,18 +143,17 @@ export default function Nav() {
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
-            {/* Add conditional to display account icon if logged in */}
-            {/* <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton> */}
+            { user && (
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                style={{color: 'black'}}>
+                <AccountCircle />
+              </IconButton>) }
 
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -157,7 +169,13 @@ export default function Nav() {
             </IconButton>
           </Box>
 
-          <Button variant="text" onClick={() => navigate("/login")}>Login</Button>
+          { user === null && (
+            <Button variant="text" onClick={(e) => navigate("/login")}>Login</Button>
+          )}
+
+          { user && (
+            <Button variant="text" onClick={onLogout}>Logout</Button>
+          )}
 
         </Toolbar>
       </AppBar>
