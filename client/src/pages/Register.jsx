@@ -15,14 +15,14 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  const { registerHandler, user, auth } = useContext(authContext);
+  const { registerHandler } = useContext(authContext);
   // register lets you register an input and apply validation rules on it
   const { register, handleSubmit } = useForm();
 
   const handleRegister = (data) => {
     registerHandler(data)
     .then((res) => {
-      if (user && auth) {
+      if (res) {
         console.log("email and password verified");
         navigate("/");
       } else {
