@@ -47,8 +47,6 @@ export default function AuthProvider(props) {
 
         setAuth(true);
         setUser(user);
-
-        return 'ok'
       })
   };
 
