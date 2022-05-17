@@ -40,7 +40,7 @@ module.exports = (db) => {
     `, [req.body.name, req.body.email, req.body.password]
     )
       .then(() => {
-        res.redirect("/");
+
         console.log(res.req.body)
 
       })
