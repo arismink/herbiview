@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 8080;
 const morgan = require("morgan");
 const BodyParser = require("body-parser");
 const cors = require("cors");
+const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -15,6 +16,13 @@ const db = new Pool(dbParams);
 db.connect();
 
 App.use(morgan("dev"));
+
+App.use(cookieSession({
+  name: 'session',
+  keys: ['key'],
+  maxAge: 24 * 60 * 60 * 1000
+}));
+
 
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
