@@ -10,6 +10,8 @@ import Login from "pages/Login";
 import Register from "pages/Register";
 import PlantDetails from "pages/PlantDetails";
 
+import ScrollButton from "components/ScrollButton";
+
 function App() {
   const { state, setFile, sendToPlantAPI } = useAppData();
 
@@ -31,8 +33,9 @@ function App() {
           <Route path="/plant-details" element={<PlantDetails data={state.data} />} />
         </Routes>
       </Container>
-
+      <ScrollButton />
       <Footer />
+
     </div>
   );
 }

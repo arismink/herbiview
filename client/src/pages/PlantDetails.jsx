@@ -28,16 +28,24 @@ data = {
 
 export default function PlantDetail({ data }) {
   return (
-    <Container>
+    <Container
+      sx={{
+        width:{ md: 800 }
+      }}
+      style={{
+        alignItems: "center"
+      }}>
       <Container sx={{ textAlign: "center" }}>
-        <Box margin={2}>
+        <Box marginY={2}>
           <img src={data.image_url} alt={"plant_image"} />
         </Box>
+
         <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
           {data.plant_name}
         </Typography>
         <Typography>{data.probability}%</Typography>
       </Container>
+
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -63,6 +71,7 @@ export default function PlantDetail({ data }) {
           </a>
         </AccordionDetails>
       </Accordion>
+
       <Box mb={15} />
     </Container>
   );
