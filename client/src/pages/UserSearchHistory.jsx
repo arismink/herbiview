@@ -17,9 +17,10 @@ export default function UserSearchHistory({ auth, user }) {
   useEffect(() => {
     if (user) {
       // GET user history
-      const email = user.email;
+      // const email = user.email;
+      const id = user.id;
       axios
-        .post('/api/userHistory', { email })
+        .post('/api/userHistory', { id })
         .then(response => {
           console.log("User history response", response.data.user_history);
           // const userHistoryArray = response.data.user_history.map(

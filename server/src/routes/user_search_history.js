@@ -22,13 +22,12 @@ module.exports = (db) => {
   })
 
   router.post("/", (req, res) => {
-    console.log("GET /api/userHistory, email is", req.body);
+    console.log("GET /api/userHistory, id is", req.body);
     db.query(`
       SELECT * FROM user_search_history 
-      JOIN users ON user_id = users.id
       JOIN plants ON plant_id = plants.id
-      WHERE email = $1
-    ;`, [req.body.email])
+      WHERE user_id = $1
+    ;`, [req.body.id])
     .then(data => {
       const user_history = data.rows;
       res.send({user_history});
