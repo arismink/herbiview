@@ -39,9 +39,9 @@ module.exports = (db) => {
       RETURNING *;
     `, [req.body.name, req.body.email, req.body.password]
     )
-      .then(() => {
-
-        console.log(res.req.body)
+      .then((data) => {
+        const user = data.rows[0]
+        res.send(user)
 
       })
       .catch(err => {
