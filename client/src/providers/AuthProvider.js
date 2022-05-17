@@ -29,7 +29,6 @@ export default function AuthProvider(props) {
   const logoutHandler = function() {
     setAuth(false);
     setUser(null);
-    console.log('user?', user)
   };
 
   // Handles account registration
