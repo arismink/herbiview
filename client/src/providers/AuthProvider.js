@@ -26,7 +26,7 @@ export default function AuthProvider(props) {
       })
   }
 
-  const logout = function() {
+  const logoutHandler = function() {
     setAuth(false);
     setUser(null);
   };
@@ -53,7 +53,7 @@ export default function AuthProvider(props) {
   };
 
   // authContext will expose these items
-  const userData = { auth, user, logout, registerHandler, loginHandler };
+  const userData = { auth, user, logoutHandler, registerHandler, loginHandler };
 
   // We can use this component to wrap any content we want to share this context
   return (
