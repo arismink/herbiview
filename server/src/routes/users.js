@@ -14,18 +14,21 @@ module.exports = (db) => {
     })
   });
 
-  router.get("/login", (req, res) => {
-    db.query(`SELECT * FROM users WHERE email = $1 AND password = $2;`, [req.body.email, req.body.password])
+  router.post("/login", (req, res) => {
+    db.query(`SELECT * FROM users WHERE email = $1 AND password_digest = $2;`, [req.body.email, req.body.password])
     .then(data => {
       const user = data.rows[0];
       console.log("Logged in as:", user);
+
+      // req.session.user_id = user.id;
       // return to home page
-      return user;
+      res.send(user);
+
     })
     .catch(err => {
       res
         .status(500)
-        .json({ error: err.message })
+        .json({ error: err.message });
     })
   });
 
