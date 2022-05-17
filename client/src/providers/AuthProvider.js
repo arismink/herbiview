@@ -12,7 +12,8 @@ export default function AuthProvider(props) {
   const login = function(email, password) {
     // query login route, to query db, to see if email and password match
     const authTry = { email, password };
-    fetch('/login', { body: authTry })
+    return axios
+      .get('/login', { body: authTry })
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
