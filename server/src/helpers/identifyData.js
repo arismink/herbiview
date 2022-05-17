@@ -1,6 +1,6 @@
 const identifyData = (data) => {
   return {
-    image_url: data.images.url,
+    image_url: data.images[0].url,
     plant_name: data.suggestions[0].plant_name,
     common_names: data.suggestions[0].plant_details.common_names,
     info_url: data.suggestions[0].plant_details.url,
