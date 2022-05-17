@@ -1,3 +1,6 @@
+import { useState, useContext } from 'react';
+import { authContext } from 'providers/AuthProvider';
+
 import { Link } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
@@ -10,12 +13,16 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 export default function Login() {
+  // use auth context given by providers/AuthProvider.js
+  const { login } = useContext(authContext);
 
   // register lets you register an input and apply validation rules on it
   const { register, handleSubmit } = useForm();
 
   // function handle login data
-  const handleLogin = data => console.log(data);
+  const handleLogin = data => {
+    console.log("handle login", data);
+  };
 
   const onErrors = errors => console.error(errors)
 
