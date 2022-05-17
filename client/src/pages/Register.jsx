@@ -18,6 +18,7 @@ export default function Register() {
   // Handle registration with this function
   const handleRegistration = (data) => {
 
+    // move to context
     return axios
       .post('/api/users/register', {
         name: data.name,
@@ -35,7 +36,8 @@ export default function Register() {
 
   return (
     <Container
-      sx={{mt: 5,
+      sx={{
+        mt: 5,
         textAlign: "center"}}
       maxWidth="md">
 
