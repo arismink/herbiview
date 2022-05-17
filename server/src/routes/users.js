@@ -52,6 +52,7 @@ module.exports = (db) => {
         };
 
         console.log("Account created. Logged in as:", user);
+        req.session.user_id = user.id;
 
         res.send(user);
       })
