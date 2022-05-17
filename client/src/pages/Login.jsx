@@ -32,6 +32,7 @@ export default function Login() {
       })
       .then(res => {
         login(loginEmail, loginPassword); // can change to res.body or whatever the response is
+        // login(res.body.user.email, res.body.user.password);
       })
   };
 
