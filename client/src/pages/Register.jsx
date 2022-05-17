@@ -17,7 +17,6 @@ export default function Register() {
 
   // Handle registration with this function
   const handleRegistration = (data) => {
-    console.log(data);
 
     return axios
       .post('/api/users/register', {
@@ -26,19 +25,18 @@ export default function Register() {
         password: data.password
       })
       .then(res => {
-        console.log('res:', res);
-        console.log(res.config.data);
-        console.log(JSON.parse(res.config.data))
-        console.log('type of:', typeof res.config.data)
-      })
+        const newUser = JSON.parse(res.config.data);
 
+        console.log(newUser);
+      })
   };
 
   const onErrors = errors => console.error(errors);
 
   return (
     <Container
-      sx={{mt: 5}}
+      sx={{mt: 5,
+        textAlign: "center"}}
       maxWidth="md">
 
       <PersonAddAltIcon style={{ fontSize: 100, color: 'grey' }}/>
