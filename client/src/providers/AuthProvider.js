@@ -43,11 +43,12 @@ export default function AuthProvider(props) {
       .post('/api/users/register', { name, email, password})
       .then(res => {
         const body = JSON.parse(res.config.data);
-
-        const user = { email: body.email, password: body.password };
+        const user = { name: body.name, email: body.email, password: body.password };
 
         setAuth(true);
         setUser(user);
+
+        return user;
       })
   };
 
