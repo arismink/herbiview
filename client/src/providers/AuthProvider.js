@@ -5,9 +5,12 @@ import axios from "axios";
 export const authContext = createContext();
 
 export default function AuthProvider(props) {
+
+  // Set state of user when on site
   const [auth, setAuth] = useState(false);
   const [user, setUser] = useState(null);
 
+  // Handles login
   const loginHandler = (data) => {
     const { email, password } = data
 
@@ -26,6 +29,7 @@ export default function AuthProvider(props) {
       })
   }
 
+  // Handles logout
   const logoutHandler = function() {
     setAuth(false);
     setUser(null);
