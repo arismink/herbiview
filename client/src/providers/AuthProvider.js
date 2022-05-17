@@ -14,6 +14,7 @@ export default function AuthProvider(props) {
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
+        // check if data returned exactly 1 row
         setAuth(true);
         setUser({ email, name: data.name });  // get name from the response obj
       })

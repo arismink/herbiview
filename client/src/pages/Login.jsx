@@ -22,6 +22,7 @@ export default function Login() {
   // function handle login data
   const handleLogin = data => {
     console.log("handle login", data);
+    login(data.email, data.password);
   };
 
   const onErrors = errors => console.error(errors)
