@@ -18,16 +18,16 @@ module.exports = (db) => {
     db.query(`SELECT * FROM users WHERE email = $1 AND password_digest = $2;`, [req.body.email, req.body.password])
     .then(data => {
       const dataObj = data.rows[0];
+      req.session.user_id = dataObj.id;
 
       const user = {
         id: dataObj.id,
-        name: dataObj.name
+        name: dataObj.name,
+        cookie: req.session.user_id
       }
 
       console.log("Logged in as:", user);
 
-      // req.session.user_id = user.id;
-      // return to home page
       res.send(user);
 
     })
@@ -54,6 +54,7 @@ module.exports = (db) => {
         }
 
         console.log("Account created. Logged in as:", user);
+        req.session.user_id = user.id;
 
         res.send(user)
 
@@ -64,6 +65,36 @@ module.exports = (db) => {
           .status(500)
           .json({error: err.message})
       })
+  });
+
+  router.post("/logout", (req, res) => {
+    req.session = null;
+    res.send(null)
+  })
+
+  router.post("/authenticate", (req, res) => {
+    const userID = req.session.user_id;
+
+    db.query(`
+      SELECT * FROM USERS WHERE USER_ID = $1;
+    `, [userID])
+    .then(data => {
+      const dataObj = data.rows[0];
+
+      const user = {
+        id: dataObj.id,
+        name: dataObj.name
+      }
+      if (data) {
+        res.send(user)
+      }
+
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({error: err.message})
+    })
   })
 
   return router;
