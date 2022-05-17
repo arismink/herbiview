@@ -17,18 +17,20 @@ export default function Register() {
 
   // Handle registration with this function
   const handleRegistration = (data) => {
+    console.log(data);
 
-    return new Promise((resolve, reject) => {
-      axios.post('/api/users/register', {
+    return axios
+      .post('/api/users/register', {
         name: data.name,
         email: data.email,
         password: data.password
       })
-        .then(res => {
-          console.log(res)
-          return resolve(res)
+      .then(res => {
+        console.log('res:', res);
+        console.log(res.config.data);
+        console.log('type of:', typeof res.config.data)
       })
-    })
+
   };
 
   const onErrors = errors => console.error(errors);
