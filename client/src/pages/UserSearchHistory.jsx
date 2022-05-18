@@ -1,5 +1,4 @@
 import { useEffect, useState, useCallback, Fragment } from 'react';
-// import { Navigate } from 'react-router-dom'
 import axios from 'axios';
 
 import { useContext } from 'react';
@@ -9,8 +8,6 @@ import { Container, Typography, Paper } from "@mui/material";
 import { Box, Collapse, IconButton } from "@mui/material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
-import { DataGrid } from '@mui/x-data-grid';
-
 
 export default function UserSearchHistory() {
   // use auth context given by providers/AuthProvider.js
@@ -29,48 +26,6 @@ export default function UserSearchHistory() {
         });
     }
   }, [user]);
-
-  // const columns = [
-  //   { field: "name", headerName: "Name", flex: 1 },
-  //   { field: "sci_name", headerName: "Scientific Name", flex: 1 },
-  //   { field: "info_url", headerName: "Info", renderCell: (params) => {
-  //     return(
-  //       <a href={params.row.info_url} target="_blank" rel="noreferrer">More info</a>
-  //     )
-  //   }},
-  //   { field: "image_url", headerName: "ASPCA Image", flex: 1, minHeight: 100, minWidth: 150, renderCell: (params) => {
-  //     return (
-  //       <div className="img-box">
-  //         <img 
-  //           src={params.row.image_url} 
-  //           alt={"ASPCA image " + params.row.name}  
-  //           style={{'maxWidth': '100%', 'maxHeight': '100%'}} 
-  //           loading="lazy"
-  //         />
-  //       </div>
-  //     )
-  //   }},
-  //   { field: "user_img_url", headerName: "Image", flex: 1, minHeight: 100, minWidth: 150, renderCell: (params) => {
-  //     return (
-  //       <div className="img-box">
-  //         <img 
-  //           src={params.row.user_img_url} 
-  //           alt={"User uploaded image " + params.row.name}  
-  //           style={{'maxWidth': '100%', 'maxHeight': '100%'}} 
-  //           loading="lazy"
-  //         />
-  //       </div>
-  //     )
-  //   }},
-  //   { field: "date", headerName: "Query Date", flex: 1, renderCell: (params) => {
-  //     const dateOnly = params.row.date.split('T')[0];
-  //     return (
-  //       <Typography variant="body1">
-  //         {dateOnly}
-  //       </Typography>
-  //     )
-  //   }}
-  // ];
 
   function Row(props) {
     const { row } = props;
@@ -163,18 +118,6 @@ export default function UserSearchHistory() {
         <div>
           <Typography variant="h4" margin={6}>Search History for {user && user.name}: {user && user.email}</Typography>
         </div>
-        {/* <DataGrid 
-          rows={queries} 
-          columns={columns} 
-          autoHeight 
-          density='comfortable'
-          initialState={{
-            sorting: {
-              sortModel: [{ field: 'date', sort: 'desc' }],
-            },
-          }}
-        /> */}
-
         <TableContainer component={Paper}>
           <Table aria-label="Search History" stickyHeader>
             <TableHead>
@@ -182,7 +125,7 @@ export default function UserSearchHistory() {
                 <TableCell />
                 <TableCell align="center">Name</TableCell>
                 <TableCell align="center">Scientific Name</TableCell>
-                <TableCell align="center">More Info</TableCell>
+                <TableCell align="center">Link to Info</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
