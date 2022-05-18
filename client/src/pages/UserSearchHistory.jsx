@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom'
+// import { Navigate } from 'react-router-dom'
 import axios from 'axios';
 
 import { useContext } from 'react';
@@ -7,7 +7,7 @@ import { authContext } from 'providers/AuthProvider';
 
 // import Box from '@mui/material/Box';
 // import TextField from '@mui/material/TextField';
-import { Container, Button, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { DataGrid } from '@mui/x-data-grid';
 
 // import Accordion from '@mui/material/Accordion';
@@ -17,7 +17,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 export default function UserSearchHistory() {
   // use auth context given by providers/AuthProvider.js
-  const { auth, user } = useContext(authContext);
+  const { user } = useContext(authContext);
 
   const [ queries, setQueries ] = useState([]);
 
@@ -83,27 +83,38 @@ export default function UserSearchHistory() {
     }}
   ];
 
+  if (queries.length) {
+    return (
+      <Container
+      // sx={{marginTop: 20}}
+      >
+        <div>
+          <Typography variant="h4" margin={6}>Search History for {user && user.name}: {user && user.email}</Typography>
+        </div>
+        <DataGrid 
+          rows={queries} 
+          columns={columns} 
+          autoHeight 
+          density='comfortable'
+          initialState={{
+            sorting: {
+              sortModel: [{ field: 'date', sort: 'desc' }],
+            },
+          }}
+        />
+  
+      </Container>
+  
+    );
+  }
   return (
     <Container
     // sx={{marginTop: 20}}
     >
       <div>
-        <Typography variant="h4" margin={2}>Search History for {user && user.name}: {user && user.email}</Typography>
+        <Typography variant="h4" margin={6}>Please <a href="/login">login</a> to view your search history.</Typography>
       </div>
-      <DataGrid 
-        rows={queries} 
-        columns={columns} 
-        autoHeight 
-        density='comfortable'
-        initialState={{
-          sorting: {
-            sortModel: [{ field: 'date', sort: 'desc' }],
-          },
-        }}
-      />
-
     </Container>
-
   );
 }
 
