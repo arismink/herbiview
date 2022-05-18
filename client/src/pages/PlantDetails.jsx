@@ -1,10 +1,7 @@
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box, Container, Stack } from "@mui/material";
 import CustomizedProgressBars from "components/ProbabilityBar";
+
+import { Accordion, AccordionDetails, AccordionSummary, Typography, Box, Container, Stack  } from "@mui/material";
 
 import "../styles/PlantDetails.scss"
 
@@ -68,7 +65,8 @@ export default function PlantDetail({ data }) {
         </Stack>
       </Box>
 
-      <Accordion>
+      <Accordion
+      elevation={3}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
@@ -93,7 +91,8 @@ export default function PlantDetail({ data }) {
           </a>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion
+      elevation={4}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
@@ -156,7 +155,8 @@ export default function PlantDetail({ data }) {
         />
 
         <Box mt={3} />
-        <Accordion>
+        <Accordion
+        elevation={4}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1bh-content"
@@ -182,7 +182,8 @@ export default function PlantDetail({ data }) {
           </AccordionDetails>
         </Accordion>
 
-        <Accordion>
+        <Accordion
+        elevation={4}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1bh-content"
@@ -216,6 +217,7 @@ export default function PlantDetail({ data }) {
             Will it harm your cat, dog or horse?
           </i>
         </Typography>
+
 
       <Box mb={15} />
     </Container>
