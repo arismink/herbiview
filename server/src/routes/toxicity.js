@@ -4,7 +4,7 @@ module.exports = (db) => {
 
   router.get("/:term", (req, res) => {
     db.query(
-      `SELECT plants.id, plants.name, plants.sci_name, toxicity.*
+      `SELECT toxicity.animal, toxicity.toxic
       FROM plants
       JOIN toxicity ON plants.id = toxicity.plant_id
       WHERE lower(sci_name) like $1 or lower(common_names) like $1 or lower(name) like $1
