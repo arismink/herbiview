@@ -4,7 +4,6 @@ const mockIdentifyData = require("../mockData/mockIdentifyData.json");
 const mockHeathData = require("../mockData/mockHealthData.json");
 const identifyData = require("../helpers/identifyData.js");
 const healthData = require("../helpers/healthData.js");
-const toxicity = require("./toxicity");
 
 module.exports = () => {
   router.post("/", async (req, res) => {
@@ -59,26 +58,25 @@ module.exports = () => {
       config
     );
 
-    const toxicApiCall = toxicity;
-
-    try {
-      // uncomment to make real api call
-      // const [identifyResponse, healthResponse] = await Promise.all([
-      //   identifyApiCall,
-      //   healthApiCall,
-      // ]);
-
+    const useMockData = true;
+    if (useMockData) {
       res.send({
-        //uncomment to make real api call
-        // ...identifyData(identifyResponse.data),
-        // ...healthData(healthResponse.data),
-
-        // //uncomment when using mock data
         ...identifyData(mockIdentifyData),
         ...healthData(mockHeathData),
       });
-    } catch (error) {
-      console.log("Error: ", error);
+    } else {
+      try {
+        const [identifyResponse, healthResponse] = await Promise.all([
+          identifyApiCall,
+          healthApiCall,
+        ]);
+        res.send({
+          ...identifyData(identifyResponse.data),
+          ...healthData(healthResponse.data),
+        });
+      } catch (error) {
+        console.log("Error: ", error);
+      }
     }
   });
   return router;
