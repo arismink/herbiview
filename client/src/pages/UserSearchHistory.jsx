@@ -6,13 +6,8 @@ import { useContext } from 'react';
 import { authContext } from 'providers/AuthProvider';
 
 // import Box from '@mui/material/Box';
-// import TextField from '@mui/material/TextField';
 import { Container, Typography } from "@mui/material";
 import { DataGrid } from '@mui/x-data-grid';
-
-// import Accordion from '@mui/material/Accordion';
-// import AccordionSummary from '@mui/material/AccordionSummary';
-// import AccordionDetails from '@mui/material/AccordionDetails';
 
 
 export default function UserSearchHistory() {
@@ -24,7 +19,6 @@ export default function UserSearchHistory() {
   useEffect(() => {
     if (user) {
       // GET user history
-      // const email = user.email;
       const id = user.id;
       axios
         .post('/api/userHistory', { id })
@@ -34,12 +28,6 @@ export default function UserSearchHistory() {
         });
     }
   }, [user]);
-
-  // // Redirect to login page if not logged in
-  // if (!auth || !user) {
-  //   console.log("AUTH OR USER NOT SET", auth, user);
-  //   // return <Navigate replace to="/login" />
-  // }
 
   const columns = [
     { field: "name", headerName: "Name", flex: 1 },
@@ -85,9 +73,7 @@ export default function UserSearchHistory() {
 
   if (queries.length) {
     return (
-      <Container
-      // sx={{marginTop: 20}}
-      >
+      <Container>
         <div>
           <Typography variant="h4" margin={6}>Search History for {user && user.name}: {user && user.email}</Typography>
         </div>
@@ -107,27 +93,12 @@ export default function UserSearchHistory() {
   
     );
   }
+  // If no queries, prompt to login
   return (
-    <Container
-    // sx={{marginTop: 20}}
-    >
+    <Container>
       <div>
         <Typography variant="h4" margin={6}>Please <a href="/login">login</a> to view your search history.</Typography>
       </div>
     </Container>
   );
 }
-
-/*
-{
-  "id":1,
-  "user_id":59,
-  "plant_id":936,
-  "sci_name":"Clematis sp.",
-  "description":"Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
-  "info_url":"https://wikimedia.org/eget/nunc/donec/quis.aspx",
-  "user_img_url":"http://dummyimage.com/144x100.png/cc0000/ffffff",
-  "common_names":"Virgin's Bower",
-  "date":"2021-12-25T00:00:00.000Z"
-}
-*/
