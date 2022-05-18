@@ -37,7 +37,8 @@ const data = {
   ]
 }
 
-export default function QueryPlantDetails() {
+export default function QueryPlantDetails(props) {
+  console.log('query plant details prop:', props)
 
   return (
     <Container sx={{ width: { md: 800 } }}>
