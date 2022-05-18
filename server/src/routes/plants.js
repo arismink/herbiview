@@ -21,21 +21,25 @@ module.exports = (db) => {
     );
 
     const toxicityQuery = db.query(
-      `SELECT *
+      `SELECT animal, toxic
       FROM toxicity
-      WHERE plant_id = $1;`,
+      WHERE plant_id = $1
+      LIMIT 3;`,
       [req.params.id]
     );
-    
+
     try {
       const [plantResponse, toxicityResponse] = await Promise.all([
         plantQuery,
-        toxicityQuery
+        toxicityQuery,
       ]);
 
-      res.send({
-        ...toxicityResponse.rows
-      });
+      const data = {
+        ...plantResponse.rows[0],
+        toxicities: toxicityResponse.rows
+      }
+
+      res.send(data);
     } catch (error) {
       console.log("Error: ", error);
     }
