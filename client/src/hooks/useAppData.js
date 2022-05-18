@@ -15,7 +15,8 @@ export default function useAppData() {
     return axios
     .get(`api/toxicity/${plantSciName}`)
     .then(res => {
-      console.log('toxicity:', res.data)
+      console.log('toxicity:', res.data);
+
       setState(prev => ({...prev, toxicity: res.data }))
     })
     .catch((err) => {
@@ -29,9 +30,13 @@ export default function useAppData() {
       axios.post("api/identify", { base64file })
       .then(res => {
         console.log("data: ", res.data);
+
         getToxicityDetails(res.data.sci_name)
         setState(prev => ({...prev, data: res.data}));
         navigate("/plant-details");
+      })
+      .catch(err => {
+        console.log(err)
       })
 
     });
