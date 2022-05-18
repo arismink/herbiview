@@ -16,6 +16,9 @@ export default function useAppData() {
     .then(res => {
       console.log("toxicity:", res.data)
     })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 
   const sendToPlantAPI = (e) => {
