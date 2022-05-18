@@ -2,6 +2,21 @@ const router = require("express").Router();
 
 module.exports = (db) => {
 
+  router.get("/", (req, res) => {
+    db.query(
+      `SELECT DISTINCT plants.id, plants.name
+      FROM plants;
+      `
+    )
+    .then(data => {
+      const plant_details = data.rows;
+      res.send(plant_details);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+  })
+
   router.get("/:term", (req, res) => {
     db.query(
       `SELECT DISTINCT plants.id, plants.name, plants.sci_name
