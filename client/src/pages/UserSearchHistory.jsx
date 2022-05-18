@@ -35,24 +35,13 @@ export default function UserSearchHistory({ auth, user }) {
 
   // Redirect to login page if not logged in
   if (!auth || !user) {
+    // console.log("AUTH OR USER NOT SET", auth, user);
     return <Navigate replace to="/login" />
   }
 
   const columns = [
     { field: "name", headerName: "Name", flex: 1 },
     { field: "sci_name", headerName: "Scientific Name", flex: 1 },
-    // { field: "description", headerName: "Description", flex: 1, renderCell: (params) => {
-    //   return (
-    //     <Accordion>
-    //       <AccordionSummary>
-    //         Description:
-    //       </AccordionSummary>
-    //       <AccordionDetails>
-    //         <Typography variant="body1" gutterBottom >{params.row.description}</Typography>
-    //       </AccordionDetails>
-    //     </Accordion>
-    //   )
-    // }},
     { field: "info_url", headerName: "Info", renderCell: (params) => {
       return(
         <a href={params.row.info_url}>More info</a>
@@ -82,7 +71,6 @@ export default function UserSearchHistory({ auth, user }) {
         </div>
       )
     }},
-    // { field: "common_names", headerName: "Other Common Names", flex: 2 },
     { field: "date", headerName: "Query Date", flex: 1, renderCell: (params) => {
       const dateOnly = params.row.date.split('T')[0];
       return (
