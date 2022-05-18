@@ -1,3 +1,4 @@
+import useSearchData from 'hooks/useSearchData';
 import SearchIcon from '@mui/icons-material/Search';
 
 import Box from '@mui/material/Box';
@@ -6,6 +7,8 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 
 
 export default function SearchBar() {
+  const { state, searchApi } = useSearchData();
+
 
   return (
   <Box sx={{padding: 2}}>
@@ -23,6 +26,7 @@ export default function SearchBar() {
           name="s"
           fullWidth
           endAdornment={<SearchIcon />}
+          onChange={searchApi}
         />
       </form>
 
