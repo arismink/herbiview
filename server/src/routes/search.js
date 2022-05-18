@@ -4,7 +4,7 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
     db.query(
-      `SELECT DISTINCT plants.id, plants.name
+      `SELECT DISTINCT plants.id, plants.name, plants.sci_name
       FROM plants;
       `
     )
