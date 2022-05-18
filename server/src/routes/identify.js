@@ -46,18 +46,6 @@ module.exports = () => {
       },
     };
 
-    const identifyApiCall = axios.post(
-      "https://api.plant.id/v2/identify",
-      plantParams,
-      config
-    );
-
-    const healthApiCall = axios.post(
-      "https://api.plant.id/v2/health_assessment",
-      healthParams,
-      config
-    );
-
     const useMockData = true;
     if (useMockData) {
       res.send({
@@ -65,6 +53,17 @@ module.exports = () => {
         ...healthData(mockHeathData),
       });
     } else {
+      const identifyApiCall = axios.post(
+        "https://api.plant.id/v2/identify",
+        plantParams,
+        config
+      );
+  
+      const healthApiCall = axios.post(
+        "https://api.plant.id/v2/health_assessment",
+        healthParams,
+        config
+      );
       try {
         const [identifyResponse, healthResponse] = await Promise.all([
           identifyApiCall,
