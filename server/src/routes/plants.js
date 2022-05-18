@@ -14,17 +14,19 @@ module.exports = (db) => {
     })
   })
 
-  router.get("/:id", (req, res) => {
+  router.get("/:term", (req, res) => {
     db.query(`
       SELECT
-        plants.*, toxicity.*
+        plants.*,
+        toxicity.*
       FROM plants
       JOIN toxicity ON plants.id = toxicity.plant_id
-      WHERE plants.id = $1;`, [req.params.id]
+      WHERE ;`, [req.params.id]
     )
       .then((data) => {
         const plant_details = data.rows;
         res.json({plant_details});
+
       })
       .catch(err => {
         res.status(500).json({ error: err.message });
@@ -34,3 +36,5 @@ module.exports = (db) => {
 
   return router;
 }
+
+// select plants.*, toxicity.* from plants join toxicity on plant_id = plants.id where sci_name like '%can%' or common_names like '%can%' or name like '%can%';
