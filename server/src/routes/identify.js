@@ -60,19 +60,19 @@ module.exports = () => {
 
     try {
       // uncomment to make real api call
-      const [identifyResponse, healthResponse] = await Promise.all([
-        identifyApiCall,
-        healthApiCall,
-      ]);
+      // const [identifyResponse, healthResponse] = await Promise.all([
+      //   identifyApiCall,
+      //   healthApiCall,
+      // ]);
 
       res.send({
         //uncomment to make real api call
-        ...identifyData(identifyResponse.data),
-        ...healthData(healthResponse.data),
+        // ...identifyData(identifyResponse.data),
+        // ...healthData(healthResponse.data),
 
         // //uncomment when using mock data
-        // ...identifyData(mockIdentifyData),
-        // ...healthData(mockHeathData),
+        ...identifyData(mockIdentifyData),
+        ...healthData(mockHeathData),
       });
     } catch (error) {
       console.log("Error: ", error);
