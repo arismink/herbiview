@@ -2,11 +2,13 @@ const router = require("express").Router();
 const axios = require("axios");
 const mockIdentifyData = require("../mockData/mockIdentifyData.json");
 const mockHeathData = require("../mockData/mockHealthData.json");
+const identifyData = require("../helpers/identifyData.js");
+const healthData = require("../helpers/healthData.js");
 
 module.exports = () => {
   router.post("/", async (req, res) => {
     const base64file = req.body.base64file;
-    const baseData = {
+    const baseParams = {
       images: [base64file],
       // modifiers docs: https://github.com/flowerchecker/Plant-id-API/wiki/Modifiers
       modifiers: ["crops_fast", "similar_images"],
@@ -14,8 +16,8 @@ module.exports = () => {
       // plant details docs: https://github.com/flowerchecker/Plant-id-API/wiki/Plant-details
     };
 
-    const plantData = {
-      ...baseData,
+    const plantParams = {
+      ...baseParams,
       plant_details: [
         "common_names",
         "url",
@@ -26,8 +28,8 @@ module.exports = () => {
       ],
     };
 
-    const healthData = {
-      ...baseData,
+    const healthParams = {
+      ...baseParams,
       disease_details: [
         "cause",
         "common_names",
@@ -44,36 +46,36 @@ module.exports = () => {
       },
     };
 
-    const identifyApiCall = axios.post(
-      "https://api.plant.id/v2/identify",
-      plantData,
-      config
-    );
-
-    const healthApiCall = axios.post(
-      "https://api.plant.id/v2/health_assessment",
-      healthData,
-      config
-    );
-
-    try {
-      // uncomment to make real api call
-      // const [identifyResponse, healthResponse] = await Promise.all([
-      //   identifyApiCall,
-      //   healthApiCall,
-      // ]);
-
+    const useMockData = true;
+    if (useMockData) {
       res.send({
-        //uncomment to make real api call
-        // identify: identifyResponse.data,
-        // health: healthResponse.data,
-
-        //uncomment when using mock data
-        identify: mockIdentifyData,
-        health: mockHeathData,
+        ...identifyData(mockIdentifyData),
+        ...healthData(mockHeathData)
       });
-    } catch (error) {
-      console.log("Error: ", error);
+    } else {
+      const identifyApiCall = axios.post(
+        "https://api.plant.id/v2/identify",
+        plantParams,
+        config
+      );
+  
+      const healthApiCall = axios.post(
+        "https://api.plant.id/v2/health_assessment",
+        healthParams,
+        config
+      );
+      try {
+        const [identifyResponse, healthResponse] = await Promise.all([
+          identifyApiCall,
+          healthApiCall,
+        ]);
+        res.send({
+          ...identifyData(identifyResponse.data),
+          ...healthData(healthResponse.data),
+        });
+      } catch (error) {
+        console.log("Error: ", error);
+      }
     }
   });
   return router;

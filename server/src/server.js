@@ -28,12 +28,16 @@ const identifyRoutes = require("./routes/identify");
 const usersRoutes = require("./routes/users");
 const plantRoutes = require("./routes/plants");
 const userHistory = require("./routes/user_search_history");
+const toxicityRoutes = require("./routes/toxicity")
+const search = require("./routes/search");
 
 // Mount resource routes
 App.use("/api/identify", identifyRoutes());
 App.use("/api/plants", plantRoutes(db));
 App.use("/api/users", usersRoutes(db));
 App.use("/api/userHistory", userHistory(db));
+App.use("/api/toxicity", toxicityRoutes(db));
+App.use("/api/search", search(db));
 
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
