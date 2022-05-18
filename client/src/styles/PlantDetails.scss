@@ -1,0 +1,15 @@
+@import 'variables.scss';
+
+.plant-img-container {
+  padding-top: 3em;
+
+  img {
+    height: 30vh;
+    width: 50vw;
+    object-fit: cover;
+    // object-position: 10vw
+    max-width: 400px;
+    border: 2px dashed $footer-bg;
+    padding: 1em;
+  }
+}

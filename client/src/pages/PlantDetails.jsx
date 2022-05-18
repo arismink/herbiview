@@ -5,6 +5,9 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, Container, Stack } from "@mui/material";
 import CustomizedProgressBars from "components/ProbabilityBar";
+
+import "../styles/PlantDetails.scss"
+
 /*
 data = {
   image_url: string,
@@ -29,10 +32,15 @@ data = {
 export default function PlantDetail({ data }) {
   return (
     <Container sx={{ width: { md: 800 } }}>
+      <Box mt={2} />
       <Container sx={{ textAlign: "center" }}>
-        <Box margin={2}>
-          <img src={data.image_url} alt={"plant_image"} />
-        </Box>
+
+          <div className="plant-img-container">
+
+            <img src={data.image_url} alt={"plant_image"} />
+
+          </div>
+
         <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
           {data.plant_name}
         </Typography>
@@ -46,16 +54,20 @@ export default function PlantDetail({ data }) {
           </i>
         </Typography>
       </Container>
+
       <Box margin={2} textAlign="center">
         <Typography variant="h6" sx={{ margin: "10px" }}>
           Similar Images
         </Typography>
         <Stack direction="row" spacing={2}>
+          <Container m={1}>
           {data.similar_images.map((img, index) => {
-            return <img src={img} alt={"image " + index} />;
+            return (<img key={index} src={img} alt={"image " + index} />);
           })}
+          </Container>
         </Stack>
       </Box>
+
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -108,6 +120,103 @@ export default function PlantDetail({ data }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
+
+      <Box mb={10} />
+
+        <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
+          Health Assessment
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          margin={2}
+          sx={{ textAlign: "center", color: "text.secondary" }}
+        >
+          <i>
+            How healthy is this plant?
+          </i>
+        </Typography>
+
+        <Typography variant="h6" sx={{textAlign: "left"}}>
+            Healthiness Probability:
+        </Typography>
+
+        <CustomizedProgressBars
+          key={data.healthy_probability}
+          value={data.healthy_probability}
+        />
+
+        <Typography variant="h6" sx={{textAlign: "left"}} mt={2}>
+            Disease Probability:
+
+        </Typography>
+
+        <CustomizedProgressBars
+          key={data.disease_probability}
+          value={data.disease_probability}
+        />
+
+        <Box mt={3} />
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1bh-content"
+            id="panel1bh-header"
+          >
+            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+              Possible Disease
+            </Typography>
+            <Typography sx={{ color: "text.secondary" }}>
+              {data.disease_name}
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>{data.disease_description}</Typography>
+            <br />
+            <Typography sx={{ color: "text.secondary" }}>
+              Additional Information:
+              <br />
+            </Typography>
+            <a href={data.info_url} target="_blank" rel="noopener noreferrer">
+              {data.disease_info_url}
+            </a>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1bh-content"
+            id="panel1bh-header"
+          >
+            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+              Remedy
+            </Typography>
+            <Typography sx={{ color: "text.secondary" }}>
+              Prevention is key
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>{data.disease_prevention}</Typography>
+            <br />
+
+          </AccordionDetails>
+        </Accordion>
+
+        <Box mb={10} />
+
+        <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
+          Animal Toxicity
+        </Typography>
+        <Typography
+          variant="subtitle2"
+          margin={2}
+          sx={{ textAlign: "center", color: "text.secondary" }}
+        >
+          <i>
+            Will it harm your cat, dog or horse?
+          </i>
+        </Typography>
+
       <Box mb={15} />
     </Container>
   );
