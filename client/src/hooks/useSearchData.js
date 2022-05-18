@@ -13,12 +13,9 @@ export default function useSearchData() {
   //   });
   // };
 
+  // get array of plants to populate dynamic search options
   const getPlantData = () => {
     return axios.get("api/search")
-    // .then((res) => {
-    //   console.log('usedata', res.data)
-    //   return res.data
-    // })
   }
 
   return { getPlantData };
