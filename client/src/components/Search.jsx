@@ -7,7 +7,7 @@ import * as React from 'react';
 import {TextField, Stack, Autocomplete } from '@mui/material';
 
 export default function SearchBar() {
-  const { getPlantData } = useSearchData();
+  const { getPlantData, getPlantDataDetails } = useSearchData();
 
   const [ plants, setPlants ] = useState([])
 
@@ -20,6 +20,12 @@ export default function SearchBar() {
 
   const [inputValue, setInputValue] = useState("");
   const [open, setOpen] = useState(false);
+
+  const handleOnClick = (plant_id) => {
+    console.log(plant_id);
+
+    getPlantDataDetails(plant_id);
+  }
 
 
   return (
@@ -44,7 +50,7 @@ export default function SearchBar() {
         }}
         popupIcon={<SearchIcon />}
         noOptionsText="We can't find your plant. Try our image search!"
-        getOptionLabel={option => option.name}
+        getOptionLabel={(option) => `${option.name} ${option.sci_name}`}
         options={plants}
         renderInput={(params) => (
           <TextField {...params} placeholder="Search..." />
@@ -54,8 +60,8 @@ export default function SearchBar() {
             <li
               {...props}
               key={option.id}
-              onClick={() => console.log(option.id)}>
-              {option.name}
+              onClick={() => handleOnClick(option.id)}>
+              {option.name} - <i>{option.sci_name}</i>
             </li>
           )
         }}
@@ -63,3 +69,5 @@ export default function SearchBar() {
     </Stack>
   );
 }
+
+// `query/plant-details/${option.id}`
