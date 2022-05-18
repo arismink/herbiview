@@ -25,8 +25,11 @@ export default function useAppData() {
       .then(res => {
         console.log("data: ", res.data);
         setState(prev => ({...prev, data: res.data}));
-        getToxicityDetails(state.data.sci_name)
+        return state
+      })
+      .then((state) => {
         navigate("/plant-details");
+        getToxicityDetails(state.data.sci_name)
       });
     });
   };

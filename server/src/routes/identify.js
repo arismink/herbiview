@@ -4,6 +4,7 @@ const mockIdentifyData = require("../mockData/mockIdentifyData.json");
 const mockHeathData = require("../mockData/mockHealthData.json");
 const identifyData = require("../helpers/identifyData.js");
 const healthData = require("../helpers/healthData.js");
+const toxicity = require("./toxicity");
 
 module.exports = () => {
   router.post("/", async (req, res) => {
@@ -57,6 +58,8 @@ module.exports = () => {
       healthParams,
       config
     );
+
+    const toxicApiCall = toxicity;
 
     try {
       // uncomment to make real api call

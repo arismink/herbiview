@@ -13,7 +13,7 @@ module.exports = (db) => {
     )
       .then((data) => {
         const toxicity_details = data.rows;
-        res.json({ toxicity_details });
+        res.send(toxicity_details);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
