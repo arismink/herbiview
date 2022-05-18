@@ -14,8 +14,12 @@ const dbParams = require("./lib/db.js")
 const db = new Pool(dbParams);
 db.connect();
 
+// Morgan middleware
 App.use(morgan("dev"));
 
+// Cookie middleware
+const cookieParser = require('cookie-parser');
+App.use(cookieParser());
 
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
@@ -32,7 +36,7 @@ const toxicityRoutes = require("./routes/toxicity")
 const search = require("./routes/search");
 
 // Mount resource routes
-App.use("/api/identify", identifyRoutes());
+App.use("/api/identify", identifyRoutes(db));
 App.use("/api/plants", plantRoutes(db));
 App.use("/api/users", usersRoutes(db));
 App.use("/api/userHistory", userHistory(db));
