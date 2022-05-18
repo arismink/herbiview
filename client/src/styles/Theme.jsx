@@ -40,16 +40,17 @@ const theme = createTheme({
         }
     }
   },
-  // overrides: {
-  //   MuiOutlinedInput: {
-  //     root: {
-  //       "& $notchedOutline": {
-  //         borderColor: "#d3d3d3",
-  //         borderWidth: 0.5
-  //       }
-  //     }
-  //   }
-  // }
+  overrides: {
+    MuiOutlinedInput: {
+      root: {
+        "& $notchedOutline": {
+          borderColor: "#d3d3d3",
+          borderWidth: 0.5,
+          borderRadius: "2rem"
+        }
+      }
+    }
+  }
 });
 
 export default theme;
