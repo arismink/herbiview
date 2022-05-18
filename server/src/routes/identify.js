@@ -75,7 +75,7 @@ module.exports = () => {
 
         // //uncomment when using mock data
         ...identifyData(mockIdentifyData),
-        ...healthData(mockHeathData),
+        ...healthData(mockHeathData)
       });
     } catch (error) {
       console.log("Error: ", error);
