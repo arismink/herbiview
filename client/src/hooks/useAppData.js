@@ -10,6 +10,14 @@ export default function useAppData() {
     data: {}
   });
 
+  const getToxicityDetails = (plantSciName) => {
+    return axios
+    .get("api/toxicity", plantSciName)
+    .then(res => {
+      console.log("toxicity:", res.data)
+    })
+  }
+
   const sendToPlantAPI = (e) => {
     e.preventDefault();
     convertImageToBase64(state.file).then((base64file) => {
@@ -17,6 +25,7 @@ export default function useAppData() {
       .then(res => {
         console.log("data: ", res.data);
         setState(prev => ({...prev, data: res.data}));
+        getToxicityDetails(state.data.sci_name)
         navigate("/plant-details");
       });
     });
