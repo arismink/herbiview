@@ -28,12 +28,14 @@ const identifyRoutes = require("./routes/identify");
 const usersRoutes = require("./routes/users");
 const plantRoutes = require("./routes/plants");
 const userHistory = require("./routes/user_search_history");
+const search = require("./routes/search");
 
 // Mount resource routes
 App.use("/api/identify", identifyRoutes());
 App.use("/api/plants", plantRoutes(db));
 App.use("/api/users", usersRoutes(db));
 App.use("/api/userHistory", userHistory(db));
+App.use("/api/search", search(db));
 
 // Sample GET route
 App.get("/api/data", (req, res) => {
