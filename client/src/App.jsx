@@ -11,8 +11,8 @@ import Footer from "components/Footer";
 import Home from "components/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
-import PlantDetails from "pages/PlantDetailPage";
 import UserSearchHistory from "pages/UserSearchHistory";
+import ApiPlantDetails from "pages/ApiPlantDetails";
 
 function App() {
   // use auth context given by providers/AuthProvider.js
@@ -33,9 +33,8 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
           <Route path="/search-history" element={<UserSearchHistory />} />
-          <Route path="/plant-details" element={<PlantDetails data={state} />} />
+          <Route path="/plant-details" element={<ApiPlantDetails data={state} />} />
         </Routes>
       </Container>
 
