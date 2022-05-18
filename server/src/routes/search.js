@@ -11,7 +11,7 @@ module.exports = (db) => {
     )
       .then((data) => {
         const plant_details = data.rows;
-        res.json({ plant_details });
+        res.send(plant_details );
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
