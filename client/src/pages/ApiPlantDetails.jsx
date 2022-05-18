@@ -26,7 +26,7 @@ data = {
 }
 */
 
-export default function PlantDetail(state) {
+export default function ApiPlantDetails(state) {
 
   const data = state.data.data;
   const toxicity = state.data.toxicity;;
