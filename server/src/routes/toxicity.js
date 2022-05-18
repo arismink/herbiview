@@ -12,7 +12,7 @@ module.exports = (db) => {
       [`%${req.params.term.toLowerCase()}%`]
     )
       .then((data) => {
-        const toxicity_details = data.rows[0];
+        const toxicity_details = data.rows;
         res.send(toxicity_details);
       })
       .catch((err) => {
