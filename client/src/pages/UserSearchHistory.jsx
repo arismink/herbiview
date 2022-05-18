@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom'
 import axios from 'axios';
 
+import { useContext } from 'react';
+import { authContext } from 'providers/AuthProvider';
+
 // import Box from '@mui/material/Box';
 // import TextField from '@mui/material/TextField';
 import { Container, Button, Typography } from "@mui/material";
@@ -11,7 +14,11 @@ import { DataGrid } from '@mui/x-data-grid';
 // import AccordionSummary from '@mui/material/AccordionSummary';
 // import AccordionDetails from '@mui/material/AccordionDetails';
 
-export default function UserSearchHistory({ auth, user }) {
+
+export default function UserSearchHistory() {
+  // use auth context given by providers/AuthProvider.js
+  const { auth, user } = useContext(authContext);
+
   const [ queries, setQueries ] = useState([]);
 
   useEffect(() => {
@@ -22,22 +29,17 @@ export default function UserSearchHistory({ auth, user }) {
       axios
         .post('/api/userHistory', { id })
         .then(response => {
-          console.log("User history response", response.data.user_history);
-          // const userHistoryArray = response.data.user_history.map(
-          //   query => Object.entries(query)
-          // );
-          // setQueryList(userHistoryArray);
+          // console.log("User history response", response.data.user_history);
           setQueries(response.data.user_history);
-          // console.log(`Query list is:`, queries);
         });
     }
-  }, []);
+  }, [user]);
 
-  // Redirect to login page if not logged in
-  if (!auth || !user) {
-    // console.log("AUTH OR USER NOT SET", auth, user);
-    return <Navigate replace to="/login" />
-  }
+  // // Redirect to login page if not logged in
+  // if (!auth || !user) {
+  //   console.log("AUTH OR USER NOT SET", auth, user);
+  //   // return <Navigate replace to="/login" />
+  // }
 
   const columns = [
     { field: "name", headerName: "Name", flex: 1 },
@@ -49,11 +51,11 @@ export default function UserSearchHistory({ auth, user }) {
     }},
     { field: "aspca_url", headerName: "ASPCA Image", flex: 1, minHeight: 100, minWidth: 150, renderCell: (params) => {
       return (
-        <div class="img-box">
+        <div className="img-box">
           <img 
             src={params.row.aspca_url} 
             alt={"ASPCA image " + params.row.name}  
-            style={{'max-width': '100%', 'max-height': '100%'}} 
+            style={{'maxWidth': '100%', 'maxHeight': '100%'}} 
             loading="lazy"
           />
         </div>
@@ -61,11 +63,11 @@ export default function UserSearchHistory({ auth, user }) {
     }},
     { field: "user_img_url", headerName: "Image", flex: 1, minHeight: 100, minWidth: 150, renderCell: (params) => {
       return (
-        <div class="img-box">
+        <div className="img-box">
           <img 
             src={params.row.user_img_url} 
             alt={"User uploaded image " + params.row.name}  
-            style={{'max-width': '100%', 'max-height': '100%'}} 
+            style={{'maxWidth': '100%', 'maxHeight': '100%'}} 
             loading="lazy"
           />
         </div>

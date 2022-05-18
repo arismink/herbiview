@@ -35,7 +35,7 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/plant-details" element={<PlantDetailPage id={state.id} health={state.health} />} />
-          <Route path="/search-history" element={<UserSearchHistory auth={auth} user={user} />} />
+          <Route path="/search-history" element={<UserSearchHistory />} />
         </Routes>
       </Container>
 
