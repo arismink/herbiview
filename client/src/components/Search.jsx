@@ -44,10 +44,21 @@ export default function SearchBar() {
         }}
         popupIcon={<SearchIcon />}
         noOptionsText="We can't find your plant. Try our image search!"
-        options={plants.map((option) => option.name)}
+        getOptionLabel={option => option.name}
+        options={plants}
         renderInput={(params) => (
           <TextField {...params} placeholder="Search..." />
         )}
+        renderOption={(props, option) => {
+          return (
+            <li
+              {...props}
+              key={option.id}
+              onClick={() => console.log(option.id)}>
+              {option.name}
+            </li>
+          )
+        }}
       />
     </Stack>
   );
