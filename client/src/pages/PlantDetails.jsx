@@ -26,7 +26,11 @@ data = {
 }
 */
 
-export default function PlantDetail({ data }) {
+export default function PlantDetail(state) {
+
+  const data = state.data.data;
+  const toxicity = state.data.toxicity;;
+
   return (
     <Container sx={{ width: { md: 800 } }}>
       <Box mt={2} />
@@ -218,6 +222,16 @@ export default function PlantDetail({ data }) {
           </i>
         </Typography>
 
+        <Typography component={"span"}>
+            {toxicity.map((obj, index) => {
+              return (
+                <Box
+                  key={index}>
+                  {obj.animal} and {String(obj.toxic)}
+                </Box>
+              );
+            })}
+          </Typography>
 
       <Box mb={15} />
     </Container>
