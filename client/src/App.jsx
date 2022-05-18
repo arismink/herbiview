@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import useAppData from "hooks/useAppData";
+import useSearchData from "hooks/useSearchData";
 
 import Container from "@mui/material/Container";
 
@@ -13,6 +14,7 @@ import QueryPlantDetails from "pages/QueryPlantDetails";
 
 function App() {
   const { state, setFile, sendToPlantAPI } = useAppData();
+  const { queryPlantDetail } = useSearchData();
 
   return (
     <div className="App">
@@ -38,7 +40,7 @@ function App() {
             path="/query/plant-details"
             element={
               //add state props
-              <QueryPlantDetails />
+              <QueryPlantDetails data={queryPlantDetail} />
             }
           />
         </Routes>
