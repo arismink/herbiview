@@ -13,7 +13,7 @@ const identifyData = (data) => {
     description: data.suggestions[0].plant_details.wiki_description.value,
     sci_name: data.suggestions[0].plant_details.scientific_name,
     suggestions: suggestions(data.suggestions),
-    similar_images: [data.suggestions[0].similar_images[0].url, data.suggestions[0].similar_images[1].url],
+    similar_images: [data.suggestions[0].similar_images[0].url_small, data.suggestions[0].similar_images[1].url_small],
   }
 }
 module.exports = identifyData;

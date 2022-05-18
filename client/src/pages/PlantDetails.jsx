@@ -3,7 +3,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 import CustomizedProgressBars from "components/ProbabilityBar";
 /*
 data = {
@@ -28,7 +28,7 @@ data = {
 
 export default function PlantDetail({ data }) {
   return (
-    <Container>
+    <Container sx={{ width: { md: 800 } }}>
       <Container sx={{ textAlign: "center" }}>
         <Box margin={2}>
           <img src={data.image_url} alt={"plant_image"} />
@@ -36,7 +36,26 @@ export default function PlantDetail({ data }) {
         <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
           {data.plant_name}
         </Typography>
+        <Typography
+          variant="subtitle2"
+          margin={2}
+          sx={{ textAlign: "center", color: "text.secondary" }}
+        >
+          <i>
+            {data.common_names[0]}, {data.common_names[1]}
+          </i>
+        </Typography>
       </Container>
+      <Box margin={2} textAlign="center">
+        <Typography variant="h6" sx={{ margin: "10px" }}>
+          Similar Images
+        </Typography>
+        <Stack direction="row" spacing={2}>
+          {data.similar_images.map((img, index) => {
+            return <img src={img} alt={"image " + index} />;
+          })}
+        </Stack>
+      </Box>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
