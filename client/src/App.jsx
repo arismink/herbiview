@@ -28,7 +28,7 @@ function App() {
           <Route path="/register" element={<Register />} />
 
 
-          <Route path="/plant-details" element={<PlantDetails data={state.data} />} />
+          <Route path="/plant-details" element={<PlantDetails data={state} />} />
         </Routes>
       </Container>
 
