@@ -3,8 +3,8 @@ INSERT INTO plants (
   sci_name,
   common_names,
   family,
-  aspca_url,
-  image_url
+  image_url,
+  aspca_url
 ) VALUES
     ('Achira','Canna edulis','Canna, Arrowroot','Cannaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/achira-r.jpg?itok=iQMC4kSf','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/achira'),
     ('Acorn Squash','Cucurbita pepo','Similar plants:pumpkin, zucchini','Cucurbitaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/acorn-squash-r.jpg?itok=t1Jia-vp','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/acorn-squash'),

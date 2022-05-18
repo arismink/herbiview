@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 // import { Navigate } from 'react-router-dom'
 import axios from 'axios';
 
@@ -34,7 +34,7 @@ export default function UserSearchHistory() {
     { field: "sci_name", headerName: "Scientific Name", flex: 1 },
     { field: "info_url", headerName: "Info", renderCell: (params) => {
       return(
-        <a href={params.row.info_url}>More info</a>
+        <a href={params.row.info_url} target="_blank" rel="noreferrer">More info</a>
       )
     }},
     { field: "aspca_url", headerName: "ASPCA Image", flex: 1, minHeight: 100, minWidth: 150, renderCell: (params) => {
@@ -71,6 +71,10 @@ export default function UserSearchHistory() {
     }}
   ];
 
+  const handleGetRowHeight = useCallback(() => {
+    return 100;
+  }, []);
+
   if (queries.length) {
     return (
       <Container>
@@ -81,6 +85,8 @@ export default function UserSearchHistory() {
           rows={queries} 
           columns={columns} 
           autoHeight 
+          // rowHeight={100}
+          // getRowHeight={handleGetRowHeight}
           density='comfortable'
           initialState={{
             sorting: {
