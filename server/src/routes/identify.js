@@ -50,7 +50,7 @@ module.exports = () => {
     if (useMockData) {
       res.send({
         ...identifyData(mockIdentifyData),
-        ...healthData(mockHeathData),
+        ...healthData(mockHeathData)
       });
     } else {
       const identifyApiCall = axios.post(

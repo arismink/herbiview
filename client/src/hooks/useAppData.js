@@ -7,14 +7,20 @@ export default function useAppData() {
   const navigate = useNavigate();
   const [state, setState] = useState({
     file: {},
-    data: {}
+    data: {},
+    toxicity: []
   });
 
   const getToxicityDetails = (plantSciName) => {
     return axios
     .get(`api/toxicity/${plantSciName}`)
     .then(res => {
-      console.log("toxicity:", res.data)
+      console.log('toxicity:', res.data);
+
+      setState(prev => ({...prev, toxicity: res.data }))
+    })
+    .catch((err) => {
+      console.log(err)
     })
   }
 
@@ -24,13 +30,15 @@ export default function useAppData() {
       axios.post("api/identify", { base64file })
       .then(res => {
         console.log("data: ", res.data);
+
+        getToxicityDetails(res.data.sci_name)
         setState(prev => ({...prev, data: res.data}));
-        return state
-      })
-      .then((state) => {
         navigate("/plant-details");
-        getToxicityDetails(state.data.sci_name)
-      });
+      })
+      .catch(err => {
+        console.log(err)
+      })
+
     });
   };
 
