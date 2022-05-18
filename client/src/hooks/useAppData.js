@@ -12,7 +12,7 @@ export default function useAppData() {
 
   const getToxicityDetails = (plantSciName) => {
     return axios
-    .get("api/toxicity", plantSciName)
+    .get(`api/toxicity/${plantSciName}`)
     .then(res => {
       console.log("toxicity:", res.data)
     })
