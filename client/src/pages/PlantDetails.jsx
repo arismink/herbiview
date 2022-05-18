@@ -4,7 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, Container } from "@mui/material";
-
+import CustomizedProgressBars from "components/ProbabilityBar";
 /*
 data = {
   image_url: string,
@@ -13,7 +13,7 @@ data = {
   info_url: string,
   description: string,
   sci_name: string,
-  probablilty: int %,
+  suggestions: array[plant_name, probability],
   similar_images: array,
 
   healthy: boolean,
@@ -36,7 +36,6 @@ export default function PlantDetail({ data }) {
         <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
           {data.plant_name}
         </Typography>
-        <Typography>{data.probability}%</Typography>
       </Container>
       <Accordion>
         <AccordionSummary
@@ -61,6 +60,33 @@ export default function PlantDetail({ data }) {
           <a href={data.info_url} target="_blank" rel="noopener noreferrer">
             {data.info_url}
           </a>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+            Probability
+          </Typography>
+          <Typography sx={{ color: "text.secondary" }}>
+            How sure are we?
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography component={"span"}>
+            {data.suggestions.map((el) => {
+              return (
+                <CustomizedProgressBars
+                  key={el.key}
+                  value={el.probability}
+                  name={el.plant_name}
+                />
+              );
+            })}
+          </Typography>
         </AccordionDetails>
       </Accordion>
       <Box mb={15} />
