@@ -138,9 +138,7 @@ export default function UserSearchHistory() {
             </TableBody>
           </Table>
         </TableContainer>
-
       </Container>
-  
     );
   }
   else if (user) {
