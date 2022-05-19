@@ -14,7 +14,6 @@ import QueryPlantDetails from "pages/QueryPlantDetails";
 
 function App() {
   const { state, setFile, sendToPlantAPI } = useAppData();
-  const { queryPlantDetail } = useSearchData();
 
   return (
     <div className="App">
