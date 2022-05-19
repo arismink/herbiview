@@ -14,8 +14,12 @@ const dbParams = require("./lib/db.js")
 const db = new Pool(dbParams);
 db.connect();
 
+// Morgan middleware
 App.use(morgan("dev"));
 
+// Cookie middleware
+const cookieParser = require('cookie-parser');
+App.use(cookieParser());
 
 // Express Configuration
 App.use(BodyParser.urlencoded({ extended: false }));
@@ -28,20 +32,16 @@ const identifyRoutes = require("./routes/identify");
 const usersRoutes = require("./routes/users");
 const plantRoutes = require("./routes/plants");
 const userHistory = require("./routes/user_search_history");
+const toxicityRoutes = require("./routes/toxicity")
+const search = require("./routes/search");
 
 // Mount resource routes
-App.use("/api/identify", identifyRoutes());
+App.use("/api/identify", identifyRoutes(db));
 App.use("/api/plants", plantRoutes(db));
 App.use("/api/users", usersRoutes(db));
 App.use("/api/userHistory", userHistory(db));
-
-// Sample GET route
-App.get("/api/data", (req, res) => {
-  console.log("GET /api/data");
-  res.json({
-    message: "Seems to work kinda!",
-  });
-});
+App.use("/api/toxicity", toxicityRoutes(db));
+App.use("/api/search", search(db));
 
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
