@@ -6,6 +6,15 @@ const identifyData = require("../helpers/identifyData.js");
 const healthData = require("../helpers/healthData.js");
 
 module.exports = (db) => {
+  router.get("/", (req, res) => {
+    const val = JSON.parse(req.cookies.credentials);
+  
+    console.log(val.id)
+    res.send(val);
+
+  });
+
+
   router.post("/", async (req, res) => {
     const base64file = req.body.base64file;
     const baseParams = {
@@ -67,46 +76,53 @@ module.exports = (db) => {
       );
       // Do both POSTs to plant.id
       Promise.all([identifyApiCall, healthApiCall])
-        .then(([identifyResponse, healthResponse]) => {
-          const responseSend = {
+        .then(([ identifyResponse, healthResponse ]) => {
+          const resSend = {
             ...identifyData(identifyResponse.data),
             ...healthData(healthResponse.data),
           };
           // Set up axios query POST to db, to find plant id, and return along with responses
-          return { 
-            queryPlantID: db.query(`
-              SELECT id FROM plants 
-              WHERE LOWER(name) LIKE $1 OR 
-                LOWER(sci_name) LIKE $1 OR 
-                LOWER(common_names) LIKE $1
-              LIMIT 1
-            ;`), 
-            responseSend 
-          };
-        })
-        .then(({ queryPlantID, responseSend }) => {
-
-          // Set up axios query POST to db, to insert query
+          const userCookie = JSON.parse(req.cookies.credentials);
           const querySaveDB = db.query(`
-          INSERT INTO user_search_history
-          (user_id, plant_id, sci_name, description, info_url, user_img_url, common_names, date) 
-          VALUES (
-            $1, $2, $3, $4, $5, $6, $7, $
-            (SELECT sci_name FROM plants WHERE id = 936), 
-            'Quisque porta volutpat erat. Nunc purus.', 
-            'https://wikimedia.org/eget/nunc/donec/quis.aspx', 
-            'http://dummyimage.com/144x100.png/cc0000/ffffff', 
-            (SELECT name FROM plants WHERE id = 936), '12/25/2021'
-          ) RETURNING *
-        ;`, [req.cookies.id, ]);
-          
+            INSERT INTO user_search_history
+            (user_id, plant_id, sci_name, description, info_url, user_img_url, common_names, date) 
+            VALUES (
+              $1,
+              (SELECT id FROM plants 
+                WHERE LOWER(name) LIKE $8 OR 
+                  LOWER(sci_name) LIKE $9 OR 
+                  LOWER(common_names) LIKE $8
+                LIMIT 1), 
+              $2, $3, $4, $5, $6, $7
+            ) RETURNING *
+          ;`, [
+            userCookie.id, 
+            resSend.sci_name, 
+            resSend.description, 
+            resSend.info_url, 
+            resSend.image_url, 
+            resSend.common_names, 
+            resSend.date,
+            `%${resSend.plant_name.toLowerCase()}%`, 
+            `%${resSend.sci_name.toLowerCase()}%`
+          ]);
+          return Promise.all([querySaveDB, resSend]);
         })
-        .then(({ querySaveDB, responseSend }) => {
-          console.log()
-          res.send(responseSend);
+        .then(([ querySaveDB, resSend ]) => {
+          console.log("Result of query to insert DB", querySaveDB.rows);
+          console.log("Response to send to client", resSend);
+          res.send(resSend);
         })
-        .catch(error => console.log("Error: ", error))
+        .catch(error => console.log("Error in /api/identify: ", error))
     }
   });
   return router;
 };
+
+/*
+SELECT id FROM plants 
+WHERE LOWER(name) LIKE 'test' OR 
+  LOWER(sci_name) LIKE 'test' OR 
+  LOWER(common_names) LIKE 'test'
+LIMIT 1;
+*/
