@@ -1,8 +1,8 @@
-import useSearchData from 'hooks/useSearchData';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { plantQueryContext } from 'providers/PlantProvider';
 
 import * as React from 'react';
 import {TextField, Stack, Autocomplete } from '@mui/material';
@@ -10,7 +10,7 @@ import {TextField, Stack, Autocomplete } from '@mui/material';
 export default function SearchBar() {
   const navigate = useNavigate();
 
-  const { getPlantData, getPlantDataDetails } = useSearchData();
+  const { getPlantData, getPlantDataDetails } = useContext(plantQueryContext);
 
   const [ plants, setPlants ] = useState([])
 
@@ -26,7 +26,6 @@ export default function SearchBar() {
 
   const handleOnClick = (plant_id) => {
     console.log(plant_id);
-
     getPlantDataDetails(plant_id);
     navigate("query/plant-details");
     setOpen(false);
