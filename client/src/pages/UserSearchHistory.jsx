@@ -9,6 +9,8 @@ import { Box, Collapse, IconButton } from "@mui/material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 
+import "../styles/UserSearchHistory.scss"
+
 export default function UserSearchHistory() {
   // use auth context given by providers/AuthProvider.js
   const { user } = useContext(authContext);
@@ -69,14 +71,14 @@ export default function UserSearchHistory() {
                 <Table size="small" aria-label="more-data">
                   <TableHead>
                     <TableRow>
-                      <TableCell align="center">ASPCA Image</TableCell>
+                      {/* <TableCell align="center">ASPCA Image</TableCell> */}
                       <TableCell align="center">Uploaded Image</TableCell>
                       <TableCell align="center">Query Date</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     <TableRow key={row.date}>
-                      <TableCell align="center">
+                      {/* <TableCell align="center">
                         <div className="img-box">
                           <img 
                             src={row.image_url} 
@@ -85,7 +87,7 @@ export default function UserSearchHistory() {
                             loading="lazy"
                           />
                         </div>
-                      </TableCell>
+                      </TableCell> */}
                       <TableCell align="center">
                         <div className="img-box">
                           <img 
@@ -112,11 +114,12 @@ export default function UserSearchHistory() {
     );
   }
 
-  if (queries.length) {
+  // If logged in and queries exist, show queries
+  if (user && queries.length) {
     return (
       <Container>
         <div>
-          <Typography variant="h4" margin={6}>Search History for {user && user.name}: {user && user.email}</Typography>
+          <Typography variant="h4" margin={6}>Search History for {user && user.name}</Typography>
         </div>
         <TableContainer component={Paper}>
           <Table aria-label="Search History" stickyHeader>
@@ -135,12 +138,22 @@ export default function UserSearchHistory() {
             </TableBody>
           </Table>
         </TableContainer>
-
       </Container>
-  
     );
   }
-  // If no queries, prompt to login
+  else if (user) {
+    return (
+      <Container>
+        <div>
+          <Typography variant="h4" margin={6}>Search History for {user && user.name}</Typography>
+        </div>
+        <div>
+          <Typography variant="body1" margin={6}>No queries found. Upload a plant photo to make a search!</Typography>
+        </div>
+      </Container>
+    );
+  }
+  // If not logged in, prompt to login
   return (
     <Container>
       <div>
