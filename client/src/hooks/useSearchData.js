@@ -19,10 +19,11 @@ export default function useSearchData() {
 
   // path for dynamic search bar
   const getPlantDataDetails = (plant_id) => {
-    axios.get(`api/plants/${plant_id}`)
+    return axios.get(`api/plants/${plant_id}`)
     .then((res) => {
       setQueryPlantDetails((prev) => ({...prev, data: res.data}))
       navigate("query/plant-details")
+      console.log('search data', queryPlantDetail)
     })
   }
 
