@@ -1,3 +1,7 @@
+import { useParams } from "react-router-dom";
+
+import { useEffect, useState } from "react";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CustomizedProgressBars from "components/ProbabilityBar";
 
@@ -15,35 +19,47 @@ import {
 } from "@mui/material";
 
 import "../styles/PlantDetails.scss";
+import axios from "axios";
 
-const data = {
-  "id": 181,
-  "name": "Ceriman",
-  "sci_name": "Monstera deliciosa",
-  "common_names": "Cutleaf Philodendron, Hurricane Plant, Swiss Cheese Plant, Mexican Breadfruit",
-  "family": "Araceae",
-  "aspca_url": "https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/ceriman-cutleaf-philodendron-r.jpg?itok=qYgFKKCu",
-  "image_url": "https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/ceriman",
-  "toxicities": [
-    {
-    "animal": "cat",
-    "toxic": true
-    },
-    {
-    "animal": "dog",
-    "toxic": true
-    },
-    {
-    "animal": "horse",
-    "toxic": true
-    }
-  ]
-}
 
 export default function QueryPlantDetails() {
-  const { plantQueryDetails } = useContext(plantQueryContext);
+  const data = {
+    "id": 181,
+    "name": "Ceriman",
+    "sci_name": "Monstera deliciosa",
+    "common_names": "Cutleaf Philodendron, Hurricane Plant, Swiss Cheese Plant, Mexican Breadfruit",
+    "family": "Araceae",
+    "aspca_url": "https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/ceriman-cutleaf-philodendron-r.jpg?itok=qYgFKKCu",
+    "image_url": "https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/ceriman",
+    "toxicities": [
+      {
+      "animal": "cat",
+      "toxic": true
+      },
+      {
+      "animal": "dog",
+      "toxic": true
+      },
+      {
+      "animal": "horse",
+      "toxic": true
+      }
+    ]
+  }
+  // const { plantQueryDetails } = useContext(plantQueryContext);
+  const [plant, setPlant] = useState(null);
 
-  console.log('from query plant details page', plantQueryDetails)
+  const params = useParams();
+
+  useEffect(() => {
+    axios.get(`/api/plants/${params.plantId}`)
+      .then(res => {
+        setPlant(res.data)
+      })
+  }, [params.plantId])
+
+  console.log('from plants/id', params)
+  console.log('plant state', plant);
 
   return (
     <Container sx={{ width: { md: 800 } }}>

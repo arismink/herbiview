@@ -9,7 +9,7 @@ import Home from "components/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
 import ApiPlantDetails from "pages/ApiPlantDetails";
-import QueryPlantDetails from "pages/QueryPlantDetails";
+import Plant from "pages/Plant";
 
 function App() {
   const { state, setFile, sendToPlantAPI } = useAppData();
@@ -36,7 +36,7 @@ function App() {
           />
 
 
-          <Route path="/plants/:plantId" element={<QueryPlantDetails />} />
+          <Route path="/plants/:plantId" element={<Plant />} />
 
         </Routes>
       </Container>
