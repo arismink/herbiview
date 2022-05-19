@@ -18,11 +18,7 @@ export default function PlantQueryProvider(props) {
   const getPlantDataDetails = (plant_id) => {
     return axios.get(`api/plants/${plant_id}`)
     .then((res) => {
-      console.log('res.data', res.data)
-
       setPlantQueryDetails((prev) => ({...prev, data: res.data}))
-
-      console.log('search data', plantQueryDetails)
 
     })
   }
