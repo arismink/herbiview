@@ -34,13 +34,10 @@ function App() {
               <ApiPlantDetails data={state.data} toxicity={state.toxicity} />
             }
           />
-          <Route
-            path="/query/plant-details"
-            element={
-              //add state props
-              <QueryPlantDetails />
-            }
-          />
+
+
+          <Route path="/plants/:plantId" element={<QueryPlantDetails />} />
+
         </Routes>
       </Container>
 
