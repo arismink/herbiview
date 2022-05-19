@@ -1,29 +1,78 @@
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
 
-import Box from '@mui/material/Box';
+import { useState, useEffect } from 'react';
 
-import OutlinedInput from '@mui/material/OutlinedInput';
+import usePlantData from 'helpers/plantData';
 
-const SearchBar = ({setSearchQuery}) => (
-  <Box sx={{padding: 2}}>
+import * as React from 'react';
+import {TextField, Stack, Autocomplete } from '@mui/material';
 
-    <form
-      autoComplete='off'
-      action="/" method="get">
-      <OutlinedInput
-        sx={{
-          height: 40
+export default function SearchBar() {
+  const navigate = useNavigate();
+
+  const { getPlantsArray } = usePlantData();
+
+  const [ plants, setPlants ] = useState([])
+
+  useEffect(() => {
+    getPlantsArray().then((res) => {
+      setPlants(res.data);
+
+    })
+  }, []);
+
+  const [inputValue, setInputValue] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const handleOnClick = (plant_id) => {
+    navigate(`/plants/${plant_id}`);
+    setOpen(false);
+    setInputValue("");
+  }
+
+  return (
+    <Stack sx={{padding: 2, width: { xs: 200, sm: 400, md: 570}}}>
+      <Autocomplete
+        clearOnBlur
+        open={open}
+        onOpen={() => {
+          // only open when in focus and inputValue is not empty
+          if (inputValue) {
+            setOpen(true);
+          }
         }}
-        type="text"
-        id="header-search"
-        placeholder="Search..."
-        name="s"
-        fullWidth
-        endAdornment={<SearchIcon />}
+        onClose={() => setOpen(false)}
+        inputValue={inputValue}
+        onInputChange={(e, value, reason) => {
+          setInputValue(value);
+
+          // only open when inputValue is not empty after the user typed something
+          if (!value) {
+            setOpen(false);
+          }
+        }}
+        popupIcon={<SearchIcon />}
+        noOptionsText="We can't find your plant. Try our image search!"
+        getOptionLabel={(option) => `${option.name} ${option.sci_name}`}
+        options={plants}
+        renderInput={(params) => (
+          <TextField {...params} placeholder="Search..." />
+        )}
+        renderOption={(props, option) => {
+          return (
+            <li
+              {...props}
+              key={option.id}
+              onClick={() => handleOnClick(option.id)}>
+
+                {option.name} - <i>{option.sci_name}</i>
+
+
+            </li>
+          )
+        }}
       />
-    </form>
-
-  </Box>
-);
-
-export default SearchBar;
+    </Stack>
+  );
+}
