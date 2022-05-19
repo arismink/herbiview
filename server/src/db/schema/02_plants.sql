@@ -3,8 +3,8 @@ INSERT INTO plants (
   sci_name,
   common_names,
   family,
-  aspca_url,
-  image_url
+  image_url,
+  aspca_url
 ) VALUES
     ('Achira','Canna edulis','Canna, Arrowroot','Cannaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/achira-r.jpg?itok=iQMC4kSf','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/achira'),
     ('Acorn Squash','Cucurbita pepo','Similar plants:pumpkin, zucchini','Cucurbitaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/acorn-squash-r.jpg?itok=t1Jia-vp','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/acorn-squash'),
@@ -829,7 +829,7 @@ INSERT INTO plants (
     ('Silver Pink Vine','Hoya pubicalyx','','Asclepiadaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/silver-pink-vine'),
     ('Silver Star','Cryptanthus lacerdae','Cape Marigold','Bromeliaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/silver-star'),
     ('Silver Table Fern','Pteris sp.','','Pteridaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/silver-table-fern'),
-    ('Silver Tree Anamiga','NONE LISTED','','','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/silver-tree-anamiga'),
+    ('Silver Tree Anamiga','','','','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/silver-tree-anamiga'),
     ('Skunk Cabbage','Symplocarpus foetidus','Skunk Weed, Polecat Weed, Meadow Cabbage, Swamp Cabbage','Araceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/skunk-cabbage'),
     ('Slender Deutzia','Deutzia gracilis','','Saxifragaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/slender-deutzia'),
     ('Small Fruited Hickory','Carya glabra','','Juglandaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/small-fruited-hickory'),
@@ -921,7 +921,7 @@ INSERT INTO plants (
     ('Tulip','Tulipa species','','Liliaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/tulip-r.jpg?itok=Kyjv8T-3','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/tulip'),
     ('Tulip Poplar','Liriodendron tulipifera','tulip tree','','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/tulip-poplar'),
     ('Turban Squash','Cucurbita maxima cv turbaniformis','','Cucurbitaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/turban-squash'),
-    ('Turf Lily','NONE LISTED','lilyturf','','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/turf-lily'),
+    ('Turf Lily','','lilyturf','','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/default_images/imageunavailable_0.jpg?itok=JCCt_uvE','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/turf-lily'),
     ('Umbrella Leaf','Podophyllum peltatum','Indian Apple Root, American Mandrake, Wild Lemon, Hog Apple, Duck''s Foot, Raccoonberry, American Mandrake','Berberidaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/americanmandrake.jpg?itok=-Bvmbwve','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/umbrella-leaf'),
     ('Umbrella Plant','Eriogonium umbellatum','Sulfur Flower, Wild Buckweat','Polygonaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/umbrella-plant-r.jpg?itok=bk35KMz0','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/umbrella-plant'),
     ('Umbrella Tree','Brassaia actinophylla','Schefflera, Australian Ivy Palm, Octopus Tree, Starleaf','Araliaceae','https://www.aspca.org/sites/default/files/styles/medium_image_300x200/public/field/image/plants/australian-ivy-palm-r.jpg?itok=3sh4iprI','https://www.aspca.org//pet-care/animal-poison-control/toxic-and-non-toxic-plants/umbrella-tree'),
