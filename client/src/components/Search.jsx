@@ -1,5 +1,6 @@
 import useSearchData from 'hooks/useSearchData';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 
@@ -7,6 +8,8 @@ import * as React from 'react';
 import {TextField, Stack, Autocomplete } from '@mui/material';
 
 export default function SearchBar() {
+  const navigate = useNavigate();
+
   const { getPlantData, getPlantDataDetails } = useSearchData();
 
   const [ plants, setPlants ] = useState([])
@@ -25,12 +28,16 @@ export default function SearchBar() {
     console.log(plant_id);
 
     getPlantDataDetails(plant_id);
+    navigate("query/plant-details");
+    setOpen(false);
+    setInputValue("");
   }
 
 
   return (
     <Stack sx={{padding: 2, width: { xs: 200, sm: 400, md: 570}}}>
       <Autocomplete
+        clearOnBlur
         open={open}
         onOpen={() => {
           // only open when in focus and inputValue is not empty
