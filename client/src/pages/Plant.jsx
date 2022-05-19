@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
-import usePlantData from 'helpers/plantData';
+import usePlantData from 'hooks/plantData';
 
 import {
   Accordion,
@@ -14,6 +14,8 @@ import {
   Stack,
   CircularProgress
 } from "@mui/material";
+
+import Toxicity from "components/Toxicity";
 
 import "../styles/PlantDetails.scss";
 
@@ -31,7 +33,9 @@ export default function Plant() {
       })
   }, [params.plantId])
 
+
   if (plant) {
+
     return (
       <Container sx={{ width: { md: 800 } }}>
         <Box mt={2} />
@@ -63,25 +67,25 @@ export default function Plant() {
         </Typography>
 
         <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
-          Animal Toxicity
-        </Typography>
-        <Typography
-          variant="subtitle2"
-          margin={2}
-          sx={{ textAlign: "center", color: "text.secondary" }}
-        >
-          <i>Will it harm your cat, dog or horse?</i>
-        </Typography>
+            Animal Toxicity
+          </Typography>
+          <Typography
+            variant="subtitle2"
+            margin={2}
+            sx={{ textAlign: "center", color: "text.secondary" }}
+          >
+            <i>Will it harm your cat, dog or horse?</i>
+          </Typography>
 
-        <Typography component={"span"}>
-          {plant.toxicities.map((obj, index) => {
-            return (
-              <Box key={index}>
-                {obj.animal} and {String(obj.toxic)}
-              </Box>
-            );
-          })}
-        </Typography>
+          <Typography component={"span"}>
+            {plant.toxicities.map((obj, index) => {
+              return (
+                <Box key={index}>
+                  {obj.animal} and {String(obj.toxic)}
+                </Box>
+              );
+            })}
+          </Typography>
 
         <Box mb={15} />
       </Container>

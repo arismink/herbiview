@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 
-import usePlantData from 'helpers/plantData';
+import usePlantData from 'hooks/plantData';
 
 import * as React from 'react';
 import {TextField, Stack, Autocomplete } from '@mui/material';
@@ -18,7 +18,6 @@ export default function SearchBar() {
   useEffect(() => {
     getPlantsArray().then((res) => {
       setPlants(res.data);
-
     })
   }, []);
 
