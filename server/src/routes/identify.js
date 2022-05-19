@@ -6,14 +6,6 @@ const identifyData = require("../helpers/identifyData.js");
 const healthData = require("../helpers/healthData.js");
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    const val = JSON.parse(req.cookies.credentials);
-  
-    console.log(val.id)
-    res.send(val);
-
-  });
-
 
   router.post("/", async (req, res) => {
     const base64file = req.body.base64file;
@@ -77,11 +69,12 @@ module.exports = (db) => {
       // Do both POSTs to plant.id
       Promise.all([identifyApiCall, healthApiCall])
         .then(([ identifyResponse, healthResponse ]) => {
+          // Create object to send back to client
           const resSend = {
             ...identifyData(identifyResponse.data),
             ...healthData(healthResponse.data),
           };
-          // Set up axios query POST to db, to find plant id, and return along with responses
+          // Set up axios query POST to db, to find plant id
           const userCookie = JSON.parse(req.cookies.credentials);
           const querySaveDB = db.query(`
             INSERT INTO user_search_history
@@ -106,11 +99,11 @@ module.exports = (db) => {
             `%${resSend.plant_name.toLowerCase()}%`, 
             `%${resSend.sci_name.toLowerCase()}%`
           ]);
+          // Pass both the db insert and the values to send back to client
           return Promise.all([querySaveDB, resSend]);
         })
         .then(([ querySaveDB, resSend ]) => {
-          console.log("Result of query to insert DB", querySaveDB.rows);
-          console.log("Response to send to client", resSend);
+          // Send plant.id results to client to display in plant-detail
           res.send(resSend);
         })
         .catch(error => console.log("Error in /api/identify: ", error))
@@ -118,11 +111,3 @@ module.exports = (db) => {
   });
   return router;
 };
-
-/*
-SELECT id FROM plants 
-WHERE LOWER(name) LIKE 'test' OR 
-  LOWER(sci_name) LIKE 'test' OR 
-  LOWER(common_names) LIKE 'test'
-LIMIT 1;
-*/
