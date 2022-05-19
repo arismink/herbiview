@@ -15,8 +15,6 @@ import {
   CircularProgress
 } from "@mui/material";
 
-import Toxicity from "components/Toxicity";
-
 import "../styles/PlantDetails.scss";
 
 export default function Plant() {
