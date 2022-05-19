@@ -74,8 +74,15 @@ export default function Nav() {
 
       )}
 
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
+      <MenuItem onClick={e => {
+          console.log("My Account clicked");
+          handleMenuClose();
+        }}>My Account</MenuItem>
+      <MenuItem onClick={e => {
+          navigate("/search-history");
+          handleMenuClose();
+        }}>My Search History</MenuItem>
+      </Menu>
   );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
