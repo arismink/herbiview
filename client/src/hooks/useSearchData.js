@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { useNavigate } from "react-router-dom";
 
 export default function useSearchData() {
-  const navigate = useNavigate();
 
   const [queryPlantDetail, setQueryPlantDetails] = useState({
     data: {}
@@ -22,7 +20,7 @@ export default function useSearchData() {
     return axios.get(`api/plants/${plant_id}`)
     .then((res) => {
       setQueryPlantDetails((prev) => ({...prev, data: res.data}))
-      navigate("query/plant-details")
+
       console.log('search data', queryPlantDetail)
     })
   }
