@@ -1,6 +1,9 @@
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CustomizedProgressBars from "components/ProbabilityBar";
 
+import { useContext } from "react";
+import { plantQueryContext } from "providers/PlantProvider";
+
 import {
   Accordion,
   AccordionDetails,
@@ -38,7 +41,9 @@ const data = {
 }
 
 export default function QueryPlantDetails() {
+  const { plantQueryDetails } = useContext(plantQueryContext);
 
+  console.log('from query plant details page', plantQueryDetails)
 
   return (
     <Container sx={{ width: { md: 800 } }}>
