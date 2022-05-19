@@ -40,7 +40,7 @@ function App() {
             path="/query/plant-details"
             element={
               //add state props
-              <QueryPlantDetails data={queryPlantDetail} />
+              <QueryPlantDetails />
             }
           />
         </Routes>
