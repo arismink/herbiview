@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import useAppData from "hooks/useAppData";
-import useSearchData from "hooks/useSearchData";
 
 import Container from "@mui/material/Container";
 
