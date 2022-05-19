@@ -10,12 +10,12 @@ import {TextField, Stack, Autocomplete } from '@mui/material';
 export default function SearchBar() {
   const navigate = useNavigate();
 
-  const { getPlantData } = useContext(plantQueryContext);
+  const { getPlantsArray } = useContext(plantQueryContext);
 
   const [ plants, setPlants ] = useState([])
 
   useEffect(() => {
-    getPlantData().then((res) => {
+    getPlantsArray().then((res) => {
       setPlants(res.data);
 
     })

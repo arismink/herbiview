@@ -11,11 +11,11 @@ export default function PlantQueryProvider(props) {
   });
 
   // get array of plants to populate dynamic search options
-  const getPlantData = () => {
+  const getPlantsArray = () => {
     return axios.get("api/search")
   }
 
-  const getPlantDataDetails = (plant_id) => {
+  const getPlantData = (plant_id) => {
     return axios.get(`api/plants/${plant_id}`)
     .then((res) => {
       setPlantQueryDetails((prev) => ({...prev, data: res.data}))
@@ -23,7 +23,7 @@ export default function PlantQueryProvider(props) {
     })
   }
 
-  const plantQueryData = { plantQueryDetails, getPlantDataDetails, getPlantData }
+  const plantQueryData = { plantQueryDetails, getPlantData, getPlantsArray }
 
   return (
     <plantQueryContext.Provider value={plantQueryData}>
