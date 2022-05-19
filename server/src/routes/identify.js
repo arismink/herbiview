@@ -47,7 +47,7 @@ module.exports = (db) => {
       },
     };
 
-    const useMockData = true;
+    const useMockData = false;
     if (useMockData) {
       res.send({
         ...identifyData(mockIdentifyData),
