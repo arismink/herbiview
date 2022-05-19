@@ -26,10 +26,7 @@ data = {
 }
 */
 
-export default function ApiPlantDetails(state) {
-
-  const data = state.data.data;
-  const toxicity = state.data.toxicity;;
+export default function ApiPlantDetails({data, toxicity}) {
 
   return (
     <Container sx={{ width: { md: 800 } }}>

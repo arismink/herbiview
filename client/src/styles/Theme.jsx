@@ -45,7 +45,8 @@ const theme = createTheme({
       root: {
         "& $notchedOutline": {
           borderColor: "#d3d3d3",
-          borderWidth: 0.5
+          borderWidth: 0.5,
+          borderRadius: "2rem"
         }
       }
     }

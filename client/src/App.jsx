@@ -13,6 +13,7 @@ import Login from "pages/Login";
 import Register from "pages/Register";
 import UserSearchHistory from "pages/UserSearchHistory";
 import ApiPlantDetails from "pages/ApiPlantDetails";
+import Plant from "pages/Plant";
 
 function App() {
   // use auth context given by providers/AuthProvider.js
@@ -24,7 +25,7 @@ function App() {
     <div className="App">
       <Nav />
       <Container
-        // sx={{marginTop: 20}}
+      // sx={{marginTop: 20}}
       >
         <Routes>
           <Route
@@ -34,7 +35,14 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/search-history" element={<UserSearchHistory />} />
-          <Route path="/plant-details" element={<ApiPlantDetails data={state} />} />
+          <Route
+            path="/plant-details"
+            element={
+              <ApiPlantDetails data={state.data} toxicity={state.toxicity} />
+            }
+          />
+          <Route path="/plants/:plantId" element={<Plant />} />
+
         </Routes>
       </Container>
 

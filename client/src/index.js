@@ -17,13 +17,13 @@ const root = ReactDOM.createRoot(container);
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={Theme}>
-      <CookiesProvider>
-        <AuthProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </AuthProvider>
-      </CookiesProvider>
+        <CookiesProvider>
+          <AuthProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </AuthProvider>
+        </CookiesProvider>
     </ThemeProvider>
   </React.StrictMode>
 );
