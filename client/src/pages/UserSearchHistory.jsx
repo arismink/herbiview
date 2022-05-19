@@ -9,6 +9,8 @@ import { Box, Collapse, IconButton } from "@mui/material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 
+import "../styles/UserSearchHistory.scss"
+
 export default function UserSearchHistory() {
   // use auth context given by providers/AuthProvider.js
   const { user } = useContext(authContext);
