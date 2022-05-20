@@ -12,7 +12,7 @@ module.exports = (db) => {
     /*
       MODIFY THIS VALUE TO USE LIVE API OR MOCK API
     */
-    const useMockData = false;
+    const useMockData = true;
 
     const base64file = req.body.base64file;
     const baseParams = {
