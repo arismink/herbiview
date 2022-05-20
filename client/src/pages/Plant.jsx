@@ -15,7 +15,10 @@ import {
   CircularProgress
 } from "@mui/material";
 
+import Toxicity from "components/Toxicity";
+
 import "../styles/PlantDetails.scss";
+
 
 export default function Plant() {
   const [plant, setPlant] = useState(null);
@@ -26,9 +29,9 @@ export default function Plant() {
 
   useEffect(() => {
     getPlantData(params.plantId)
-      .then((res) => {
-        setPlant(res.data)
-      })
+    .then((res) => {
+      setPlant(res.data)
+    })
   }, [params.plantId])
 
 
@@ -64,26 +67,7 @@ export default function Plant() {
           Additional info: {plant.aspca_url}
         </Typography>
 
-        <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
-            Animal Toxicity
-          </Typography>
-          <Typography
-            variant="subtitle2"
-            margin={2}
-            sx={{ textAlign: "center", color: "text.secondary" }}
-          >
-            <i>Will it harm your cat, dog or horse?</i>
-          </Typography>
-
-          <Typography component={"span"}>
-            {plant.toxicities.map((obj, index) => {
-              return (
-                <Box key={index}>
-                  {obj.animal} and {String(obj.toxic)}
-                </Box>
-              );
-            })}
-          </Typography>
+        <Toxicity toxicities={plant.toxicities} />
 
         <Box mb={15} />
       </Container>
