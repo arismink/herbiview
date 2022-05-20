@@ -1,9 +1,11 @@
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CustomizedProgressBars from "components/ProbabilityBar";
 
-import { Accordion, AccordionDetails, AccordionSummary, Typography, Box, Container, Stack  } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Typography, Box, Container, Stack, Paper  } from "@mui/material";
 
 import "../styles/PlantDetails.scss"
+
+import Toxicity from "components/Toxicity";
 
 /*
 data = {
@@ -206,8 +208,14 @@ export default function ApiPlantDetails({data, toxicity}) {
         </Accordion>
 
         <Box mb={10} />
+        <Paper elevation={4}>
 
-        <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
+          <Toxicity toxicities={toxicity} />
+
+        </Paper>
+
+
+        {/* <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
           Animal Toxicity
         </Typography>
         <Typography
@@ -229,7 +237,7 @@ export default function ApiPlantDetails({data, toxicity}) {
                 </Box>
               );
             })}
-          </Typography>
+          </Typography> */}
 
       <Box mb={15} />
     </Container>
