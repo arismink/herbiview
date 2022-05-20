@@ -54,7 +54,10 @@
         "structured_name": {
           "genus": "monstera",
           "species": "deliciosa"
-        }
+        },
+        "edible_parts": [
+          "fruit"
+        ]
       },
       "probability": 0.9612380825417501,
       "confirmed": false,
