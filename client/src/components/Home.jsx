@@ -1,9 +1,19 @@
 import "../styles/Home.scss"
+import { Box } from "@mui/system";
 
+import { Typography } from "@mui/material";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faImage } from "@fortawesome/free-solid-svg-icons";
+
+import { useState } from "react";
 
 import Loading from "components/Loading";
 
 export default function Home({sendToPlantAPI, setFile}) {
+
+  const [show, setShow] = useState(false);
 
   return (
     <div className="home-container">
@@ -16,13 +26,19 @@ export default function Home({sendToPlantAPI, setFile}) {
 
 
         <div className="home-msg">
+          <Box mb={25} sx={{ display: { xs: 'none', sm: 'none', md: 'block', lg: 'block'}}} />
           <strong>Learn</strong> more about plants <br />by taking a <b>picture</b> of it.
 
         </div>
-        <Loading 
-          sendToPlantAPI={sendToPlantAPI} 
-          setFile={setFile} 
-        />
+
+        { show ? <Loading sendToPlantAPI={sendToPlantAPI} setFile={setFile}/> :
+          <Box onClick={() => setShow(true) }>
+            <Typography variant="body2" align="center">
+            <FontAwesomeIcon icon={faImage} size="3x" /> <br/><br/>
+              UPLOAD AN<br/> IMAGE</Typography>
+          </Box>
+          }
+
 
       </div>
 
