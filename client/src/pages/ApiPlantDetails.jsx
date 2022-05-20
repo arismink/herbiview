@@ -67,7 +67,7 @@ export default function ApiPlantDetails({data, toxicity}) {
       </Box>
 
       <Accordion
-      elevation={3}>
+      elevation={4}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
@@ -92,6 +92,7 @@ export default function ApiPlantDetails({data, toxicity}) {
           </a>
         </AccordionDetails>
       </Accordion>
+
       <Accordion
       elevation={4}>
         <AccordionSummary
