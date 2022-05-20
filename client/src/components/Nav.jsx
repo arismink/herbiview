@@ -69,12 +69,10 @@ export default function Nav() {
       onClose={handleMenuClose}>
 
       { user && (
-        <>
-          <Typography sx={{color: 'black', margin: "1em"}}>
+          <Typography component={'span'} sx={{color: 'black', marginX: "1em", marginTop: "0.5em"}}>
            <AccountCircle /> {user.name}
+           <StepConnector sx={{ paddingTop: 1}}/>
           </Typography>
-          <StepConnector/>
-        </>
       )}
 
       <MenuItem onClick={e => {
