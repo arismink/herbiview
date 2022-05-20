@@ -7,7 +7,7 @@ import { faHorse, faCat, faDog, faCircleExclamation } from "@fortawesome/free-so
 export default function Toxicity({ toxicities }) {
   console.log('dammit', toxicities);
 
-  if (toxicities.length > 0) {
+  if (toxicities.length > 0 && toxicities.includes("true")) {
     return (
       <Container>
         <Container align="center">
