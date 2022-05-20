@@ -157,7 +157,7 @@ export default function Nav() {
           </Box>
 
 
-          <Box sx={{ display: { xs: 'flex', md: 'flex' } }} paddingRight={3}>
+          <Box sx={{ display: { xs: 'flex', md: 'flex' } }} paddingRight={1}>
 
             { user && (
               <IconButton
