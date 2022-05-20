@@ -20,6 +20,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvira } from '@fortawesome/free-brands-svg-icons';
 
 import SearchBar from './Search';
+import { StepConnector } from '@mui/material';
 
 export default function Nav() {
   const { user, logoutHandler } = useContext(authContext);
@@ -68,10 +69,12 @@ export default function Nav() {
       onClose={handleMenuClose}>
 
       { user && (
-        <Typography sx={{color: 'black', marginX: 2}}>
-          {user.name}
-        </Typography>
-
+        <>
+          <Typography sx={{color: 'black', margin: "1em"}}>
+           <AccountCircle /> {user.name}
+          </Typography>
+          <StepConnector/>
+        </>
       )}
 
       <MenuItem onClick={e => {
@@ -138,6 +141,15 @@ export default function Nav() {
               <FontAwesomeIcon icon={faEnvira} /> HERBIVIEW
             </Typography>
 
+            <Typography
+              variant="logo1"
+              noWrap
+              component="div"
+              sx={{ display: { xs: 'block', sm: 'none', md: 'none', lg: 'none' }}}
+              style={{ fontSize: "2em"}}>
+              <FontAwesomeIcon icon={faEnvira} />
+            </Typography>
+
           </Link>
 
           <Box sx={{
@@ -147,7 +159,7 @@ export default function Nav() {
           </Box>
 
 
-          <Box sx={{ display: { xs: 'flex', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'flex' } }} paddingRight={3}>
 
             { user && (
               <IconButton
