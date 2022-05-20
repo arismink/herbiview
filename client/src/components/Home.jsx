@@ -1,7 +1,7 @@
 import "../styles/Home.scss"
 import { Box } from "@mui/system";
 
-import { Typography } from "@mui/material";
+import { Typography, StepConnector } from "@mui/material";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -29,10 +29,14 @@ export default function Home({sendToPlantAPI, setFile}) {
           <Box mb={25} sx={{ display: { xs: 'none', sm: 'none', md: 'block', lg: 'block'}}} />
           <strong>Learn</strong> more about plants <br />by taking a <b>picture</b> of it.
 
+
+
         </div>
 
         { show ? <Loading sendToPlantAPI={sendToPlantAPI} setFile={setFile}/> :
           <Box onClick={() => setShow(true) }>
+            <StepConnector/>
+            <br/>
             <Typography variant="body2" align="center">
             <FontAwesomeIcon icon={faImage} size="3x" /> <br/><br/>
               UPLOAD AN<br/> IMAGE</Typography>
