@@ -71,14 +71,14 @@ export default function Nav() {
       { user && (
           <Typography component={'span'} sx={{color: 'black', marginX: "1em", marginTop: "0.5em"}}>
            <AccountCircle /> {user.name}
-           <StepConnector sx={{ paddingTop: 1}}/>
           </Typography>
       )}
-
+      <StepConnector sx={{ paddingTop: 1}}/>
       <MenuItem onClick={e => {
           console.log("My Account clicked");
           handleMenuClose();
-        }}>My Account</MenuItem>
+        }}>
+          My Account</MenuItem>
       <MenuItem onClick={e => {
           navigate("/search-history");
           handleMenuClose();
