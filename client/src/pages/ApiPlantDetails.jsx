@@ -231,7 +231,8 @@ export default function ApiPlantDetails({ data, toxicity }) {
 
       <Box mb={10} />
       <Paper elevation={4}>
-        <Toxicity toxicities={toxicity} />
+
+        { toxicity && <Toxicity toxicities={toxicity} /> }
       </Paper>
 
       <Box mb={15} />
