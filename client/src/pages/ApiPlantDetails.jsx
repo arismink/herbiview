@@ -214,31 +214,6 @@ export default function ApiPlantDetails({data, toxicity}) {
 
         </Paper>
 
-
-        {/* <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
-          Animal Toxicity
-        </Typography>
-        <Typography
-          variant="subtitle2"
-          margin={2}
-          sx={{ textAlign: "center", color: "text.secondary" }}
-        >
-          <i>
-            Will it harm your cat, dog or horse?
-          </i>
-        </Typography>
-
-        <Typography component={"span"}>
-            {toxicity.map((obj, index) => {
-              return (
-                <Box
-                  key={index}>
-                  {obj.animal} and {String(obj.toxic)}
-                </Box>
-              );
-            })}
-          </Typography> */}
-
       <Box mb={15} />
     </Container>
   );
