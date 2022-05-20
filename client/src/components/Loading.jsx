@@ -30,9 +30,9 @@ export default function Loading({sendToPlantAPI, setFile}) {
         {errorMessage && <div className="error">{errorMessage}</div>}
         <form onSubmit={handleSubmit}>
           <input type="file" onChange={setFile} />
-          <Button 
-            variant="outlined" 
-            type="submit" 
+          <Button
+            variant="contained"
+            type="submit"
             disabled={isLoading}
           >Upload</Button>
         </form>
