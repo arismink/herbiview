@@ -11,9 +11,10 @@ export default function Toxicity({ toxicities }) {
     return (
       <Container>
 
-      <Typography paddingTop={5} variant="h4" margin={2} sx={{ textAlign: "center" }}>
-          Animal Toxicity
+        <Typography paddingTop={5} variant="h4" margin={2} sx={{ textAlign: "center" }}>
+            Animal Toxicity
         </Typography>
+
         <Typography
           variant="subtitle2"
           margin={2}
@@ -22,32 +23,27 @@ export default function Toxicity({ toxicities }) {
           <i>It may be dangerous to the animals<br/>displayed below if consumed: </i>
         </Typography>
 
-        <Typography variant="h1" sx={{ textAlign: "center" }}>
+        <Box sx={{ flexDirection: "row", padding: 3}}>
+          <Typography component={'span'} variant="h1" sx={{ textAlign: "center" }}>
 
-          <Box sx={{ flexDirection: "row", padding: 3}}>
 
-            {toxicities.map((obj) => {
+            {toxicities.map((obj, index) => {
 
               if (obj.animal === "horse" && obj.toxic === true) return (
-                <>
-                  <FontAwesomeIcon icon={faHorse} />
-                </>)
+                <FontAwesomeIcon icon={faHorse} key={index} />
+                )
 
               else if (obj.animal === "cat" && obj.toxic === true ) return (
-                <>
-                  <FontAwesomeIcon icon={faCat} />
+                <FontAwesomeIcon icon={faCat} key={index} />
 
-                </>)
+                )
 
               else if (obj.animal === "dog" && obj.toxic === true) return (
-              <>
-                <FontAwesomeIcon icon={faDog} />
-
-              </>)
-
+                <FontAwesomeIcon icon={faDog} key={index} />
+              )
             })}
-          </Box>
-        </Typography>
+          </Typography>
+        </Box>
 
         <Box mb={5} />
 
