@@ -1,9 +1,9 @@
 import "../styles/Home.scss"
 
-import { Button } from "@mui/material";
+
+import Loading from "components/Loading";
 
 export default function Home({sendToPlantAPI, setFile}) {
-
 
   return (
     <div className="home-container">
@@ -19,14 +19,10 @@ export default function Home({sendToPlantAPI, setFile}) {
           <strong>Learn</strong> more about plants <br />by taking a <b>picture</b> of it.
 
         </div>
-
-        <div>
-          <form onSubmit={sendToPlantAPI}>
-            <input type="file" onChange={setFile} />
-            <Button variant="outlined" type="submit">Upload</Button>
-          </form>
-
-        </div>
+        <Loading 
+          sendToPlantAPI={sendToPlantAPI} 
+          setFile={setFile} 
+        />
 
       </div>
 
