@@ -7,7 +7,6 @@
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 
   h2 {
-    padding-left: 1em;
     font-weight: $logo-weighting;
     font-family: $logo_font;
     letter-spacing: 0.15rem;
@@ -15,7 +14,7 @@
 }
 
 .navbar-link {
-  padding: 1.3em;
+  // padding: 1.3em;
   text-transform: uppercase;
 }
 
