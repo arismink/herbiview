@@ -30,19 +30,19 @@ export default function Toxicity({ toxicities }) {
 
               if (obj.animal === "horse") return (
                 <>
-                  <FontAwesomeIcon icon={faHorse} /> <FontAwesomeIcon icon={faCircleExclamation} size="xs" />
+                  <FontAwesomeIcon icon={faHorse} />
                 </>)
 
               else if (obj.animal === "cat") return (
                 <>
                   <FontAwesomeIcon icon={faCat} />
-                  <FontAwesomeIcon icon={faCircleExclamation} size="xs" />
+
                 </>)
 
               else if (obj.animal === "dog") return (
               <>
                 <FontAwesomeIcon icon={faDog} />
-                <FontAwesomeIcon icon={faCircleExclamation} size="xs" />
+
               </>)
 
             })}
