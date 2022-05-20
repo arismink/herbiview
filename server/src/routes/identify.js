@@ -7,17 +7,11 @@ const healthData = require("../helpers/healthData.js");
 
 module.exports = (db) => {
 
-  // router.get("/", (req, res) => {
-  //   const userCookie = req.cookies.credentials;
-  //   const parsedCookie = userCookie ? JSON.parse(userCookie) : undefined;
-  //   console.log("Checking cookie exists:", parsedCookie ? true : false);
-  // })
-
   router.post("/", async (req, res) => {
     /*
       MODIFY THIS VALUE TO USE LIVE API OR MOCK API
     */
-    const useMockData = true;
+    const useMockData = false;
 
     const base64file = req.body.base64file;
     const baseParams = {
