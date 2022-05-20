@@ -5,14 +5,12 @@ import { useEffect, useState } from "react";
 import usePlantData from 'hooks/plantData';
 
 import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
   Typography,
   Box,
   Container,
-  Stack,
-  CircularProgress
+  CircularProgress,
+  Paper,
+  StepConnector
 } from "@mui/material";
 
 import Toxicity from "components/Toxicity";
@@ -59,15 +57,22 @@ export default function Plant() {
           </Typography>
         </Container>
 
-        <Typography variant="h6" margin={2} sx={{ textAlign: "center" }}>
-          Family: {plant.family}
-        </Typography>
+        <Paper elevation={4}>
 
-        <Typography variant="h6" margin={2} sx={{ textAlign: "center" }}>
-          Additional info: {plant.aspca_url}
-        </Typography>
+          <Typography variant="h6" padding={2} margin={2}>
+            Family: {plant.family}
+          </Typography>
+          <StepConnector />
+          <Typography variant="subtitle2" padding={2} margin={2}>
+            <a href={plant.aspca_url}>Additional Info</a>
+          </Typography>
 
-        <Toxicity toxicities={plant.toxicities} />
+        </Paper>
+        <Box mb={5} />
+
+          <Toxicity toxicities={plant.toxicities} />
+
+
 
         <Box mb={15} />
       </Container>
