@@ -77,7 +77,7 @@ export default function UserSearchHistory() {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    <TableRow key={row.date}>
+                    <TableRow key={`${row.id}&&${row.user_id}`}>
                       {/* <TableCell align="center">
                         <div className="img-box">
                           <img 
@@ -133,7 +133,7 @@ export default function UserSearchHistory() {
             </TableHead>
             <TableBody>
               {queries.map((row) => (
-                <Row key={row.name} row={row} />
+                <Row key={row.id} row={row} />
               ))}
             </TableBody>
           </Table>
