@@ -63,4 +63,13 @@
     padding: 10em 0 0 0;
   }
 
+  .home-msg {
+    font-size: 2.5em;
+
+    strong {
+      font-family: $logo-font;
+      font-size: 1.5em;
+    }
+  }
+
 }

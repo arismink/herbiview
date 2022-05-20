@@ -4,6 +4,7 @@ const mockIdentifyData = require("../mockData/mockIdentifyData.json");
 const mockHeathData = require("../mockData/mockHealthData.json");
 const identifyData = require("../helpers/identifyData.js");
 const healthData = require("../helpers/healthData.js");
+const mockData2 = require("../mockData/mockData2.json");
 
 module.exports = (db) => {
 
@@ -31,6 +32,7 @@ module.exports = (db) => {
         "wiki_description",
         "taxonomy",
         "synonyms",
+        "edible_parts",
       ],
     };
 
@@ -56,6 +58,7 @@ module.exports = (db) => {
       res.send({
         ...identifyData(mockIdentifyData),
         ...healthData(mockHeathData)
+        // ...mockData2
       });
     } else {
       // Set up axios identify POST to plant.id
@@ -84,6 +87,7 @@ module.exports = (db) => {
           const parsedCookie = userCookie ? JSON.parse(userCookie) : undefined;
           // If no user logged in, get out
           if (!userCookie) {
+            console.log(resSend);
             return Promise.all([" ", resSend]);
           }
 
@@ -116,6 +120,7 @@ module.exports = (db) => {
         })
         .then(([ querySaveDB, resSend ]) => {
           // Send plant.id results to client to display in plant-detail
+          console.log('data response JSON:', JSON.stringify(resSend));
           res.send(resSend);
         })
         .catch(error => console.log("Error in /api/identify: ", error))

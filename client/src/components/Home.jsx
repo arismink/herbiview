@@ -27,7 +27,7 @@ export default function Home({sendToPlantAPI, setFile}) {
 
         <div className="home-msg">
           <Box mb={25} sx={{ display: { xs: 'none', sm: 'none', md: 'block', lg: 'block'}}} />
-          <strong>Learn</strong> more about plants <br />by taking a <b>picture</b> of it.
+          <strong>Learn</strong> more about plants by taking a <b>picture</b> of it.
 
 
 
