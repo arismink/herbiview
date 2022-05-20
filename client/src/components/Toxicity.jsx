@@ -19,7 +19,7 @@ export default function Toxicity({ toxicities }) {
           margin={2}
           sx={{ textAlign: "center", color: "text.secondary" }}
         >
-          <i>Will it harm your cat, dog or horse?</i>
+          <i>It may be dangerous to the animals<br/>displayed below if consumed: </i>
         </Typography>
 
         <Typography variant="h1" sx={{ textAlign: "center" }}>
@@ -28,18 +28,18 @@ export default function Toxicity({ toxicities }) {
 
             {toxicities.map((obj) => {
 
-              if (obj.animal === "horse") return (
+              if (obj.animal === "horse" && obj.toxic === true) return (
                 <>
                   <FontAwesomeIcon icon={faHorse} />
                 </>)
 
-              else if (obj.animal === "cat") return (
+              else if (obj.animal === "cat" && obj.toxic === true ) return (
                 <>
                   <FontAwesomeIcon icon={faCat} />
 
                 </>)
 
-              else if (obj.animal === "dog") return (
+              else if (obj.animal === "dog" && obj.toxic === true) return (
               <>
                 <FontAwesomeIcon icon={faDog} />
 
