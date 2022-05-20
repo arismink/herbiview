@@ -1,4 +1,6 @@
 import SearchIcon from '@mui/icons-material/Search';
+
+import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
@@ -65,7 +67,12 @@ export default function SearchBar() {
               key={option.id}
               onClick={() => handleOnClick(option.id)}>
 
-                {option.name} - <i>{option.sci_name}</i>
+                <Typography>
+                  {option.name} -
+                </Typography>
+
+                <Typography variant="subtitle2" sx={{ color: "text.secondary" }}> <i>{option.sci_name}</i></Typography>
+
 
 
             </li>
