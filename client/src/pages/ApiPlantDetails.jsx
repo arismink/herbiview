@@ -55,7 +55,7 @@ export default function ApiPlantDetails({ data, toxicity }) {
           margin={2}
           sx={{ textAlign: "center", color: "text.secondary" }}
         >
-          {data.common_names && data.common_names.join(", ")}
+          <i>{data.common_names && data.common_names.join(", ")}</i>
         </Typography>
       </Container>
 
@@ -66,7 +66,7 @@ export default function ApiPlantDetails({ data, toxicity }) {
         <Stack direction="row">
           <Container>
             {data.similar_images.map((img, index) => {
-              return <img src={img} alt={"image " + index}/>;
+              return <img src={img} alt={"image " + index} key={index}/>;
             })}
           </Container>
         </Stack>
