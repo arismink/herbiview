@@ -15,8 +15,6 @@ import {
   CircularProgress
 } from "@mui/material";
 
-import Toxicity from "components/Toxicity";
-
 import "../styles/PlantDetails.scss";
 
 export default function Plant() {
@@ -41,7 +39,7 @@ export default function Plant() {
         <Box mt={2} />
         <Container sx={{ textAlign: "center" }}>
           <div className="plant-img-container">
-            <img src={plant.aspca_url} alt={"plant_image"} />
+            <img src={plant.image_url} alt={"plant_image"} />
           </div>
 
           <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
@@ -63,7 +61,7 @@ export default function Plant() {
         </Typography>
 
         <Typography variant="h6" margin={2} sx={{ textAlign: "center" }}>
-          Additional info: {plant.image_url}
+          Additional info: {plant.aspca_url}
         </Typography>
 
         <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>

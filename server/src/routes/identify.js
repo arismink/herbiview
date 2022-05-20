@@ -7,7 +7,18 @@ const healthData = require("../helpers/healthData.js");
 
 module.exports = (db) => {
 
+  // router.get("/", (req, res) => {
+  //   const userCookie = req.cookies.credentials;
+  //   const parsedCookie = userCookie ? JSON.parse(userCookie) : undefined;
+  //   console.log("Checking cookie exists:", parsedCookie ? true : false);
+  // })
+
   router.post("/", async (req, res) => {
+    /*
+      MODIFY THIS VALUE TO USE LIVE API OR MOCK API
+    */
+    const useMockData = false;
+
     const base64file = req.body.base64file;
     const baseParams = {
       images: [base64file],
@@ -47,7 +58,6 @@ module.exports = (db) => {
       },
     };
 
-    const useMockData = false;
     if (useMockData) {
       res.send({
         ...identifyData(mockIdentifyData),
@@ -74,8 +84,16 @@ module.exports = (db) => {
             ...identifyData(identifyResponse.data),
             ...healthData(healthResponse.data),
           };
+
+          // Get cookie id, and do not INSERT into db if not logged in
+          const userCookie = req.cookies.credentials;
+          const parsedCookie = userCookie ? JSON.parse(userCookie) : undefined;
+          // If no user logged in, get out
+          if (!userCookie) {
+            return Promise.all([" ", resSend]);
+          }
+
           // Set up axios query POST to db, to find plant id
-          const userCookie = JSON.parse(req.cookies.credentials);
           const querySaveDB = db.query(`
             INSERT INTO user_search_history
             (user_id, plant_id, sci_name, description, info_url, user_img_url, common_names, date)
@@ -89,7 +107,7 @@ module.exports = (db) => {
               $2, $3, $4, $5, $6, $7
             ) RETURNING *
           ;`, [
-            userCookie.id,
+            parsedCookie.id,
             resSend.sci_name,
             resSend.description,
             resSend.info_url,
