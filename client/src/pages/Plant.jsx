@@ -64,7 +64,7 @@ export default function Plant() {
           </Typography>
 
           <Accordion
-            elevation={4}>
+            elevation={3}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1bh-content"
@@ -79,10 +79,18 @@ export default function Plant() {
               </AccordionSummary>
               <AccordionDetails>
 
-                <Typography variant="body1" padding={4}>
-                  Family: {plant.family} <br />
-                  Common names: {plant.common_names}
+                <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                  Family:
                 </Typography>
+                {plant.family} <br /><br />
+
+                <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                  Common names:
+
+                </Typography>
+
+                  {plant.common_names}<br /><br />
+                <StepConnector />
                 <br />
                 <Typography sx={{ color: "text.secondary" }}>
                   Additional Information:
