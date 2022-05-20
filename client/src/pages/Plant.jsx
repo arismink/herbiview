@@ -43,7 +43,9 @@ export default function Plant() {
             <img src={plant.image_url} alt={"plant_image"} />
           </div>
 
-          <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
+        </Container>
+        <Paper elevation={4}>
+          <Typography paddingTop={4} variant="h4" margin={2} sx={{ textAlign: "center" }}>
             {plant.name}
           </Typography>
           <Typography
@@ -55,26 +57,29 @@ export default function Plant() {
               {plant.sci_name}
             </i>
           </Typography>
-        </Container>
 
-        <Paper elevation={4}>
 
-          <Typography variant="h6" padding={2} margin={2}>
+          <Typography variant="body1" padding={4}>
             Family: {plant.family}
           </Typography>
-          <StepConnector />
-          <Typography variant="subtitle2" padding={2} margin={2}>
+          <Box marginX={4}>
+            <StepConnector />
+
+          </Box>
+          <Typography variant="body1" padding={4}>
             <a href={plant.aspca_url}>Additional Info</a>
           </Typography>
 
         </Paper>
         <Box mb={5} />
-
+        <Paper elevation={4}>
           <Toxicity toxicities={plant.toxicities} />
 
-
+        </Paper>
 
         <Box mb={15} />
+
+
       </Container>
     );
 
