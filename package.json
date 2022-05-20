@@ -1,0 +1,21 @@
+{
+  "name": "herbiview",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server/ && npm run go",
+    "build": "cd server/ && npm install && cd ../client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arismink/herbiview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arismink/herbiview/issues"
+  },
+  "homepage": "https://github.com/arismink/herbiview#readme"
+}
