@@ -4,7 +4,12 @@ import { useEffect, useState } from "react";
 
 import usePlantData from 'hooks/plantData';
 
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Typography,
   Box,
   Container,
@@ -44,7 +49,7 @@ export default function Plant() {
           </div>
 
         </Container>
-        <Paper elevation={4}>
+
           <Typography paddingTop={4} variant="h4" margin={2} sx={{ textAlign: "center" }}>
             {plant.name}
           </Typography>
@@ -58,19 +63,37 @@ export default function Plant() {
             </i>
           </Typography>
 
+          <Accordion
+            elevation={4}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
+              >
+                <Typography sx={{ width: "20%", flexShrink: 0 }}>
+                  Details
+                </Typography>
+                <Typography sx={{ color: "text.secondary" }}>
+                  Learn more about this plant
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
 
-          <Typography variant="body1" padding={4}>
-            Family: {plant.family}
-          </Typography>
-          <Box marginX={4}>
-            <StepConnector />
+                <Typography variant="body1" padding={4}>
+                  Family: {plant.family} <br />
+                  Common names: {plant.common_names}
+                </Typography>
+                <br />
+                <Typography sx={{ color: "text.secondary" }}>
+                  Additional Information:
+                  <br />
+                </Typography>
+                <a href={plant.aspca_url} target="_blank" rel="noopener noreferrer">
+                  {plant.aspca_url}}
+                </a>
+              </AccordionDetails>
+            </Accordion>
 
-          </Box>
-          <Typography variant="body1" padding={4}>
-            <a href={plant.aspca_url}>Additional Info</a>
-          </Typography>
-
-        </Paper>
         <Box mb={5} />
         <Paper elevation={4}>
           <Toxicity toxicities={plant.toxicities} />
