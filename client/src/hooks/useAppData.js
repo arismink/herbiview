@@ -26,7 +26,7 @@ export default function useAppData() {
 
   const sendToPlantAPI = (e) => {
     e.preventDefault();
-    convertImageToBase64(state.file).then((base64file) => {
+    return convertImageToBase64(state.file).then((base64file) => {
       axios
         .post("api/identify", { base64file })
         .then((res) => {
