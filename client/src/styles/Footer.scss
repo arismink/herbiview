@@ -2,8 +2,8 @@
 
 .main-footer{
   display: flex;
-  justify-content: space-between;
-  padding: 0em 1.5em 1em 1.5em;
+  // justify-content: space-between;
+  padding: 0em 1.5em 2em 1.5em;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -14,7 +14,23 @@
     font-family: $logo-font;
     font-size: 0.9em;
     letter-spacing: 0.1em;
+    width: 200px;
   }
+}
+
+.logo-footer {
+  padding-top: 0.5em;
+  width: 10%;
+  padding-right: 2em;
+}
+
+.footer-body {
+  display: flex;
+  width: 90%;
+  padding-top: 1em;
+  justify-content: space-around;
+  font-size: 0.9em;
+
 }
 
 /* Mobile and smaller devices only styles */
@@ -24,6 +40,7 @@
       font-size: 1em;
       font-family: $logo_font;
       letter-spacing: 0.1em;
+      width: 100px;
     }
   }
 }
