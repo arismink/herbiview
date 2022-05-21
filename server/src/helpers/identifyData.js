@@ -10,7 +10,7 @@ const identifyData = (data) => {
     plant_name: data.suggestions[0].plant_name,
     common_names: data.suggestions[0].plant_details.common_names,
     info_url: data.suggestions[0].plant_details.url,
-    description: data.suggestions[0].plant_details.wiki_description.value,
+    description: data.suggestions[0].plant_details.wiki_description ? data.suggestions[0].plant_details.wiki_description.value : undefined,
     sci_name: data.suggestions[0].plant_details.scientific_name,
     date: data.meta_data.date,
     suggestions: suggestions(data.suggestions),
