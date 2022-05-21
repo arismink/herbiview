@@ -97,7 +97,7 @@ export default function Plant() {
                   <br />
                 </Typography>
                 <a href={plant.aspca_url} target="_blank" rel="noopener noreferrer">
-                  {plant.aspca_url}}
+                  {plant.aspca_url}
                 </a>
               </AccordionDetails>
             </Accordion>
