@@ -32,7 +32,7 @@ export default function UserSearchHistory() {
   function Row(props) {
     const { row } = props;
     const [open, setOpen] = useState(false);
-  
+
     return (
       <Fragment>
         <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
@@ -80,20 +80,20 @@ export default function UserSearchHistory() {
                     <TableRow key={`${row.id}&&${row.user_id}`}>
                       {/* <TableCell align="center">
                         <div className="img-box">
-                          <img 
-                            src={row.image_url} 
-                            alt={`ASPCA pic: ${row.name}`}   
-                            style={{'maxWidth': '100%', 'maxHeight': '100%'}} 
+                          <img
+                            src={row.image_url}
+                            alt={`ASPCA pic: ${row.name}`}
+                            style={{'maxWidth': '100%', 'maxHeight': '100%'}}
                             loading="lazy"
                           />
                         </div>
                       </TableCell> */}
                       <TableCell align="center">
                         <div className="img-box">
-                          <img 
-                            src={row.user_img_url} 
-                            alt={`User uploaded: ${row.name}`}  
-                            style={{'maxWidth': '100%', 'maxHeight': '100%'}} 
+                          <img
+                            src={row.user_img_url}
+                            alt={`User uploaded: ${row.name}`}
+                            style={{'maxWidth': '100%', 'maxHeight': '100%'}}
                             loading="lazy"
                           />
                         </div>
@@ -119,15 +119,15 @@ export default function UserSearchHistory() {
     return (
       <Container>
         <div>
-          <Typography variant="h4" margin={6}>Search History for {user && user.name}</Typography>
+          <Typography variant="h4" paddingTop={8} paddingBottom={4}>Search History for {user && user.name}</Typography>
         </div>
         <TableContainer component={Paper}>
           <Table aria-label="Search History" stickyHeader>
             <TableHead>
               <TableRow>
                 <TableCell />
-                <TableCell align="center">Name</TableCell>
-                <TableCell align="center">Scientific Name</TableCell>
+                <TableCell >Name</TableCell>
+                <TableCell >Scientific Name</TableCell>
                 <TableCell align="center">Link to Info</TableCell>
               </TableRow>
             </TableHead>

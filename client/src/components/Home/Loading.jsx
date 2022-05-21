@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from "@mui/material";
 
-import "../styles/Loading.scss";
+import "../../styles/Loading.scss";
 
 export default function Loading({sendToPlantAPI, setFile}) {
   const [ isLoading, setIsLoading ] = useState(false);

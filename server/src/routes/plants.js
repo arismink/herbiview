@@ -21,7 +21,7 @@ module.exports = (db) => {
     );
 
     const toxicityQuery = db.query(
-      `SELECT animal, toxic
+      `SELECT animal, toxic, clinical_signs
       FROM toxicity
       WHERE plant_id = $1
       LIMIT 3;`,
