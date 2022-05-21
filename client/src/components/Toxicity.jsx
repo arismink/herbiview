@@ -6,7 +6,6 @@ import { faHorse, faCat, faDog } from "@fortawesome/free-solid-svg-icons"
 
 
 export default function Toxicity({ toxicities }) {
-  console.log('dammit', toxicities);
 
   if (toxicities.filter(e => e.toxic === true).length > 0) {
     return (
