@@ -7,9 +7,10 @@
   "author": "garrettgsb",
   "license": "MIT",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "node ./src/server.js",
     "go": "nodemon -L server.js",
-    "publish-heroku": "cd ../ && git subtree push --prefix server herbiview-api main || true"
+    "publish-heroku": "cd ../ && git subtree push --prefix server herbiview-api main || true",
+    "postinstall": "npm install"
   },
   "dependencies": {
     "axios": "^0.27.2",
