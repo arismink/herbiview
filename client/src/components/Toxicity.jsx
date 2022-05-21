@@ -2,12 +2,12 @@ import { Container, Box, Typography, StepConnector } from "@mui/material";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faHorse, faCat, faDog, faCircleExclamation } from "@fortawesome/free-solid-svg-icons"
+import { faHorse, faCat, faDog } from "@fortawesome/free-solid-svg-icons"
 
 export default function Toxicity({ toxicities }) {
   console.log('dammit', toxicities);
 
-  if (toxicities.length > 0 && toxicities.includes("true")) {
+  if (toxicities.length > 0 || toxicities.includes(true)) {
     return (
       <Container>
         <Container align="center">
