@@ -36,5 +36,6 @@ CREATE TABLE toxicity (
   id SERIAL PRIMARY KEY NOT NULL,
   plant_id INTEGER REFERENCES plants(id) ON DELETE CASCADE,
   animal VARCHAR(255) NOT NULL,
-  toxic BOOLEAN NOT NULL
+  toxic BOOLEAN NOT NULL,
+  clinical_signs TEXT NOT NULL
 );
