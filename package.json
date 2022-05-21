@@ -7,7 +7,12 @@
     "node": "12.x"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "(cd server && npm start);",
+    "build:server": "cd server && npm install",
+    "build:client": "cd client && npm install && npm run build",
+    "build": "npm run build:server && npm run build:client",
+    "deploy": "cp -a client/build/. public",
+    "heroku-postbuild": "npm run build && npm run deploy"
   },
   "repository": {
     "type": "git",
