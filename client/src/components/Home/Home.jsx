@@ -1,4 +1,4 @@
-import "../styles/Home.scss"
+import "../../styles/Home.scss"
 import { Box } from "@mui/system";
 
 import { Typography, StepConnector } from "@mui/material";
@@ -9,7 +9,7 @@ import { faImage } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 
-import Loading from "components/Loading";
+import Loading from "components/Home/Loading";
 
 export default function Home({sendToPlantAPI, setFile}) {
 

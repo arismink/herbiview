@@ -8,7 +8,7 @@ import { authContext } from 'providers/AuthProvider';
 
 import Nav from "components/Nav";
 import Footer from "components/Footer";
-import Home from "components/Home";
+import Home from "components/Home/Home";
 import Login from "pages/Login";
 import Register from "pages/Register";
 import UserSearchHistory from "pages/UserSearchHistory";
