@@ -5,7 +5,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "scripts": {
-    "start": "cd server/ && npm install && npm run go",
+    "start": "node --optimize_for_size --max_old_space_size=460 cd server/ && npm install && npm run go",
     "build": "cd client/ && npm install && npm run build && cd .."
   },
   "repository": {
