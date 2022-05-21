@@ -78,7 +78,7 @@ export default function ApiPlantDetails({ data, toxicity }) {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+          <Typography sx={{ width: "38%", flexShrink: 0 }}>
             Probability
           </Typography>
           <Typography sx={{ color: "text.secondary" }}>
@@ -106,7 +106,7 @@ export default function ApiPlantDetails({ data, toxicity }) {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+          <Typography sx={{ width: "38%", flexShrink: 0 }}>
             Description
           </Typography>
           <Typography sx={{ color: "text.secondary" }}>
@@ -132,7 +132,7 @@ export default function ApiPlantDetails({ data, toxicity }) {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>Edible</Typography>
+          <Typography sx={{ width: "38%", flexShrink: 0 }}>Edible</Typography>
           <Typography sx={{ color: "text.secondary" }}>
             Is it safe to eat?
           </Typography>
