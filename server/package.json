@@ -9,7 +9,7 @@
   "scripts": {
     "go": "nodemon -L server.js",
     "build:ui": "cd ../client && npm install && npm run build",
-    "start": "node index.js"
+    "start": "npm run start"
   },
   "dependencies": {
     "axios": "^0.27.2",
