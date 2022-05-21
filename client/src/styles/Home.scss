@@ -52,7 +52,7 @@
   .hero-container {
 
     img {
-      height: 20vh;
+      height: 40vh;
       width: 100%;
       object-fit: cover;
       // object-position: 10vw
@@ -60,7 +60,7 @@
   }
 
   .home-body {
-    padding: 10em 0 0 0;
+    padding: 4em 0 0 0;
   }
 
   .home-msg {
@@ -70,6 +70,13 @@
       font-family: $logo-font;
       font-size: 1.5em;
     }
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+  input {
+    width: 200px
   }
 
 }
