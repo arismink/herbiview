@@ -1,5 +1,6 @@
 {
   "name": "express-back-end",
+  "engines": {"node": "12.x"},
   "version": "1.0.0",
   "description": "Boilerplate for the Express backend in an Express-React project",
   "main": "src/server.js",
