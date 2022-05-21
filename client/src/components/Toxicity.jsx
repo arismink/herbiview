@@ -52,7 +52,9 @@ export default function Toxicity({ toxicities }) {
         </Container>
       <Container>
         <StepConnector />
-          <Typography variant="body1" paddingY={4}>
+          <Typography variant="body1" paddingTop={3} sx={{ color: "text.secondary" }}>
+            Clinical signs: </Typography>
+          <Typography variant="body1" paddingBottom={4}>
 
             { toxicities[0].clinical_signs }
 
