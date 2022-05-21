@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const Express = require("express");
+const path = require("path");
 const App = Express();
 const PORT = process.env.PORT || 8080;
 
@@ -25,7 +26,7 @@ App.use(cookieParser());
 App.use(BodyParser.urlencoded({ extended: false }));
 App.use(BodyParser.json({ limit: "50mb" }));
 App.use(cors());
-App.use(Express.static("public"));
+App.use(Express.static("build"));
 
 // Routes
 const identifyRoutes = require("./routes/identify");
@@ -42,6 +43,13 @@ App.use("/api/users", usersRoutes(db));
 App.use("/api/userHistory", userHistory(db));
 App.use("/api/toxicity", toxicityRoutes(db));
 App.use("/api/search", search(db));
+
+// Instruct Express to serve React
+App.use(Express.static(path.join(__dirname, 'build')));
+
+// App.get('/*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// });
 
 App.listen(PORT, () => {
   // eslint-disable-next-line no-console
