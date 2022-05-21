@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faHorse, faCat, faDog } from "@fortawesome/free-solid-svg-icons"
 
+
 export default function Toxicity({ toxicities }) {
   console.log('dammit', toxicities);
 
-  if (toxicities.length > 0 || toxicities.includes(true)) {
+  if (toxicities.filter(e => e.toxic === true).length > 0) {
     return (
       <Container>
         <Container align="center">
@@ -53,7 +54,7 @@ export default function Toxicity({ toxicities }) {
         <StepConnector />
           <Typography variant="body1" paddingY={4}>
 
-            Fluff about its clinical_signs will be here
+            { toxicities[0].clinical_signs }
 
           </Typography>
 
