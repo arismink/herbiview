@@ -63,10 +63,13 @@ a:active {
   z-index: 20;
 }
 .icon-style{
+  text-align: center;
+  line-height: 80px;
+  font-size: 25px;
   background-color: $black;
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   color: #fff;
   cursor: pointer;
   animation: movebtn 3s ease-in-out infinite;
@@ -77,6 +80,8 @@ a:active {
   background: #fff;
   color: $black;
 }
+
+
 @keyframes movebtn {
   0%{
     transform: translateY(0px);
@@ -84,9 +89,9 @@ a:active {
   25%{
     transform: translateY(20px);
   }
-  50%{
-    transform: translateY(0px);
-  }
+  // 50%{
+  //   transform: translateY(0px);
+  // }
   75%{
     transform: translateY(-20px);
   }
