@@ -52,6 +52,7 @@ export default function Login() {
       sx={{mt: 5,
       textAlign: "center"}}
       maxWidth="md">
+      <Box mb={18}/>
 
       <AccountCircleIcon style={{ fontSize: 100, color: 'grey' }}/>
       <Typography variant="h4" margin={2}>Login</Typography>
