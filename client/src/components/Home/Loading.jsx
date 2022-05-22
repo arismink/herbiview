@@ -40,7 +40,7 @@ export default function Loading({sendToPlantAPI, setFile}) {
            className="button"
             type="submit"
             disabled={isLoading}
-          >Upload</button>
+          ><span>Upload</span><span>image </span></button>
         </form>
       </div>
   );
