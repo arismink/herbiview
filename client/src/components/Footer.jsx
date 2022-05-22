@@ -37,7 +37,7 @@ export default function Footer() {
           <Typography variant="body2">
             Follow Us: <br/>
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="h6">
             <FontAwesomeIcon icon={faInstagram} /> <FontAwesomeIcon icon={faFacebookSquare} /> <FontAwesomeIcon icon={faLinkedin} />
           </Typography>
         </div>
