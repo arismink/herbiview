@@ -53,6 +53,8 @@ App.listen(PORT, () => {
 
 // eslint-disable-next-line no-console
   console.log(
-    `Express seems to be listening on port ${PORT} so that's pretty good 👍`
-);
+    `Express seems to be listening on port ${PORT} so that's pretty good 👍`);
+
+  console.log('db url', process.env.DATABASE_URL);
+
 });
