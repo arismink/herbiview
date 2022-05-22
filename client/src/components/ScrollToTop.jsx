@@ -17,7 +17,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 50) {
             setShowTopBtn(true);
         } else {
             setShowTopBtn(false);
@@ -29,9 +29,14 @@ const ScrollToTop = () => {
         <div className="top-to-btm">
           {" "}
             {showTopBtn && (
-              <FontAwesomeIcon icon={faAnglesUp} className="icon-position icon-style"
+              <div className="icon-position icon-style"
               onClick={goToTop}
-              />
+              >
+
+                <FontAwesomeIcon icon={faAnglesUp}
+                />
+
+              </div>
             )}
 
           {" "}
