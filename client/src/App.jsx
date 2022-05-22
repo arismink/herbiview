@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import useAppData from "hooks/useAppData";
 
+// import ScrollToTop from "react-scroll-to-top";
+
 import Container from "@mui/material/Container";
 
 import { useContext } from 'react';
@@ -14,6 +16,7 @@ import Register from "pages/Register";
 import UserSearchHistory from "pages/UserSearchHistory";
 import ApiPlantDetails from "pages/ApiPlantDetails";
 import Plant from "pages/Plant";
+import ScrollToTop from "components/ScrollToTop";
 
 function App() {
   // use auth context given by providers/AuthProvider.js
@@ -24,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <ScrollToTop />
       <Container
       // sx={{marginTop: 20}}
       >
