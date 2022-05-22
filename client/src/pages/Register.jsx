@@ -39,7 +39,7 @@ export default function Register() {
       sx={{mt: 5,
         textAlign: "center"}}
       maxWidth="md">
-
+      <Box mb={18}/>
       <PersonAddAltIcon style={{ fontSize: 100, color: 'grey' }}/>
         <Typography variant="h4" margin={2}>Register</Typography>
 
