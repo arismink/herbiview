@@ -5,9 +5,6 @@ import useAppData from "hooks/useAppData";
 
 import Container from "@mui/material/Container";
 
-import { useContext } from 'react';
-import { authContext } from 'providers/AuthProvider';
-
 import Nav from "components/Nav";
 import Footer from "components/Footer";
 import Home from "components/Home/Home";
@@ -19,8 +16,6 @@ import Plant from "pages/Plant";
 import ScrollToTop from "components/ScrollToTop";
 
 function App() {
-  // use auth context given by providers/AuthProvider.js
-  const { auth, user } = useContext(authContext);
 
   const { state, setFile, sendToPlantAPI } = useAppData();
 
