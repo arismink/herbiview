@@ -9,6 +9,7 @@
   "author": "garrettgsb",
   "license": "MIT",
   "scripts": {
+    "start": "node ./src/server.js",
     "go": "nodemon -L server.js",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down"
