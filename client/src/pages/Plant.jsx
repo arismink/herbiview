@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 import usePlantData from 'hooks/plantData';
 
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import {
   Accordion,
   AccordionDetails,
@@ -11,13 +13,15 @@ import {
   Typography,
   Box,
   Container,
-  Stack,
-  CircularProgress
+  CircularProgress,
+  Paper,
+  StepConnector
 } from "@mui/material";
 
 import Toxicity from "components/Toxicity";
 
 import "../styles/PlantDetails.scss";
+
 
 export default function Plant() {
   const [plant, setPlant] = useState(null);
@@ -28,9 +32,9 @@ export default function Plant() {
 
   useEffect(() => {
     getPlantData(params.plantId)
-      .then((res) => {
-        setPlant(res.data)
-      })
+    .then((res) => {
+      setPlant(res.data)
+    })
   }, [params.plantId])
 
 
@@ -41,10 +45,12 @@ export default function Plant() {
         <Box mt={2} />
         <Container sx={{ textAlign: "center" }}>
           <div className="plant-img-container">
-            <img src={plant.aspca_url} alt={"plant_image"} />
+            <img src={plant.image_url} alt={"plant_image"} />
           </div>
 
-          <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
+        </Container>
+
+          <Typography paddingTop={4} variant="h4" margin={2} sx={{ textAlign: "center" }}>
             {plant.name}
           </Typography>
           <Typography
@@ -56,38 +62,55 @@ export default function Plant() {
               {plant.sci_name}
             </i>
           </Typography>
-        </Container>
 
-        <Typography variant="h6" margin={2} sx={{ textAlign: "center" }}>
-          Family: {plant.family}
-        </Typography>
+          <Accordion
+            elevation={3}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
+              >
+                <Typography sx={{ width: "33%", flexShrink: 0 }}>
+                  Details
+                </Typography>
+                <Typography sx={{ color: "text.secondary" }}>
+                  Learn more about this plant
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
 
-        <Typography variant="h6" margin={2} sx={{ textAlign: "center" }}>
-          Additional info: {plant.image_url}
-        </Typography>
+                <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                  Family:
+                </Typography>
+                {plant.family} <br /><br />
 
-        <Typography variant="h4" margin={2} sx={{ textAlign: "center" }}>
-            Animal Toxicity
-          </Typography>
-          <Typography
-            variant="subtitle2"
-            margin={2}
-            sx={{ textAlign: "center", color: "text.secondary" }}
-          >
-            <i>Will it harm your cat, dog or horse?</i>
-          </Typography>
+                <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                  Common names:
 
-          <Typography component={"span"}>
-            {plant.toxicities.map((obj, index) => {
-              return (
-                <Box key={index}>
-                  {obj.animal} and {String(obj.toxic)}
-                </Box>
-              );
-            })}
-          </Typography>
+                </Typography>
+
+                  {plant.common_names}<br /><br />
+                <StepConnector />
+                <br />
+                <Typography sx={{ color: "text.secondary" }}>
+                  Additional Information:
+                  <br />
+                </Typography>
+                <a href={plant.aspca_url} target="_blank" rel="noopener noreferrer">
+                  {plant.aspca_url}
+                </a>
+              </AccordionDetails>
+            </Accordion>
+
+        <Box mb={5} />
+        <Paper elevation={4}>
+          <Toxicity toxicities={plant.toxicities} />
+
+        </Paper>
 
         <Box mb={15} />
+
+
       </Container>
     );
 

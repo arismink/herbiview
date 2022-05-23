@@ -1,4 +1,6 @@
 import SearchIcon from '@mui/icons-material/Search';
+
+import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
@@ -6,7 +8,7 @@ import { useState, useEffect } from 'react';
 import usePlantData from 'hooks/plantData';
 
 import * as React from 'react';
-import {TextField, Stack, Autocomplete } from '@mui/material';
+import { TextField, Stack, Autocomplete } from '@mui/material';
 
 export default function SearchBar() {
   const navigate = useNavigate();
@@ -24,7 +26,7 @@ export default function SearchBar() {
   const [inputValue, setInputValue] = useState("");
   const [open, setOpen] = useState(false);
 
-  const handleOnClick = (plant_id) => {
+  const handleOnSubmit = (plant_id) => {
     navigate(`/plants/${plant_id}`);
     setOpen(false);
     setInputValue("");
@@ -63,9 +65,14 @@ export default function SearchBar() {
             <li
               {...props}
               key={option.id}
-              onClick={() => handleOnClick(option.id)}>
+              onClick={() => handleOnSubmit(option.id)}>
 
-                {option.name} - <i>{option.sci_name}</i>
+                <Typography>
+                  {option.name} -
+                </Typography>
+
+                <Typography variant="subtitle2" sx={{ color: "text.secondary" }}> <i>{option.sci_name}</i></Typography>
+
 
 
             </li>

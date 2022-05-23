@@ -2,7 +2,7 @@
 
 .main-footer{
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding: 0em 1.5em 1em 1.5em;
   position: fixed;
   left: 0;
@@ -14,16 +14,35 @@
     font-family: $logo-font;
     font-size: 0.9em;
     letter-spacing: 0.1em;
+    width: 200px;
   }
+}
+
+.logo-footer {
+  padding-top: 0.8em;
+  width: 10%;
+  padding-right: 2em;
+  line-height: 2px;
+}
+
+.footer-body {
+  padding-left: 1em;
+  display: flex;
+  width: 90%;
+  padding-top: 1.6em;
+  justify-content: space-around;
+  font-size: 0.9em;
+
 }
 
 /* Mobile and smaller devices only styles */
 @media only screen and (max-width: 700px) {
   .main-footer{
     h3 {
-      font-size: 0.7em;
+      font-size: 1em;
       font-family: $logo_font;
       letter-spacing: 0.1em;
+      width: 100px;
     }
   }
 }

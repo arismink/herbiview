@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { authContext } from 'providers/AuthProvider';
 
 import { Link, useNavigate } from "react-router-dom";
@@ -11,10 +11,14 @@ import { Container, Button, Typography } from "@mui/material";
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
+import "../styles/Login.scss";
 
 export default function Login() {
   // use auth context given by providers/AuthProvider.js
   const { loginHandler } = useContext(authContext);
+
+  // set up error message state
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -27,9 +31,11 @@ export default function Login() {
     .then((res) => {
       if (res) {
         console.log("email and password verified");
+        setError("");
         navigate("/");
       } else {
-        console.log("email and password could not be verified.")
+        console.log("email and password could not be verified.");
+        setError("Email and password combination could not be verified.");
       }
     })
     .catch(err => {
@@ -37,13 +43,16 @@ export default function Login() {
     })
   };
 
-  const onErrors = errors => console.error(errors);
+  const onErrors = errors => {
+    console.error(errors);
+  };
 
   return (
     <Container
       sx={{mt: 5,
       textAlign: "center"}}
       maxWidth="md">
+      <Box mb={18}/>
 
       <AccountCircleIcon style={{ fontSize: 100, color: 'grey' }}/>
       <Typography variant="h4" margin={2}>Login</Typography>
@@ -55,9 +64,7 @@ export default function Login() {
           alignItems: "center",
         }}
         noValidate
-
-        >
-
+      >
         <form
           autoComplete="off"
           onSubmit={handleSubmit(handleLogin, onErrors)}>
@@ -80,7 +87,6 @@ export default function Login() {
               })}
               autoFocus
             />
-
             <TextField
               required
               id="outlined-password-input"
@@ -91,7 +97,6 @@ export default function Login() {
               sx={{mb: 2}}
               {...register('password', { required: true })}
             />
-
           </Box>
 
           <Button
@@ -102,10 +107,11 @@ export default function Login() {
 
         </form>
 
+        {error && <div className="error">{error}</div>}
+
         <Link to="/register">Don't have an account? Register here</Link>
 
-
-       </Container>
+      </Container>
 
     </Container>
   );

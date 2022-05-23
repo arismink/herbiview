@@ -4,10 +4,16 @@ const mockIdentifyData = require("../mockData/mockIdentifyData.json");
 const mockHeathData = require("../mockData/mockHealthData.json");
 const identifyData = require("../helpers/identifyData.js");
 const healthData = require("../helpers/healthData.js");
+const mockData2 = require("../mockData/mockData2.json");
 
 module.exports = (db) => {
 
   router.post("/", async (req, res) => {
+    /*
+      MODIFY THIS VALUE TO USE LIVE API OR MOCK API
+    */
+    const useMockData = true;
+
     const base64file = req.body.base64file;
     const baseParams = {
       images: [base64file],
@@ -26,6 +32,7 @@ module.exports = (db) => {
         "wiki_description",
         "taxonomy",
         "synonyms",
+        "edible_parts",
       ],
     };
 
@@ -47,11 +54,11 @@ module.exports = (db) => {
       },
     };
 
-    const useMockData = false;
     if (useMockData) {
       res.send({
         ...identifyData(mockIdentifyData),
         ...healthData(mockHeathData)
+        // ...mockData2
       });
     } else {
       // Set up axios identify POST to plant.id
@@ -74,29 +81,38 @@ module.exports = (db) => {
             ...identifyData(identifyResponse.data),
             ...healthData(healthResponse.data),
           };
+
+          // Get cookie id, and do not INSERT into db if not logged in
+          const userCookie = req.cookies.credentials;
+          const parsedCookie = userCookie ? JSON.parse(userCookie) : undefined;
+          // If no user logged in, get out
+          if (!userCookie) {
+            console.log(resSend);
+            return Promise.all([" ", resSend]);
+          }
+
           // Set up axios query POST to db, to find plant id
-          const userCookie = JSON.parse(req.cookies.credentials);
           const querySaveDB = db.query(`
             INSERT INTO user_search_history
-            (user_id, plant_id, sci_name, description, info_url, user_img_url, common_names, date) 
+            (user_id, plant_id, sci_name, description, info_url, user_img_url, common_names, date)
             VALUES (
               $1,
-              (SELECT id FROM plants 
-                WHERE LOWER(name) LIKE $8 OR 
-                  LOWER(sci_name) LIKE $9 OR 
+              (SELECT id FROM plants
+                WHERE LOWER(name) LIKE $8 OR
+                  LOWER(sci_name) LIKE $9 OR
                   LOWER(common_names) LIKE $8
-                LIMIT 1), 
+                LIMIT 1),
               $2, $3, $4, $5, $6, $7
             ) RETURNING *
           ;`, [
-            userCookie.id, 
-            resSend.sci_name, 
-            resSend.description, 
-            resSend.info_url, 
-            resSend.image_url, 
-            resSend.common_names, 
+            parsedCookie.id,
+            resSend.sci_name,
+            resSend.description,
+            resSend.info_url,
+            resSend.image_url,
+            resSend.common_names,
             resSend.date,
-            `%${resSend.plant_name.toLowerCase()}%`, 
+            `%${resSend.plant_name.toLowerCase()}%`,
             `%${resSend.sci_name.toLowerCase()}%`
           ]);
           // Pass both the db insert and the values to send back to client
@@ -104,6 +120,7 @@ module.exports = (db) => {
         })
         .then(([ querySaveDB, resSend ]) => {
           // Send plant.id results to client to display in plant-detail
+          console.log('data response JSON:', JSON.stringify(resSend));
           res.send(resSend);
         })
         .catch(error => console.log("Error in /api/identify: ", error))

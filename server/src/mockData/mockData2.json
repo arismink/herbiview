@@ -1,0 +1,45 @@
+{
+  "image_url": "https://plant.id/media/images/46d50b5a9330407fb12020f35928ee94.jpg",
+  "plant_name": "Rhododendron",
+  "common_names": null,
+  "info_url": "https://en.wikipedia.org/wiki/Rhododendron",
+  "description": "Rhododendron (from Ancient Greek ῥόδον rhódon \"rose\" and δένδρον déndron \"tree\") is a genus of 1,024 species of woody plants in the heath family (Ericaceae), either evergreen or deciduous, and found mainly in Asia, although it is also widespread throughout lowland and montane forests in the Pacific Northwest, California, the Northeastern United States, and especially in the highlands of the Appalachian Mountains of North America. It is the national flower of Nepal, the state flower of Washington and West Virginia in the United States, the provincial flower of Jiangxi in China and the state tree of Sikkim and Uttarakhand in India. Most species have brightly colored flowers which bloom from late winter through to early summer.\nAzaleas make up two subgenera of Rhododendron. They are distinguished from \"true\" rhododendrons by having only five anthers per flower.",
+  "sci_name": "Rhododendron",
+  "date": "2022-05-20",
+  "suggestions": [
+    {
+      "key": 0,
+      "plant_name": "Rhododendron",
+      "probability": 91
+    },
+    {
+      "key": 1,
+      "plant_name": "Rhododendron ferrugineum",
+      "probability": 2
+    },
+    {
+      "key": 2,
+      "plant_name": "Rhododendron indicum",
+      "probability": 1
+    }
+  ],
+  "similar_images": [
+    "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/fdb/2af3ef6151551b3b18c6a298e2b60.small.jpg",
+    "https://plant-id.ams3.cdn.digitaloceanspaces.com/similar_images/images/828/aac7540f5603e26cd30504601a4db.small.jpg"
+  ],
+  "edible": null,
+  "healthy": true,
+  "healthy_probability": 100,
+  "disease_name": "Fungi",
+  "disease_probability": 1,
+  "disease_info_url": "https://en.wikipedia.org/wiki/Fungus",
+  "disease_prevention": [
+    "Use resistant species and cultivars as well as healthy, certified seeds and seedlings.",
+    "Avoid overwatering. Ensure having good soil drainage.",
+    "Improve the air circulation around the plant.",
+    "Avoid prolonged wetting of the leaves - avoid overhead irrigation.",
+    "Rotate crops. Avoid planting sensitive crops in infested soil.",
+    "Disinfect tools and hands to avoid disease transmission."
+  ],
+  "disease_description": "Fungi take energy from the plants on which they live, causing damage to the plant. Fungal infections are responsible for approximately two-thirds of infectious plant diseases and cause wilting, molding, rusts, scabs, rotted tissue, and other problems."
+}

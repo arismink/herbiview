@@ -9,6 +9,8 @@ import { Box, Collapse, IconButton } from "@mui/material";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 
+import "../styles/UserSearchHistory.scss"
+
 export default function UserSearchHistory() {
   // use auth context given by providers/AuthProvider.js
   const { user } = useContext(authContext);
@@ -30,7 +32,7 @@ export default function UserSearchHistory() {
   function Row(props) {
     const { row } = props;
     const [open, setOpen] = useState(false);
-  
+
     return (
       <Fragment>
         <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
@@ -69,29 +71,29 @@ export default function UserSearchHistory() {
                 <Table size="small" aria-label="more-data">
                   <TableHead>
                     <TableRow>
-                      <TableCell align="center">ASPCA Image</TableCell>
+                      {/* <TableCell align="center">ASPCA Image</TableCell> */}
                       <TableCell align="center">Uploaded Image</TableCell>
                       <TableCell align="center">Query Date</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    <TableRow key={row.date}>
-                      <TableCell align="center">
+                    <TableRow key={`${row.id}&&${row.user_id}`}>
+                      {/* <TableCell align="center">
                         <div className="img-box">
-                          <img 
-                            src={row.image_url} 
-                            alt={`ASPCA pic: ${row.name}`}   
-                            style={{'maxWidth': '100%', 'maxHeight': '100%'}} 
+                          <img
+                            src={row.image_url}
+                            alt={`ASPCA pic: ${row.name}`}
+                            style={{'maxWidth': '100%', 'maxHeight': '100%'}}
                             loading="lazy"
                           />
                         </div>
-                      </TableCell>
+                      </TableCell> */}
                       <TableCell align="center">
                         <div className="img-box">
-                          <img 
-                            src={row.user_img_url} 
-                            alt={`User uploaded: ${row.name}`}  
-                            style={{'maxWidth': '100%', 'maxHeight': '100%'}} 
+                          <img
+                            src={row.user_img_url}
+                            alt={`User uploaded: ${row.name}`}
+                            style={{'maxWidth': '100%', 'maxHeight': '100%'}}
                             loading="lazy"
                           />
                         </div>
@@ -112,35 +114,46 @@ export default function UserSearchHistory() {
     );
   }
 
-  if (queries.length) {
+  // If logged in and queries exist, show queries
+  if (user && queries.length) {
     return (
       <Container>
         <div>
-          <Typography variant="h4" margin={6}>Search History for {user && user.name}: {user && user.email}</Typography>
+          <Typography variant="h4" paddingTop={8} paddingBottom={4}>Search History for {user && user.name}</Typography>
         </div>
         <TableContainer component={Paper}>
           <Table aria-label="Search History" stickyHeader>
             <TableHead>
               <TableRow>
                 <TableCell />
-                <TableCell align="center">Name</TableCell>
-                <TableCell align="center">Scientific Name</TableCell>
+                <TableCell >Name</TableCell>
+                <TableCell >Scientific Name</TableCell>
                 <TableCell align="center">Link to Info</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {queries.map((row) => (
-                <Row key={row.name} row={row} />
+                <Row key={row.id} row={row} />
               ))}
             </TableBody>
           </Table>
         </TableContainer>
-
       </Container>
-  
     );
   }
-  // If no queries, prompt to login
+  else if (user) {
+    return (
+      <Container>
+        <div>
+          <Typography variant="h4" margin={6}>Search History for {user && user.name}</Typography>
+        </div>
+        <div>
+          <Typography variant="body1" margin={6}>No queries found. Upload a plant photo to make a search!</Typography>
+        </div>
+      </Container>
+    );
+  }
+  // If not logged in, prompt to login
   return (
     <Container>
       <div>
