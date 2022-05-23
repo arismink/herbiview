@@ -9,15 +9,9 @@
   "author": "garrettgsb",
   "license": "MIT",
   "scripts": {
-<<<<<<< HEAD
     "go": "nodemon -L server.js",
     "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down",
-    "docker:reset": "docker-compose down && docker-compose up -d"
-=======
-    "start": "node ./src/server.js",
-    "go": "nodemon -L server.js"
->>>>>>> f7b324637c3aee293104594ff9add48d6cc25350
+    "docker:down": "docker-compose down"
   },
   "dependencies": {
     "axios": "^0.27.2",

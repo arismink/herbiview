@@ -1,6 +1,6 @@
 version: "3.7"
 services: 
-  db:
+  db: 
     image: postgres
     hostname: db
     container_name: db
