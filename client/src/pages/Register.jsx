@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { authContext } from "providers/AuthProvider";
 
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,12 @@ import { Container, Button, Typography } from "@mui/material";
 
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 
+import "../styles/Register.scss";
+
 export default function Register() {
+
+  // set up error message state
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -24,13 +29,16 @@ export default function Register() {
     .then((res) => {
       if (res) {
         console.log("email and password verified");
+        setError("");
         navigate("/");
       } else {
-        console.log("email and password could not be verified.")
+        // console.log("email and password could not be verified.");
+        setError("Invalid email and/or password entered.");
       }
     })
     .catch(err => {
-      console.log(err)
+      console.log("register error:", err);
+      setError("Invalid email and/or password entered.");
     })
   }
 
@@ -38,7 +46,8 @@ export default function Register() {
     <Container
       sx={{mt: 5,
         textAlign: "center"}}
-      maxWidth="md">
+      maxWidth="md"
+    >
       <Box mb={18}/>
       <PersonAddAltIcon style={{ fontSize: 100, color: 'grey' }}/>
         <Typography variant="h4" margin={2}>Register</Typography>
@@ -103,6 +112,8 @@ export default function Register() {
             sx={{mb: 4}}>Register</Button>
 
         </form>
+
+        {error && <div className="error">{error}</div>}
 
       </Container>
 
