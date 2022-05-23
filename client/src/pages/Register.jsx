@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { authContext } from "providers/AuthProvider";
 
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,9 @@ import { Container, Button, Typography } from "@mui/material";
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 
 export default function Register() {
+
+  // set up error message state
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 

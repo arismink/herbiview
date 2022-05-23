@@ -20,10 +20,12 @@ export default function UserSearchHistory() {
   useEffect(() => {
     if (user) {
       // GET user history
-      const id = user.id;
+      const userid = user.id;
       axios
-        .post('/api/userHistory', { id })
+        // .post('/api/userHistory', { userid })
+        .get(`/api/userHistory/${userid}`)
         .then(response => {
+          console.log("User history is:", response.data.user_history);
           setQueries(response.data.user_history);
         });
     }
@@ -47,7 +49,11 @@ export default function UserSearchHistory() {
           </TableCell>
           <TableCell component="th" scope="row">
             <Typography variant="h6">
-              {row.name}
+              {row.name ? (
+                row.name
+              ) : (
+                JSON.parse(row.common_names.replace(/{(.*)}/, '[$1]'))[0]
+              )}
             </Typography>
           </TableCell>
           <TableCell>
@@ -77,7 +83,9 @@ export default function UserSearchHistory() {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    <TableRow key={`${row.id}&&${row.user_id}`}>
+                    <TableRow 
+                      // key={`${row.id}&&${row.user_id}`}
+                    >
                       {/* <TableCell align="center">
                         <div className="img-box">
                           <img
