@@ -56,7 +56,7 @@ module.exports = (db) => {
         res.send(user);
       })
       .catch((err) => {
-        console.log("Error:", err);
+        console.log("Error:", err.message);
         res.status(500).json({ error: err.message });
       });
   });
