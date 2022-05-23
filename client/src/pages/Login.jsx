@@ -30,16 +30,17 @@ export default function Login() {
     loginHandler(data)
     .then((res) => {
       if (res) {
-        console.log("email and password verified");
+        // console.log("email and password verified");
         setError("");
         navigate("/");
       } else {
-        console.log("email and password could not be verified.");
+        // console.log("email and password could not be verified.");
         setError("Email and password combination could not be verified.");
       }
     })
     .catch(err => {
-      console.log('login error:', err)
+      console.log('login error:', err);
+      setError("Email and password combination could not be verified.");
     })
   };
 
