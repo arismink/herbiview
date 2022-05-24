@@ -1,13 +1,12 @@
 @import 'variables.scss';
 
 .img-box {
-  padding-top: 3em;
+  padding-top: 2em;
 
   img {
     height: 30vh;
     width: 50vw;
     object-fit: cover;
-    // object-position: 10vw
     max-width: 400px;
     border: 2px dashed $footer-bg;
     padding: 1em;
