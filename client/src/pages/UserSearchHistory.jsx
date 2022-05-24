@@ -15,14 +15,24 @@ export default function UserSearchHistory() {
   // use auth context given by providers/AuthProvider.js
   const { user } = useContext(authContext);
 
+  // Set up states to handle user queries and desktop
   const [ queries, setQueries ] = useState([]);
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 800);
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 800);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  }, []);
 
   useEffect(() => {
     if (user) {
       // GET user history
       const userid = user.id;
       axios
-        // .post('/api/userHistory', { userid })
         .get(`/api/userHistory/${userid}`)
         .then(response => {
           console.log("User history is:", response.data.user_history);
@@ -56,46 +66,48 @@ export default function UserSearchHistory() {
               )}
             </Typography>
           </TableCell>
-          <TableCell>
-            <Typography variant="body1">
-              {row.sci_name}
-            </Typography>
-          </TableCell>
-          <TableCell align="center">
-            <Typography variant="body1">
-              <a href={row.info_url} target="_blank" rel="noreferrer">More info</a>
-            </Typography>
-          </TableCell>
+          <>
+            {isDesktop ? (
+              <>
+                <TableCell>
+                  <Typography variant="body1">
+                    {row.sci_name}
+                  </Typography>
+                </TableCell>
+                <TableCell align="center">
+                  <Typography variant="body1">
+                    <a 
+                      href={row.info_url} 
+                      target="_blank" 
+                      rel="noreferrer"
+                    >More info</a>
+                  </Typography>
+                </TableCell>
+              </>
+            ) : (
+              <></>
+            )}
+          </>
         </TableRow>
         <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <Box sx={{ margin: 1 }}>
-                {/* <Typography variant="h6" gutterBottom component="div">
-                  Additional Data
-                </Typography> */}
                 <Table size="small" aria-label="more-data">
                   <TableHead>
                     <TableRow>
-                      {/* <TableCell align="center">ASPCA Image</TableCell> */}
                       <TableCell align="center">Uploaded Image</TableCell>
-                      <TableCell align="center">Query Date</TableCell>
+                      <>
+                        {isDesktop ? (
+                          <TableCell align="center">Query Date</TableCell>
+                        ) : (
+                          <></>
+                        )}
+                      </>
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    <TableRow 
-                      // key={`${row.id}&&${row.user_id}`}
-                    >
-                      {/* <TableCell align="center">
-                        <div className="img-box">
-                          <img
-                            src={row.image_url}
-                            alt={`ASPCA pic: ${row.name}`}
-                            style={{'maxWidth': '100%', 'maxHeight': '100%'}}
-                            loading="lazy"
-                          />
-                        </div>
-                      </TableCell> */}
+                    <TableRow>
                       <TableCell align="center">
                         <div className="img-box">
                           <img
@@ -106,11 +118,17 @@ export default function UserSearchHistory() {
                           />
                         </div>
                       </TableCell>
-                      <TableCell align="center">
-                        <Typography variant="body1">
-                          {row.date.split('T')[0]}
-                        </Typography>
-                      </TableCell>
+                      <>
+                        {isDesktop ? (
+                          <TableCell align="center">
+                            <Typography variant="body1">
+                              {row.date.split('T')[0]}
+                            </Typography>
+                          </TableCell>
+                        ) : (
+                          <></>
+                        )}
+                      </>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -135,8 +153,16 @@ export default function UserSearchHistory() {
               <TableRow>
                 <TableCell />
                 <TableCell >Name</TableCell>
-                <TableCell >Scientific Name</TableCell>
-                <TableCell align="center">Link to Info</TableCell>
+                  <>
+                    {isDesktop ? (
+                      <>
+                        <TableCell >Scientific Name</TableCell>
+                        <TableCell align="center">Link to Info</TableCell>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
               </TableRow>
             </TableHead>
             <TableBody>

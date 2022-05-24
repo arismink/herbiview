@@ -3,10 +3,10 @@ const router = require("express").Router();
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
-    db.query(
-      `SELECT DISTINCT plants.id, plants.name, plants.sci_name
-      FROM plants;
-      `
+    db.query(`
+      SELECT DISTINCT plants.id, plants.name, plants.sci_name
+      FROM plants
+      ;`
     )
     .then(data => {
       const plant_details = data.rows;
@@ -18,10 +18,13 @@ module.exports = (db) => {
   })
 
   router.get("/:term", (req, res) => {
-    db.query(
-      `SELECT DISTINCT plants.id, plants.name, plants.sci_name
+    db.query(`
+      SELECT DISTINCT plants.id, plants.name, plants.sci_name
       FROM plants
-      WHERE lower(sci_name) like $1 or lower(common_names) like $1 or lower(name) like $1;`,
+      WHERE lower(sci_name) LIKE $1 
+        OR lower(common_names) LIKE $1 
+        OR lower(name) LIKE $1
+      ;`,
       [`%${req.params.term.toLowerCase()}%`]
     )
       .then((data) => {
