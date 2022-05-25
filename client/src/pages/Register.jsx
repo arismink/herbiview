@@ -117,6 +117,8 @@ export default function Register() {
 
       </Container>
 
+      <Box mb={30}  />
+
     </Container>
   )
 };

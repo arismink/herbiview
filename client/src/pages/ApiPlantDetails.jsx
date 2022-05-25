@@ -79,7 +79,7 @@ export default function ApiPlantDetails({ data, toxicity }) {
           id="panel1bh-header"
         >
           <Typography sx={{ width: "38%", flexShrink: 0 }}>
-            Probability
+            Certainty
           </Typography>
           <Typography sx={{ color: "text.secondary" }}>
             How sure are we?
@@ -167,7 +167,7 @@ export default function ApiPlantDetails({ data, toxicity }) {
       </Typography>
 
       <Typography variant="h6" sx={{ textAlign: "left" }}>
-        Healthiness Probability:
+        Healthiness Certainty:
       </Typography>
 
       <CustomizedProgressBars
@@ -176,7 +176,7 @@ export default function ApiPlantDetails({ data, toxicity }) {
       />
 
       <Typography variant="h6" sx={{ textAlign: "left" }} mt={2}>
-        Disease Probability:
+        Disease Certainty:
       </Typography>
 
       <CustomizedProgressBars
