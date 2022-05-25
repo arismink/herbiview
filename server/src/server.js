@@ -46,11 +46,9 @@ App.use("/api/search", search(db));
 
 // serve static files in ../build
 const public = path.join(__dirname, '../..', 'public');
-console.log(public);
 App.use(Express.static(public));
 
 App.listen(PORT, () => {
-
 
 // eslint-disable-next-line no-console
   console.log(
