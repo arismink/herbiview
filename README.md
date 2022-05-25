@@ -1,7 +1,11 @@
-# Getting Started with Create React App
+# Herbiview
 
+Learn more about plants by taking a picture of it. This application interacts with the Plant.id(https://plant.id/) API and identifies the plant uploaded by the user. In addition to the information provided by the API, our application will also inform you about whether or not the plant indentified may be toxic to household animals (i.e. Cats, dogs and horses).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Final Product
+
+### Upload an image of a plant
+![plant-upload]
 
 ## Available Scripts
 
