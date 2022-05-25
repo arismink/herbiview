@@ -36,18 +36,22 @@ To run the following project on your machine, please follow the steps outlined b
 
 ### Backend Setup:
 
-1. Locate the ```.env.example``` and make a copy of it. Rename it to ```.env```.  You will provide the required API key here.
+1. Locate the `.env.example` and make a copy of it. Rename it to `.env`.  You will provide the required API key here.
 
-2. Obtain a trial API key from [Plant.id](https://web.plant.id/api-access-request/) and place it in the ```.env``` file.
+2. Obtain a trial API key from [Plant.id](https://web.plant.id/api-access-request/) and place it in the `.env` file.
 
 ### Getting Started:
 
 1. From the root directory of the project, run the command:
-`npm run heroku:postbuild`
+```
+npm run heroku:postbuild
+```
 This will install all the required dependencies for the front-end and the back-end.
 
 2. Set up the database:
 
 
 3. Start the project in the root directory with the command:
-`npm start`
+```
+npm start
+```
