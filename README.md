@@ -1,24 +1,36 @@
 # Herbiview
 
-Learn more about plants by taking a picture of it. This application interacts with the [Plant.id](https://plant.id/) API and identifies the plant uploaded by the user. In addition to the information provided by the API, our application will also inform you about whether or not the plant indentified may be toxic to household animals (i.e. Cats, dogs and horses).
+Learn more about plants by taking a picture of it.
+
+This application interacts with the [Plant.id](https://plant.id/) API and identifies the plant uploaded by the user. In addition to the information provided by the API, our application will also inform you about whether or not the plant indentified may be toxic to household animals (i.e. Cats, dogs and horses).
 
 ## Final Product
 
 ### Upload an image of a plant
+Select an image of a plant you wish to know more about and upload it for our API to identify.
 ![plant-upload](https://github.com/arismink/herbiview/blob/main/client/docs/uploads/plant-upload.gif)
 
-### User Search History
-![search-history](https://github.com/arismink/herbiview/blob/main/client/docs/uploads/user-search%20history.gif)
+### Search our database
+Retrieve basic information about a plant and its toxicity towards animals by searching through our database,
+![plant-search](https://github.com/arismink/herbiview/blob/main/client/docs/uploads/plant%20search.gif)
 
 ### User Login
+Create an account and login in to create a search history for plants you've previously queried for.
 ![user-login](https://github.com/arismink/herbiview/blob/main/client/docs/uploads/user-login.gif)
 
+### User Search History
+If a user is logged in and performs a successful API plant search, their previous search is added to their user search history.
+![search-history](https://github.com/arismink/herbiview/blob/main/client/docs/uploads/user-search%20history.gif)
+
 ### Mobile View
-![mobile-view]()
+Responsive design gives user the ability to search for plants on the go.
+![mobile-view](https://github.com/arismink/herbiview/blob/main/client/docs/uploads/mobile-view.gif)
 
-## Available Scripts
+## Initial Setup
 
-In the project directory, you can run:
+To run the following project on your machine, please follow the steps outlined below:
+
+
 
 ### `npm start`
 
