@@ -13,6 +13,9 @@ Learn more about plants by taking a picture of it. This application interacts wi
 ### User Login
 ![user-login](https://github.com/arismink/herbiview/blob/main/client/docs/uploads/user-login.gif)
 
+### Mobile View
+![mobile-view]()
+
 ## Available Scripts
 
 In the project directory, you can run:
