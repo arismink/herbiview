@@ -120,7 +120,7 @@ module.exports = (db) => {
         })
         .then(([ querySaveDB, resSend ]) => {
           // Send plant.id results to client to display in plant-detail
-          console.log('data response JSON:', JSON.stringify(resSend));
+          // console.log('data response JSON:', JSON.stringify(resSend));
           res.send(resSend);
         })
         .catch(error => console.log("Error in /api/identify: ", error))
