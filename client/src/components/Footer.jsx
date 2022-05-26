@@ -31,7 +31,7 @@ export default function Footer() {
             <br/>
           </Typography>
           <Typography variant="caption">
-            <a href="https://github.com/arismink/herbiview">
+            <a href="https://github.com/arismink/herbiview" target="_blank" rel="noopener noreferrer">
               Link
             </a>
           </Typography>

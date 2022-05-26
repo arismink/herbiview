@@ -37,10 +37,10 @@ export default function Login() {
         justifyContent: "center",
         alignItems: "center", 
       }}>
-        <a href="https://github.com/arismink">
+        <a href="https://github.com/arismink" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon size="2x" icon={faGithubSquare} />
         </a>
-        <a href="https://www.linkedin.com/in/krismina">
+        <a href="https://www.linkedin.com/in/krismina" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon size="2x" icon={faLinkedin} />
         </a>
       </CardActions>
@@ -76,10 +76,10 @@ export default function Login() {
         justifyContent: "center",
         alignItems: "center", 
       }}>
-        <a href="https://github.com/kai-commits">
+        <a href="https://github.com/kai-commits" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon size="2x" icon={faGithubSquare} />
         </a>
-        <a href="https://www.linkedin.com/in/kaimeikle123">
+        <a href="https://www.linkedin.com/in/kaimeikle123" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon size="2x" icon={faLinkedin} />
         </a>
       </CardActions>
@@ -115,10 +115,10 @@ export default function Login() {
         justifyContent: "center",
         alignItems: "center", 
       }}>
-        <a href="https://github.com/nathan-ts">
+        <a href="https://github.com/nathan-ts" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon size="2x" icon={faGithubSquare} />
         </a>
-        <a href="https://www.linkedin.com/in/npytsang/">
+        <a href="https://www.linkedin.com/in/npytsang/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon size="2x" icon={faLinkedin} />
         </a>
       </CardActions>
