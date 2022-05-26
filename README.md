@@ -2,7 +2,7 @@
 
 Learn more about plants by taking a picture of it.
 
-This application interacts with the [Plant.id](https://plant.id/) API and identifies the plant uploaded by the user. In addition to the information provided by the API, our application will also inform you about whether or not the plant indentified may be toxic to household animals (i.e. Cats, dogs and horses).
+This React application interacts with the [Plant.id](https://plant.id/) API and identifies the plant uploaded by the user. In addition to the information provided by the API, our application will also inform you about whether or not the plant indentified may be toxic to household animals (i.e. Cats, dogs and horses).
 
 This project was developed by [Kai Meikle](https://github.com/kai-commits), [Krismina La](https://github.com/arismink) and [Nathan Tsang](https://github.com/nathan-ts).
 
@@ -54,3 +54,25 @@ npm run heroku:postbuild
 ```
 npm start
 ```
+
+## Dependencies
+    axios: ^0.27.2,
+    body-parser: ^1.18.3,
+    cookie-parser: ^1.4.6,
+    cors: ^2.8.5,
+    dotenv: ^16.0.1,
+    express: ^4.16.4,
+    morgan: ^1.10.0,
+    nodemon: ^1.18.7,
+    pg: ^8.7.3,
+    babel-loader: ^8.2.5,
+    node-sass: ^7.0.1,
+    prop-types: ^15.8.1,
+    react: ^18.1.0,
+    react-axios: ^2.0.5,
+    react-cookie: ^4.1.1,
+    react-dom: ^18.1.0,
+    react-hook-form: ^7.31.1,
+    react-router-dom: ^6.3.0,
+    react-scripts: 5.0.1,
+    @mui/material: ^5.7.0
