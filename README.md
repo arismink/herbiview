@@ -48,7 +48,7 @@ npm run heroku:postbuild
 ```
 This will install all the required dependencies for the front-end and the back-end.
 
-2. Set up the database:
+2. Set up the database by creating a database in Postgres named Herbiview. Populate the tables by navigating to `src/db/schema` and run `00.sql` which will create the tables and seed it.
 
 
 3. Start the project in the root directory with the command:
