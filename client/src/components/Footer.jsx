@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvira, faInstagram, faFacebookSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Typography } from '@mui/material';
 
+import { Link, useNavigate } from "react-router-dom";
+
 import "../styles/Footer.scss";
 
 export default function Footer() {
@@ -19,17 +21,19 @@ export default function Footer() {
 
           </Typography>
           <Typography variant="caption">
-            About Us
+            <Link to="/about">About</Link>
           </Typography>
         </div>
 
         <div className="footer-body-git">
           <Typography variant="body2">
-            GitHub <br/>
-
+            GitHub 
+            <br/>
           </Typography>
           <Typography variant="caption">
-            Link
+            <a href="https://github.com/arismink/herbiview">
+              Link
+            </a>
           </Typography>
         </div>
 

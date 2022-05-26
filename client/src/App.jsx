@@ -13,6 +13,7 @@ import Register from "pages/Register";
 import UserSearchHistory from "pages/UserSearchHistory";
 import ApiPlantDetails from "pages/ApiPlantDetails";
 import Plant from "pages/Plant";
+import About from "pages/About";
 import ScrollToTop from "components/ScrollToTop";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             }
           />
           <Route path="/plants/:plantId" element={<Plant />} />
+          <Route path="/about" element={<About />} />
 
         </Routes>
       </Container>
