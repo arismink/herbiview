@@ -12,7 +12,8 @@
     "build:client": "cd client && npm install && npm run build",
     "build": "npm run build:server && npm run build:client",
     "deploy": "cp -a client/build/. public",
-    "heroku-postbuild": "npm run build && npm run deploy"
+    "heroku-postbuild": "npm run build && npm run deploy",
+    "db:reset": "cd server && node src/bin/resetdb.js"
   },
   "repository": {
     "type": "git",
