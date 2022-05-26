@@ -55,6 +55,12 @@ npm run heroku:postbuild
 npm start
 ```
 
+4. View project at:
+```
+https://localhost:4000
+```
+
+
 ## Dependencies
     axios: ^0.27.2,
     body-parser: ^1.18.3,
