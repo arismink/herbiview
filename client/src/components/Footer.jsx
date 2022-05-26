@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvira, faInstagram, faFacebookSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvira, faInstagram, faFacebookSquare, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Typography } from '@mui/material';
 
 import { Link, useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="footer-body-about">
 
           <Typography variant="body2">
-            Company<br/>
+            More Info<br/>
 
           </Typography>
           <Typography variant="caption">
@@ -38,10 +38,10 @@ export default function Footer() {
         </div>
 
         <div className="footer-body-follow us">
-          <Typography variant="body2">
+          <Typography variant="body2" sx={{display: "none"}}>
             Follow Us: <br/>
           </Typography>
-          <Typography variant="h6">
+          <Typography variant="h6" sx={{display: "none"}}>
             <FontAwesomeIcon icon={faInstagram} /> <FontAwesomeIcon icon={faFacebookSquare} /> <FontAwesomeIcon icon={faLinkedin} />
           </Typography>
         </div>
