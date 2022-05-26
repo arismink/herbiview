@@ -67,7 +67,7 @@ export default function Login() {
           Kai Meikle
         </Typography>
         <Typography variant="body1">
-          Hello, World!
+          <i>"If you encounter a bug don't panic, call me and I'll tell you a joke."</i>
         </Typography>
       </CardContent>
       <CardActions sx={{ 
