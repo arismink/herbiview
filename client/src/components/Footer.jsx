@@ -21,13 +21,13 @@ export default function Footer() {
 
           </Typography>
           <Typography variant="caption">
-            <Link to="/about">About</Link>
+            <Link to="/about">About Us</Link>
           </Typography>
         </div>
 
         <div className="footer-body-git">
           <Typography variant="body2">
-            GitHub 
+            GitHub
             <br/>
           </Typography>
           <Typography variant="caption">

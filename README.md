@@ -44,7 +44,7 @@ To run the following project on your machine, please follow the steps outlined b
 
 1. From the root directory of the project, run the command below. This will install all the required dependencies for the front-end and the back-end.
 ```
-npm run heroku:postbuild
+npm run heroku-postbuild
 ```
 
 2. Set up the database by creating a database in Postgres named Herbiview. Populate the tables by navigating to `src/db/schema` and run `00.sql` which will create the tables and seed it.
