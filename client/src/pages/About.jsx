@@ -2,8 +2,8 @@ import { Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-import { 
-  Box, Container, Typography, Card, CardActions, CardContent 
+import {
+  Box, Container, Typography, Card, CardActions, CardContent
 } from "@mui/material";
 
 export default function Login() {
@@ -14,7 +14,7 @@ export default function Login() {
         <Typography variant="body2" color="text.secondary" gutterBottom>
           Team Member
         </Typography>
-        <Box 
+        <Box
           component="img"
           sx={{
             objectFit: "cover",
@@ -28,14 +28,16 @@ export default function Login() {
           Krismina La
         </Typography>
         <Typography variant="body1">
-          Aspiring developer with industry experience in federal government, education and oil & gas. Passionate, motivated to learn and driven about creating exceptional end-user experiences, I build things that live on the web.
+          <i>
+            "You miss 100% of the shots you don't take -Wayne Gretzky -Michael Scott"
+          </i> -Krismina La
         </Typography>
       </CardContent>
-      <CardActions sx={{ 
-        display: 'flex', 
+      <CardActions sx={{
+        display: 'flex',
         flexDirection: "row",
         justifyContent: "center",
-        alignItems: "center", 
+        alignItems: "center",
       }}>
         <a href="https://github.com/arismink" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon size="2x" icon={faGithubSquare} />
@@ -53,7 +55,7 @@ export default function Login() {
         <Typography variant="body2" color="text.secondary" gutterBottom>
           Team Member
         </Typography>
-        <Box 
+        <Box
           component="img"
           sx={{
             objectFit: "cover",
@@ -70,11 +72,11 @@ export default function Login() {
           <i>"If you encounter a bug don't panic, call me and I'll tell you a joke."</i>
         </Typography>
       </CardContent>
-      <CardActions sx={{ 
-        display: 'flex', 
+      <CardActions sx={{
+        display: 'flex',
         flexDirection: "row",
         justifyContent: "center",
-        alignItems: "center", 
+        alignItems: "center",
       }}>
         <a href="https://github.com/kai-commits" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon size="2x" icon={faGithubSquare} />
@@ -92,7 +94,7 @@ export default function Login() {
         <Typography variant="body2" color="text.secondary" gutterBottom>
           Team Member
         </Typography>
-        <Box 
+        <Box
           component="img"
           sx={{
             objectFit: "cover",
@@ -106,14 +108,18 @@ export default function Login() {
           Nathan Tsang
         </Typography>
         <Typography variant="body1">
-          Adept at thyme management.
+          <i>
+            Adept at thyme management.
+
+          </i>
+
         </Typography>
       </CardContent>
-      <CardActions sx={{ 
-        display: 'flex', 
+      <CardActions sx={{
+        display: 'flex',
         flexDirection: "row",
         justifyContent: "center",
-        alignItems: "center", 
+        alignItems: "center",
       }}>
         <a href="https://github.com/nathan-ts" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon size="2x" icon={faGithubSquare} />
@@ -127,7 +133,7 @@ export default function Login() {
 
   const formatCard = function(card) {
     return (
-      <Card 
+      <Card
         elevation={6}
         sx={{
           display: 'flex',
@@ -159,8 +165,8 @@ export default function Login() {
           flexWrap: "nowrap",
           flexDirection: { xs: "column", md: "row"}
         }}
-        
-      > 
+
+      >
 
         {formatCard(card1)}
         {formatCard(card2)}
