@@ -106,7 +106,7 @@ export default function Login() {
           Nathan Tsang
         </Typography>
         <Typography variant="body1">
-          Former CPA, current Full-Stack Web Developer. Experienced in project, thyme, and people management. Looking to use my STEM background to grow as a budding developer. 
+          Adept at thyme management.
         </Typography>
       </CardContent>
       <CardActions sx={{ 
